@@ -4,47 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-interface Props {
-  title?: string;
-  description?: string;
-  canonicalUrl?: string;
-  ogImage?: string;
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
 }
 
-const {
-  title = "Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub",
-  description = "Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources.",
-  canonicalUrl = "https://www.sauditravelhub.com/",
-  ogImage = "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200"
-} = Astro.props;
-
-// JSON-LD Schema Objects
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Saudi Travel Hub",
-  "url": canonicalUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${canonicalUrl}search?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
-};
-
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Saudi Travel Hub",
-  "url": canonicalUrl,
-  "logo": `${canonicalUrl}saudi-travel-logo.png`,
-  "sameAs": [
-    "https://www.instagram.com/sauditravelhub",
-    "https://twitter.com/sauditravelhub",
-    "https://www.tiktok.com/@sauditravelhub",
-    "https://www.youtube.com/@sauditravelhub",
-    "https://www.facebook.com/sauditravelhub"
-  ]
-};
+const { title, description, canonical = "https://www.sauditravelhub.com/" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -52,56 +18,26 @@ const orgSchema = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="NqPXYYsoZD2B1qBCatip9o0FSJc8zemm_j4Rek13gLE" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="saudi arabia travel guide, saudi travel visa, saudi travel tips, saudi destinations, FIFA 2034 travel, hajj umrah guide, riyadh jeddah alula neom, saudi travel 2026" />
-  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/png" href="/saudi_favicon.png" />
   
-  <!-- Canonical and Alternate Locales -->
-  <link rel="canonical" href={canonicalUrl} />
-  <link rel="alternate" hreflang="en" href={canonicalUrl} />
-  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
-  
-  <!-- Geographic Targeting -->
-  <meta name="geo.region" content="SA" />
-  <meta name="geo.placename" content="Saudi Arabia" />
-  <meta name="geo.position" content="24.7136;46.6753" />
-  <meta name="ICBM" content="24.7136, 46.6753" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalUrl} />
-  <meta property="og:site_name" content="Saudi Travel Hub" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
-
-  <!-- Icons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" href="/saudi-travel-logo.png" sizes="192x192" />
-  
-  <!-- Preconnects and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <meta name="generator" content={Astro.generator} />
-
-  <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Saudi Travel Hub",
+    "url": "https://www.sauditravelhub.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.sauditravelhub.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <slot name="head" />
 </head>
 <body>
   <!-- Custom Cursor -->
@@ -111,9 +47,9 @@ const orgSchema = {
   </div>
 
   <Header />
-
+  
   <slot />
-
+  
   <Footer />
 
   <!-- Cookie Consent Banner -->
