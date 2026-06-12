@@ -1,7 +1,4 @@
 ---
-// src/layouts/Layout.astro
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -40,101 +37,6 @@ const { title, description, canonical = "https://www.sauditravelhub.com/" } = As
   <slot name="head" />
 </head>
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor" id="customCursor" aria-hidden="true">
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-  </div>
-
-  <Header />
-  
   <slot />
-  
-  <Footer />
-
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-desc">
-    <p class="cookie-text" id="cookie-desc">We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept", you consent to our use of cookies. Read our <a href="/privacy">Privacy Policy</a>.</p>
-    <div class="cookie-btns">
-      <button class="cookie-reject" id="btnRejectCookies">Reject</button>
-      <button class="cookie-accept" id="btnAcceptCookies">Accept All</button>
-    </div>
-  </div>
-
-  <!-- Back to Top Button -->
-  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top" title="Scroll to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </a>
-
-  <!-- Layout Level Interactive Script -->
-  <script>
-    // 1. Custom Cursor Script
-    const cursorDot = document.getElementById('cursorDot');
-    const cursorRing = document.getElementById('cursorRing');
-    if (cursorDot && cursorRing) {
-      document.addEventListener('mousemove', function(e) {
-        requestAnimationFrame(function() {
-          cursorDot.style.left = e.clientX + 'px';
-          cursorDot.style.top = e.clientY + 'px';
-          cursorRing.style.left = e.clientX + 'px';
-          cursorRing.style.top = e.clientY + 'px';
-        });
-      });
-    }
-
-    // 2. Nav Scroll Styling
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('mainNav');
-      if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // 3. Scroll Reveal Observer
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      reveals.forEach(function(el) { io.observe(el); });
-    } else {
-      reveals.forEach(function(el) { el.classList.add('visible'); });
-    }
-
-    // 4. Back to Top Script
-    const btt = document.getElementById('backToTop');
-    if (btt) {
-      window.addEventListener('scroll', function() {
-        btt.classList.toggle('visible', window.scrollY > 500);
-      });
-      btt.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // 5. Cookie Consent Banner Handling
-    const cookieBanner = document.getElementById('cookieBanner');
-    const btnAccept = document.getElementById('btnAcceptCookies');
-    const btnReject = document.getElementById('btnRejectCookies');
-
-    function handleCookies(accepted: boolean) {
-      localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'rejected');
-      if (cookieBanner) cookieBanner.classList.remove('visible');
-    }
-
-    if (btnAccept) btnAccept.addEventListener('click', () => handleCookies(true));
-    if (btnReject) btnReject.addEventListener('click', () => handleCookies(false));
-
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      setTimeout(function() {
-        if (cookieBanner) cookieBanner.classList.add('visible');
-      }, 1500);
-    }
-  </script>
 </body>
 </html>
