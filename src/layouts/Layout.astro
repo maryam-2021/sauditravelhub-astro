@@ -1,13 +1,50 @@
 ---
+// src/layouts/Layout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-export interface Props {
-  title: string;
-  description: string;
-  canonical?: string;
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
 }
 
-const { title, description, canonical = "https://www.sauditravelhub.com/" } = Astro.props;
+const {
+  title = "Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub",
+  description = "Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources.",
+  canonicalUrl = "https://www.sauditravelhub.com/",
+  ogImage = "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200"
+} = Astro.props;
+
+// JSON-LD Schema Objects
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Saudi Travel Hub",
+  "url": canonicalUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${canonicalUrl}search?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Saudi Travel Hub",
+  "url": canonicalUrl,
+  "logo": `${canonicalUrl}saudi-travel-logo.png`,
+  "sameAs": [
+    "https://www.instagram.com/sauditravelhub",
+    "https://twitter.com/sauditravelhub",
+    "https://www.tiktok.com/@sauditravelhub",
+    "https://www.youtube.com/@sauditravelhub",
+    "https://www.facebook.com/sauditravelhub"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -15,28 +52,153 @@ const { title, description, canonical = "https://www.sauditravelhub.com/" } = As
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="NqPXYYsoZD2B1qBCatip9o0FSJc8zemm_j4Rek13gLE" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={canonical} />
-  <link rel="icon" type="image/png" href="/saudi_favicon.png" />
+  <meta name="keywords" content="saudi arabia travel guide, saudi travel visa, saudi travel tips, saudi destinations, FIFA 2034 travel, hajj umrah guide, riyadh jeddah alula neom, saudi travel 2026" />
+  <meta name="robots" content="index, follow" />
   
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Saudi Travel Hub",
-    "url": "https://www.sauditravelhub.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.sauditravelhub.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <slot name="head" />
+  <!-- Canonical and Alternate Locales -->
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="en" href={canonicalUrl} />
+  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+  
+  <!-- Geographic Targeting -->
+  <meta name="geo.region" content="SA" />
+  <meta name="geo.placename" content="Saudi Arabia" />
+  <meta name="geo.position" content="24.7136;46.6753" />
+  <meta name="ICBM" content="24.7136, 46.6753" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Saudi Travel Hub" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/saudi-travel-logo.png" sizes="192x192" />
+  
+  <!-- Preconnects and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+  </div>
+
+  <Header />
+
   <slot />
+
+  <Footer />
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-desc">
+    <p class="cookie-text" id="cookie-desc">We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept", you consent to our use of cookies. Read our <a href="/privacy">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+      <button class="cookie-reject" id="btnRejectCookies">Reject</button>
+      <button class="cookie-accept" id="btnAcceptCookies">Accept All</button>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top" title="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </a>
+
+  <!-- Layout Level Interactive Script -->
+  <script>
+    // 1. Custom Cursor Script
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+    if (cursorDot && cursorRing) {
+      document.addEventListener('mousemove', function(e) {
+        requestAnimationFrame(function() {
+          cursorDot.style.left = e.clientX + 'px';
+          cursorDot.style.top = e.clientY + 'px';
+          cursorRing.style.left = e.clientX + 'px';
+          cursorRing.style.top = e.clientY + 'px';
+        });
+      });
+    }
+
+    // 2. Nav Scroll Styling
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('mainNav');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // 3. Scroll Reveal Observer
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function(el) { io.observe(el); });
+    } else {
+      reveals.forEach(function(el) { el.classList.add('visible'); });
+    }
+
+    // 4. Back to Top Script
+    const btt = document.getElementById('backToTop');
+    if (btt) {
+      window.addEventListener('scroll', function() {
+        btt.classList.toggle('visible', window.scrollY > 500);
+      });
+      btt.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 5. Cookie Consent Banner Handling
+    const cookieBanner = document.getElementById('cookieBanner');
+    const btnAccept = document.getElementById('btnAcceptCookies');
+    const btnReject = document.getElementById('btnRejectCookies');
+
+    function handleCookies(accepted: boolean) {
+      localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'rejected');
+      if (cookieBanner) cookieBanner.classList.remove('visible');
+    }
+
+    if (btnAccept) btnAccept.addEventListener('click', () => handleCookies(true));
+    if (btnReject) btnReject.addEventListener('click', () => handleCookies(false));
+
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+      setTimeout(function() {
+        if (cookieBanner) cookieBanner.classList.add('visible');
+      }, 1500);
+    }
+  </script>
 </body>
 </html>
