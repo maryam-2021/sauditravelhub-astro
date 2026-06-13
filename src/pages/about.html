@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Saudi Travel Hub — Editorial Team & Credentials</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/saudi-travel-logo.png" sizes="192x192" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black: #050d1a;
+      --deep: #0a1628;
+      --surface: #0f1e35;
+      --surface2: #162540;
+      --border: rgba(160, 200, 255, 0.09);
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --white: #eef3fc;
+      --white-dim: rgba(220, 232, 255, 0.85);
+      --radius: 4px;
+      --radius-lg: 12px;
+      --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Outfit', sans-serif; color: #1a1a1a; background: #fff; line-height: 1.7; overflow-x: hidden; }
+
+    /* SHARED NAV STYLES */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 72px; border-bottom: 1px solid transparent; transition: var(--transition); background: rgba(5, 13, 26, 0.98); backdrop-filter: blur(20px); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.04em; color: var(--white); }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: var(--white-dim); text-decoration: none; font-size: 0.825rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color var(--transition); position: relative; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--black); padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity var(--transition); }
+    .nav-drop { position: relative; }
+    .nav-drop-content { position: absolute; top: 100%; left: 0; background: rgba(5, 13, 26, 0.95); border: 1px solid var(--border); border-radius: var(--radius); min-width: 180px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; padding: 1rem 0; z-index: 100; }
+    .nav-drop:hover .nav-drop-content { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-drop-content a { display: block; padding: 0.8rem 1.5rem; font-size: 0.85rem; color: var(--white-dim); transition: var(--transition); }
+    .nav-drop-content a:hover { background: var(--surface); color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; }
+    .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); }
+
+    /* PAGE HEADER (Adaptation of Dark Hero) */
+    .page-header { background: #050d1a; color: #fff; padding: 8rem 2rem 5rem; text-align: center; position: relative; overflow: hidden; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 1rem; position: relative; z-index: 2; }
+    .page-header p { color: var(--white-dim); max-width: 600px; margin: 0 auto; position: relative; z-index: 2; font-size: 1.1rem; }
+
+    /* BREADCRUMBS */
+    .breadcrumb-area { background: #f9f9f5; border-bottom: 1px solid #eee; padding: 0.8rem 0; }
+    .breadcrumbs { max-width: 860px; margin: 0 auto; padding: 0 2rem; font-size: 0.78rem; color: #888; display: flex; align-items: center; gap: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .breadcrumbs a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .breadcrumbs span { opacity: 0.5; }
+
+    /* CONTENT SECTIONS */
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+    .section { margin-bottom: 4rem; }
+    .section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: #050d1a; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
+    .section p { color: #444; margin-bottom: 1.25rem; font-size: 1.05rem; }
+    .mission-box { background: #f4f7fa; border-left: 3px solid var(--gold); padding: 2rem; border-radius: 0 12px 12px 0; margin-bottom: 2.5rem; }
+    .mission-box p { margin: 0; font-size: 1.15rem; color: #050d1a; font-style: italic; line-height: 1.6; }
+
+    /* FOOTER (Synced with Home) */
+    footer { background: var(--deep); color: var(--white-dim); padding: 5rem 3rem 2rem; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1320px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--white); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.8rem; }
+    .footer-col ul li a { color: var(--white-dim); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; font-size: 0.8rem; }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+    /* MOBILE ADAPTATION */
+    @media(max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav id="mainNav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Saudi Arabia Wonders — Home">
+      <img src="/saudi-travel-logo.png" alt="Saudi Travel Hub Logo" style="width:28px; height:28px; object-fit:contain; margin-right:8px;">
+      <span class="nav-logo-text">Saudi Travel<span> Hub</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-drop">
+        <a href="#" class="nav-drop-btn">Destinations ▾</a>
+        <div class="nav-drop-content">
+          <a href="/destinations/riyadh/">Riyadh</a>
+          <a href="/destinations/jeddah/">Jeddah</a>
+          <a href="/blog/alula-guide">AlUla</a>
+          <a href="/destinations/neom/">NEOM</a>
+        </div>
+      </div>
+      <a href="/fifa-2034/">FIFA 2034</a>
+      <a href="/visa/">Visa Info</a>
+      <a href="/booking">Booking</a>
+    </div>
+    <a href="/booking" class="nav-cta">Book Now</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>About Saudi Travel Hub</h1>
+    <p>Independent editorial travel guide to the Kingdom of Saudi Arabia — who we are, how we work, and why you can trust our content</p>
+  </div>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-area">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> About Us
+    </div>
+  </div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="mission-box">
+      <p>"Saudi Travel Hub exists to give independent travellers accurate, unsponsored, first-hand guidance on visiting Saudi Arabia — a destination that has transformed faster than any other in the world over the past five years."</p>
+    </div>
+
+    <p>Saudi Travel Hub is an independent editorial guide founded in 2023, covering Saudi Arabia's destinations, visa process, culture, food, and upcoming FIFA 2034 travel planning. We are not affiliated with the Saudi government, Saudi Tourism Authority, or any tour operator. Our content is editorially independent.</p>
+
+    <p>We have personally visited every major destination covered on this site — from the Nabataean tombs of Hegra in AlUla to the coral reefs of the Red Sea, the UNESCO streets of Al-Balad in Jeddah, and the lava fields of Harrat Khaybar. Our visa guidance is based on direct application experience and verified against official Saudi Tourism Authority sources.</p>
+  </div>
+
+  <div class="section">
+    <h2>Editorial team</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="avatar">MZ</div>
+        <h3>Maryam Zafar</h3>
+        <div class="role">Founder &amp; Editor-in-Chief</div>
+        <p>Digital entrepreneur and travel content strategist who founded Saudi Travel Hub to create the most comprehensive independent guide to Saudi Arabia. Maryam oversees editorial direction across all destination guides, visa content, and site strategy. She brings a hands-on approach to content quality and personally reviews every major piece published on the platform.</p>
+        <div class="expertise">
+          <span class="tag">Editorial strategy</span>
+          <span class="tag">Saudi destinations</span>
+          <span class="tag">Content direction</span>
+          <span class="tag">Digital publishing</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">EC</div>
+        <h3>Eshal Chaudhary</h3>
+        <div class="role">Travel &amp; Culture Editor</div>
+        <p>Travel and culture editor responsible for Saudi Travel Hub's destination guides, visa walkthroughs, and cultural content. Eshal researches, writes, and fact-checks the site's most in-depth editorial pieces — from eVisa application guides to city breakdowns and food coverage. She monitors Saudi Tourism Authority updates to keep all regulatory content current.</p>
+        <div class="expertise">
+          <span class="tag">Saudi eVisa</span>
+          <span class="tag">Destination guides</span>
+          <span class="tag">Culture &amp; heritage</span>
+          <span class="tag">Gulf cuisine</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">AI</div>
+        <h3>Ady I.</h3>
+        <div class="role">FIFA 2034 &amp; Sports Correspondent</div>
+        <p>Sports and events correspondent leading Saudi Travel Hub's FIFA 2034 coverage. Ady tracks stadium development, host city preparations, ticketing announcements, and fan travel logistics for the 2034 World Cup. He also covers Saudi Arabia's broader sports and entertainment scene, including Riyadh Season and Formula E.</p>
+        <div class="expertise">
+          <span class="tag">FIFA 2034</span>
+          <span class="tag">Stadium guides</span>
+          <span class="tag">Sports travel</span>
+          <span class="tag">Fan logistics</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Our editorial standards</h2>
+    <ul class="standards-list">
+      <li>All factual claims are sourced and cited — statistics reference official sources (Saudi Tourism Authority, UNESCO, SCTH) rather than unverified aggregators.</li>
+      <li>Visa and entry information is verified against official Saudi Tourism Authority and MOFA sources, with update dates clearly marked.</li>
+      <li>Destination guides are written from personal on-the-ground experience — we do not publish AI-generated content without editorial verification.</li>
+      <li>We do not accept payment to promote hotels, tours, or services. Booking links are for reader convenience and may generate affiliate revenue — this never influences editorial coverage.</li>
+      <li>Content is reviewed and updated quarterly, or immediately following official policy changes (such as visa regulation updates).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Commercial disclosure</h2>
+    <div class="disclosure">
+      <p><strong>Affiliate links:</strong> Some booking links on Saudi Travel Hub (hotels, tours, flights) are affiliate links — if you book through them, we receive a small commission at no extra cost to you. This does not influence which properties, services, or destinations we recommend. Our editorial content is never sponsored or paid for.</p>
+      <p style="margin-top:0.75rem;"><strong>Advertising:</strong> Saudi Travel Hub displays contextual advertising. Advertisers have no influence over editorial content.</p>
+      <p style="margin-top:0.75rem;"><strong>Not affiliated:</strong> Saudi Travel Hub is an independent guide. We are not affiliated with the Saudi Tourism Authority, the Saudi government, Visit Saudi, or any tour operator.</p>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="/destinations/riyadh/">Riyadh Travel Guide</a></li>
+            <li><a href="/destinations/jeddah/">Jeddah City Guide</a></li>
+            <li><a href="/blog/alula-guide">AlUla Heritage Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>FIFA 2034</h4>
+          <ul>
+            <li><a href="/fifa-2034/stadiums/">FIFA 2034 Stadiums</a></li>
+            <li><a href="/fifa-2034/host-cities/">FIFA 2034 Host Cities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 SaudiTravelHub.com — Independent Editorial Guide</span>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('.nav-links');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
