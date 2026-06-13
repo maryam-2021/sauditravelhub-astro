@@ -17,21 +17,21 @@ import Layout from '../layouts/Layout.astro';
       "name": "Is traditional Saudi food very spicy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not usually in the way you might expect. Saudi food relies heavily on warm, aromatic spices like cardamom, cinnamon, saffron, and black lime rather than fiery chili heat. However, the tomato salsa served with Kabsa can be spicy, so taste it first."
+        "text": "Not usually in the way you might expect. Saudi food relies heavily on warm, aromatic spices like cardamom, cinnamon, saffron, cumin, and black lime (loomi) rather than fiery chili heat. However, the tomato salsa (dakous) served with Kabsa can be quite spicy, so taste it first!"
       }
     }, {
       "@type": "Question",
       "name": "Can vegetarians find traditional food in Saudi Arabia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While meat is central, vegetarians can easily enjoy Foul Mudammas, Hummus, Mutabbaq, Balilah, and fresh salads. Most restaurants also offer excellent vegetarian rice dishes upon request."
+        "text": "While Saudi cuisine is heavily meat-focused, vegetarians can easily enjoy dishes like Foul Mudammas, Hummus, Mutabbaq (vegetable or cheese stuffed), Balilah (chickpeas), and fresh salads. Most restaurants also offer excellent vegetarian rice dishes upon request."
       }
     }, {
       "@type": "Question",
       "name": "What is the national dish of Saudi Arabia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kabsa is widely recognized as the national dish of Saudi Arabia. It is a fragrant, one-pot meal of spiced rice and meat, usually chicken or lamb, served with a spicy tomato salsa."
+        "text": "Kabsa is widely recognized as the national dish of Saudi Arabia. It is a fragrant, one-pot meal of spiced rice and meat (usually chicken or lamb) served with a spicy tomato salsa."
       }
     }]
   }
@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
   <main id="main-content" style="max-width: 800px; margin: 0 auto; padding: 7rem 1.5rem 3rem; font-family: 'Outfit', sans-serif; line-height: 1.8; color: var(--white);">
     <!-- HERO SECTION -->
     <header style="margin-bottom: 3rem; text-align: center;">
-      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Culinary & Culture Guide · 2026</div>
+      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Culinary &amp; Culture Guide · 2026</div>
       <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.75rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; color: #fff;">Saudi Arabia Traditional Food Guide: 15 Must-Try Dishes</h1>
       
       <div style="position: relative; border-radius: 12px; overflow: hidden; margin-top: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3); border: 1px solid var(--border);">
@@ -55,13 +55,20 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </header>
 
-    <!-- ARTICLE BODY -->
-    <article style="font-size: 1.15rem; color: var(--white-dim); line-height: 1.8;">
+    <!-- TABS NAVIGATION -->
+    <div class="tabs-nav" style="display: flex; gap: 0.5rem; border-bottom: 2px solid var(--border); margin-bottom: 2rem; justify-content: center; flex-wrap: wrap;">
+      <button class="tab-btn active" data-tab="dishes" style="background: none; border: none; border-bottom: 2px solid var(--gold); padding: 0.75rem 1.5rem; color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">15 Traditional Dishes</button>
+      <button class="tab-btn" data-tab="etiquette" style="background: none; border: none; border-bottom: 2px solid transparent; padding: 0.75rem 1.5rem; color: var(--white-dim); font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Dining Etiquette</button>
+      <button class="tab-btn" data-tab="recent" style="background: none; border: none; border-bottom: 2px solid transparent; padding: 0.75rem 1.5rem; color: var(--white-dim); font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Dedicated Recipes</button>
+    </div>
+
+    <!-- TABS CONTENT -->
+    <div class="tab-content" id="tab-dishes" style="display: block;">
       <p style="font-size: 1.25rem; color: #fff; margin-bottom: 2rem; font-weight: 400; line-height: 1.7; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
         Saudi Arabian cuisine is a rich, aromatic tapestry woven from centuries of trade routes, Bedouin traditions, and pilgrim influences. It is a cuisine built on hospitality, where meals are often shared from large communal platters using the right hand, and where no guest ever leaves a table hungry. From the slow-cooked, melt-in-your-mouth meats of the desert to the vibrant, spice-filled street food of Jeddah’s historic Al-Balad, here is your ultimate guide to the 15 traditional Saudi dishes you absolutely must try on your 2026 trip.
       </p>
 
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">The Heavyweights: Rice & Meat Masterpieces</h2>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">The Heavyweights: Rice &amp; Meat Masterpieces</h2>
       
       <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">1. <strong>Kabsa</strong> (The National Dish)</h3>
       <p>You cannot visit Saudi Arabia without eating <strong>Kabsa</strong>. Often considered the national dish, it is a fragrant, one-pot wonder made of long-grain basmati rice, tender chunks of meat (chicken, lamb, or camel), and a complex blend of spices like cardamom, saffron, cinnamon, and black lime (loomi). It is typically served on a massive platter, garnished with toasted nuts and raisins, and accompanied by a spicy tomato salsa called dakous.</p>
@@ -78,7 +85,7 @@ import Layout from '../layouts/Layout.astro';
       <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">5. <strong>Matazeez</strong></h3>
       <p>Another Najdi favorite, <strong>Matazeez</strong> is a rich, savory stew made with meat, vegetables, and spices. The star of the dish is the "dumplings" (rubian) – small, hand-rolled balls of flour dough that are cooked directly in the stew, absorbing all the rich, spiced broth.</p>
 
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Street Food & Quick Bites</h2>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Street Food &amp; Quick Bites</h2>
 
       <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">6. <strong>Mutabbaq</strong></h3>
       <p>The ultimate Saudi street food. <strong>Mutabbaq</strong> is a thin, folded, pan-fried bread stuffed with a variety of fillings. The classic savory version is filled with minced meat, eggs, tomatoes, and leeks. However, you must also try the sweet version, which is stuffed with bananas and honey or sweet cheese. It is crispy, greasy, and absolutely delicious.</p>
@@ -101,17 +108,17 @@ import Layout from '../layouts/Layout.astro';
       <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">8. <strong>Balilah</strong></h3>
       <p>A simple but incredibly popular street snack, especially in the evenings. <strong>Balilah</strong> consists of soft, boiled chickpeas seasoned with a dash of cumin, lemon juice, and sometimes a touch of chili. It is served in a paper cone and eaten warm. It is cheap, healthy, and deeply satisfying.</p>
 
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Breakfast & Dips</h2>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Breakfast &amp; Dips</h2>
 
-      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">9. <strong>Foul Mudammas & Hummus</strong></h3>
+      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">9. <strong>Foul Mudammas &amp; Hummus</strong></h3>
       <p>A staple breakfast across the Kingdom. <strong>Foul</strong> is a warm, comforting stew of fava beans cooked with olive oil, cumin, garlic, and lemon juice. It is scooped up with fresh, warm flatbread and usually served alongside a generous portion of creamy, garlic-heavy hummus.</p>
 
-      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">10. <strong>Mutabbak (Egg & Tomato)</strong></h3>
+      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">10. <strong>Mutabbak (Egg &amp; Tomato)</strong></h3>
       <p>Not to be confused with the bread dish above, this refers to a popular breakfast omelet-style dish made with eggs, tomatoes, onions, and spices, often served with fresh bread and cheese.</p>
 
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">The Sweet Finish & Drinks</h2>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">The Sweet Finish &amp; Drinks</h2>
 
-      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">11. <strong>Arabic Coffee (Gahwa) & Dates</strong></h3>
+      <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">11. <strong>Arabic Coffee (Gahwa) &amp; Dates</strong></h3>
       <p>No Saudi meal is complete without Gahwa. This is not your standard caffeinated coffee; it is a lightly roasted, finely ground brew infused with cardamom and sometimes saffron. It is served without sugar in small, handle-less cups (finjan) and is always accompanied by sweet, sticky dates to balance the bitterness. It is the ultimate symbol of Saudi hospitality.</p>
 
       <!-- VISUAL BREAK IMAGE 2: ARABIC COFFEE -->
@@ -137,99 +144,140 @@ import Layout from '../layouts/Layout.astro';
 
       <h3 style="font-size: 1.3rem; color: #fff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;">15. <strong>Laban / Ayran</strong></h3>
       <p>To wash it all down, you will frequently be served Laban (traditional buttermilk) or Ayran (a salty, yogurt-based drink). It is incredibly refreshing and aids digestion after a heavy, meat-rich meal.</p>
+    </div>
 
-      <!-- CALLOUT BOX: ETIQUETTE -->
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3.5rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Saudi Dining Etiquette: How to Eat Like a Local</h2>
-      
+    <div class="tab-content" id="tab-etiquette" style="display: none;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-bottom: 1.25rem; font-weight: 700;">Saudi Dining Etiquette: How to Eat Like a Local</h2>
+      <p style="margin-bottom: 1.5rem;">Dining in Saudi Arabia is a highly social and respectful affair. By understanding these key etiquette guidelines, you can navigate traditional home hosting and local restaurants with confidence:</p>
+
       <div style="background: rgba(220, 110, 40, 0.07); border: 1px solid rgba(220, 110, 40, 0.3); border-left: 4px solid #dd6e28; padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; font-size: 1.05rem; color: var(--white-dim); box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
           <div>
-            <strong style="color: #e58244; display: block; margin-bottom: 0.25rem;">The Right Hand Rule:</strong>
-            In traditional settings, food is eaten with the hands. Always use your RIGHT hand for eating and passing dishes. The left hand is considered unclean.
+            <strong style="color: #e58244; display: block; font-size: 1.1rem; margin-bottom: 0.25rem;">✋ The Right Hand Rule</strong>
+            Always use your RIGHT hand for eating, passing platters, and receiving drinks. In Islamic culture, the left hand is used for personal hygiene and is considered unclean.
           </div>
           <div>
-            <strong style="color: #e58244; display: block; margin-bottom: 0.25rem;">Eat from What is in Front of You:</strong>
-            When sharing a massive communal platter of Kabsa, politely eat the food directly in front of you. Reaching across the platter is considered rude.
+            <strong style="color: #e58244; display: block; font-size: 1.1rem; margin-bottom: 0.25rem;">🍲 Eat from Your Section</strong>
+            When sharing a massive communal rice platter of Kabsa or Mandi, eat only from the triangular wedge of rice directly in front of you. Reaching across the platter to take meat or rice from someone else's section is considered impolite.
           </div>
           <div>
-            <strong style="color: #e58244; display: block; margin-bottom: 0.25rem;">Accept Hospitality:</strong>
-            If a host offers you more food, it is polite to accept at least a small amount. Leaving a little food on your plate at the end of the meal shows that you are completely full and satisfied.
+            <strong style="color: #e58244; display: block; font-size: 1.1rem; margin-bottom: 0.25rem;">❤️ Accept Hospitality</strong>
+            Saudi hosts are incredibly generous. If they pile meat onto your section of the platter, accept it with thanks. To signal that you are completely full and satisfied, leave a tiny amount of rice on your plate/section at the end of the meal.
           </div>
           <div>
-            <strong style="color: #e58244; display: block; margin-bottom: 0.25rem;">Bismillah:</strong>
-            Before taking your first bite, it is customary to say "Bismillah" (In the name of God). When finished, say "Alhamdulillah" (Praise be to God).
+            <strong style="color: #e58244; display: block; font-size: 1.1rem; margin-bottom: 0.25rem;">🙏 Saying Blessings</strong>
+            Always say <strong>"Bismillah"</strong> (In the name of God) before your very first bite, and say <strong>"Alhamdulillah"</strong> (Praise be to God) once you have finished eating.
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- FAQ SECTION -->
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Frequently Asked Questions</h2>
-      <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-        
-        <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;" open>
-          <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            <span>Is traditional Saudi food very spicy?</span>
-            <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
-          </summary>
-          <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
-            Not usually in the way you might expect. Saudi food relies heavily on warm, aromatic spices like cardamom, cinnamon, saffron, cumin, and black lime (loomi) rather than fiery chili heat. However, the tomato salsa (dakous) served with Kabsa can be quite spicy, so taste it first!
-          </div>
-        </details>
-
-        <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
-          <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            <span>Can vegetarians find traditional food in Saudi Arabia?</span>
-            <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
-          </summary>
-          <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
-            While Saudi cuisine is heavily meat-focused, vegetarians can easily enjoy dishes like Foul Mudammas, Hummus, Mutabbaq (vegetable or cheese stuffed), Balilah (chickpeas), and fresh salads. Most restaurants also offer excellent vegetarian rice dishes upon request.
-          </div>
-        </details>
-
-        <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
-          <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-            <span>What is the national dish of Saudi Arabia?</span>
-            <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
-          </summary>
-          <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
-            Kabsa is widely recognized as the national dish of Saudi Arabia. It is a fragrant, one-pot meal of spiced rice and meat (usually chicken or lamb) served with a spicy tomato salsa.
-          </div>
-        </details>
-
-      </div>
-
-      <!-- Continue Your Culinary Journey -->
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 4rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Continue Your Culinary Journey</h2>
-      <p style="margin-bottom: 2rem;">Now that you know what to order, make sure you know where to go and how much to spend. Check out these essential guides:</p>
-      
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-        <a href="/saudi-arabia-travel-budget-costs-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-          <span style="color: var(--gold); margin-right: 0.5rem;">💰</span> Saudi Arabia Travel Budget 2026 &rarr;
-          <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">See exactly how much you should budget for incredible local meals versus high-end dining</span>
+    <div class="tab-content" id="tab-recent" style="display: none;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; font-weight: 700;">Explore Detailed Dish &amp; Recipe Guides</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <a href="/saudi-kabsa-recipe-traditional-guide-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">🍗 Traditional Saudi Kabsa Recipe &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Learn to make the famous national chicken and saffron rice dish.</span>
         </a>
-        <a href="/best-areas-to-stay-in-jeddah-tourists-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-          <span style="color: var(--gold); margin-right: 0.5rem;">🏨</span> Best Areas to Stay in Jeddah &rarr;
-          <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">Stay in Al-Balad or Al-Hamra to be steps away from the best traditional street food in the Kingdom</span>
+        <a href="/saudi-mandi-slow-pit-cooked-traditional-guide-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">🍖 Saudi Mandi slow pit-cooked guide &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Discover the smoke-infused tandoor pit cooking techniques of Mandi.</span>
         </a>
-        <a href="/best-time-to-visit-saudi-arabia-families-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-          <span style="color: var(--gold); margin-right: 0.5rem;">🗓️</span> Best Time to Visit Saudi Arabia &rarr;
-          <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">Time your trip to catch the massive food festivals during Riyadh Season or the Jeddah Food Festival</span>
+        <a href="/saudi-jareesh-hail-region-ancient-recipe-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">🌾 Hail Region Ancient Jareesh Recipe &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Discover the heritage of Saudi Arabia's oldest crushed wheat comfort dish.</span>
+        </a>
+        <a href="/saudi-mutabbaq-recipe-street-food-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">🥞 Authentic Saudi Mutabbaq Recipe &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Learn to make Jeddah's favorite crispy, stuffed pan-fried street food flatbread.</span>
+        </a>
+        <a href="/saudi-arabic-coffee-gahwa-recipe-guide-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">☕ Saudi Arabic Coffee (Gahwa) Guide &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Discover the spices and traditional welcome rituals behind Saudi hospitality.</span>
+        </a>
+        <a href="/saudi-red-sea-seafood-guide-2026" style="display: block; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; transition: border-color 0.3s ease;">
+          <strong style="color: var(--gold); display: block; font-size: 1.1rem;">🐟 Red Sea Seafood Culinary Guide &rarr;</strong>
+          <span style="font-size: 0.9rem; color: var(--white-dim);">Explore Jeddah's fresh hammour, lobster, and king prawns.</span>
         </a>
       </div>
-    </article>
+    </div>
+
+    <!-- Frequently Asked Questions -->
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Frequently Asked Questions</h2>
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+      <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;" open>
+        <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Is traditional Saudi food very spicy?</span>
+          <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
+        </summary>
+        <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
+          Not usually in the way you might expect. Saudi food relies heavily on warm, aromatic spices like cardamom, cinnamon, saffron, cumin, and black lime (loomi) rather than fiery chili heat. However, the tomato salsa (dakous) served with Kabsa can be quite spicy, so taste it first!
+        </div>
+      </details>
+      <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
+        <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>Can vegetarians find traditional food in Saudi Arabia?</span>
+          <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
+        </summary>
+        <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
+          While Saudi cuisine is heavily meat-focused, vegetarians can easily enjoy dishes like Foul Mudammas, Hummus, Mutabbaq (vegetable or cheese stuffed), Balilah (chickpeas), and fresh salads. Most restaurants also offer excellent vegetarian rice dishes upon request.
+        </div>
+      </details>
+      <details style="background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; cursor: pointer; transition: all 0.2s ease;">
+        <summary style="font-weight: 700; font-size: 1.15rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <span>What is the national dish of Saudi Arabia?</span>
+          <span style="color: var(--gold); font-size: 1.5rem;">&plus;</span>
+        </summary>
+        <div style="margin-top: 1rem; color: var(--white-dim); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; cursor: default; font-size: 1.05rem;">
+          Kabsa is widely recognized as the national dish of Saudi Arabia. It is a fragrant, one-pot meal of spiced rice and meat (usually chicken or lamb) served with a spicy tomato salsa.
+        </div>
+      </details>
+    </div>
+
+    <!-- Continue Your Culinary Journey -->
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); margin-top: 4rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em;">Continue Your Culinary Journey</h2>
+    <p style="margin-bottom: 2rem;">Now that you know what to order, make sure you know where to go and how much to spend. Check out these essential guides:</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+      <a href="/saudi-arabia-travel-budget-costs-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+        <span style="color: var(--gold); margin-right: 0.5rem;">💰</span> Saudi Arabia Travel Budget 2026 &rarr;
+        <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">See exactly how much you should budget for incredible local meals versus high-end dining</span>
+      </a>
+      <a href="/best-areas-to-stay-in-jeddah-tourists-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+        <span style="color: var(--gold); margin-right: 0.5rem;">🏨</span> Best Areas to Stay in Jeddah &rarr;
+        <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">Stay in Al-Balad or Al-Hamra to be steps away from the best traditional street food in the Kingdom</span>
+      </a>
+      <a href="/best-time-to-visit-saudi-arabia-families-2026/" style="display: block; padding: 1.2rem 1.5rem; border: 1px solid var(--gold); border-radius: 8px; background: var(--surface2); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+        <span style="color: var(--gold); margin-right: 0.5rem;">🗓️</span> Best Time to Visit Saudi Arabia &rarr;
+        <span style="display: block; font-size: 0.85rem; color: var(--white-dim); font-weight: 400; margin-top: 0.25rem;">Time your trip to catch the massive food festivals during Riyadh Season or the Jeddah Food Festival</span>
+      </a>
+    </div>
   </main>
+
+  <script slot="body">
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.style.borderBottomColor = 'transparent';
+          b.style.color = 'var(--white-dim)';
+        });
+        contents.forEach(c => c.style.display = 'none');
+        btn.classList.add('active');
+        btn.style.borderBottomColor = 'var(--gold)';
+        btn.style.color = '#fff';
+        const target = document.getElementById(`tab-${btn.dataset.tab}`);
+        target.style.display = 'block';
+      });
+    });
+  </script>
 </Layout>
 
 <style>
-  /* Custom detail summary accordion triggers */
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-  details[open] summary span:last-child {
-    transform: rotate(45deg);
-    color: var(--gold-light);
-  }
-  details summary span:last-child {
-    transition: transform 0.2s ease;
+  .tab-btn.active {
+    border-bottom: 2px solid var(--gold) !important;
+    color: #fff !important;
   }
 </style>
