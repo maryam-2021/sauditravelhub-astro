@@ -1,0 +1,43 @@
+---
+// src/components/InternalLink.astro
+interface Props {
+  href: string;
+  class?: string;
+  style?: string;
+  id?: string;
+  [key: string]: any;
+}
+
+const { href, class: className, style, id, ...rest } = Astro.props;
+
+// Process href to ensure clean URL with trailing slash and correct path
+let cleanHref = href;
+if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+  // Separate path from query/fragment
+  const parts = href.split(/[?#]/);
+  const pathPart = parts[0];
+  const restPart = href.substring(pathPart.length);
+  
+  // Exclude files with extensions (like images, sitemaps, etc.)
+  const hasExtension = /\.[a-zA-Z0-9]+$/.test(pathPart);
+  if (!hasExtension) {
+    let normalizedPath = pathPart;
+    
+    // Map legacy URLs to standard clean routes
+    if (normalizedPath === '/visa.html' || normalizedPath === '/visa') {
+      normalizedPath = '/visa-guide/';
+    } else if (normalizedPath === '/fifa-2034-tickets.html' || normalizedPath === '/fifa-2034-tickets') {
+      normalizedPath = '/fifa-2034/tickets/';
+    } else {
+      if (!normalizedPath.endsWith('/')) {
+        normalizedPath += '/';
+      }
+    }
+    cleanHref = normalizedPath + restPart;
+  }
+}
+---
+
+<a href={cleanHref} class={className} style={style} id={id} {...rest}>
+  <slot />
+</a>
