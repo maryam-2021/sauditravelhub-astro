@@ -14,9 +14,24 @@ interface Props {
 const {
   title = "Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub",
   description = "Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources.",
-  canonicalUrl = "https://www.sauditravelhub.com/",
+  canonicalUrl: canonicalUrlProp,
   ogImage = "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200"
 } = Astro.props;
+
+// Derive canonical URL dynamically:
+// - In production builds (PROD=true), always use the live domain regardless
+//   of which host the build is served from (prevents staging.pages.dev URLs
+//   from leaking into Google's index as duplicate-content signals).
+// - In dev / preview builds, use the actual request origin so localhost and
+//   preview deployments self-canonicalise correctly instead of pointing at prod.
+// - An explicit prop passed by an individual page always wins (e.g. for pages
+//   that need a canonical pointing at a different URL for pagination etc.).
+const PROD_ORIGIN = "https://www.sauditravelhub.com";
+const STAGING_ORIGIN = "https://sauditravelhub-astro.pages.dev";
+const derivedCanonical = canonicalUrlProp ??
+  (import.meta.env.PROD
+    ? PROD_ORIGIN + Astro.url.pathname
+    : STAGING_ORIGIN + Astro.url.pathname);
 
 // JSON-LD Schema Objects
 const websiteSchema = {
@@ -64,9 +79,9 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   <meta name="robots" content="index, follow" />
   
   <!-- Canonical and Alternate Locales -->
-  <link rel="canonical" href={canonicalUrl} />
-  <link rel="alternate" hreflang="en" href={canonicalUrl} />
-  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+  <link rel="canonical" href={derivedCanonical} />
+  <link rel="alternate" hreflang="en" href={derivedCanonical} />
+  <link rel="alternate" hreflang="x-default" href={derivedCanonical} />
   
   <!-- Geographic Targeting -->
   <meta name="geo.region" content="SA" />
@@ -76,7 +91,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:url" content={derivedCanonical} />
   <meta property="og:site_name" content="Saudi Travel Hub" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -100,7 +115,6 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;600&display=swap" rel="stylesheet" />
 
-  <meta name="generator" content={Astro.generator} />
 
   <!-- Structured Data JSON-LD -->
   {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}

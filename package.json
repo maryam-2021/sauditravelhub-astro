@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.6",
