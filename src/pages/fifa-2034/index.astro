@@ -318,7 +318,16 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- ARTICLE BODY -->
     <main class="article-content" role="main">
-      
+
+      <!-- DATA SOURCES CALLOUT -->
+      <div style="background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.04) 100%); border: 1px solid rgba(201,168,76,0.35); border-left: 4px solid var(--gold); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 1.6rem 2rem; margin-bottom: 2.5rem; display: flex; gap: 1.2rem; align-items: flex-start;" role="note" aria-label="About our 2034 data sources">
+        <div style="color: var(--gold); font-size: 1.6rem; flex-shrink: 0; line-height: 1;">📋</div>
+        <div>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin: 0 0 0.6rem; border: none; padding: 0;">About Our 2034 Data Sources</h2>
+          <p style="font-size: 0.92rem; color: var(--white-dim); line-height: 1.7; margin: 0;">We track all FIFA 2034 developments using official sources including the <strong style="color: var(--white);">Saudi Ministry of Sport</strong>, <strong style="color: var(--white);">Vision 2030 documents</strong>, and <strong style="color: var(--white);">FIFA.com</strong>. While we provide the most detailed planning data available today, please note that stadium names, capacities, and transport routes are subject to change during the 8-year development phase. We update this guide monthly. <em>Last updated: June 2026.</em></p>
+        </div>
+      </div>
+
       <!-- INTRO -->
       <section id="intro" style="padding: 0; margin-bottom: 3rem;">
         <p>
@@ -349,12 +358,14 @@ import Layout from '../../layouts/Layout.astro';
         </p>
 
         <!-- STADIUMS TABLE -->
-        <table class="stadiums-table" aria-label="FIFA 2034 Stadiums and Host Cities">
+        <table class="stadiums-table" aria-label="Planned FIFA 2034 Stadiums and Host Cities — Subject to Final FIFA Confirmation">
+          <caption style="caption-side: top; text-align: left; font-size: 0.82rem; color: var(--gold); font-weight: 600; padding: 0 0 0.8rem; letter-spacing: 0.04em;">Planned FIFA 2034 Stadiums &amp; Capacities <span style="color: var(--white-dim); font-weight: 400;">(Subject to Final FIFA Confirmation)</span></caption>
           <thead>
             <tr>
               <th>Host City</th>
               <th>Stadium Name</th>
-              <th>Capacity</th>
+              <th>Planned Capacity</th>
+              <th>Status</th>
               <th>Key Matches / Stage</th>
             </tr>
           </thead>
@@ -362,95 +373,111 @@ import Layout from '../../layouts/Layout.astro';
             <tr>
               <td><strong>Riyadh</strong></td>
               <td>King Salman International Stadium</td>
-              <td>92,760</td>
+              <td>92,760 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Opening Match, Group Stage, Semi-Final, Grand Final</td>
             </tr>
             <tr>
               <td><strong>Riyadh</strong></td>
               <td>King Fahd International Stadium</td>
-              <td>67,000</td>
+              <td>67,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Renovation Confirmed</span></td>
               <td>Group Stage, Round of 32, Round of 16, Quarter-Final</td>
             </tr>
             <tr>
               <td><strong>Riyadh</strong></td>
               <td>Al-Awwal Park (KSU Stadium)</td>
               <td>25,000</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32</td>
             </tr>
             <tr>
               <td><strong>Riyadh</strong></td>
               <td>Prince Faisal bin Fahd Stadium</td>
               <td>45,000</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32, Round of 16</td>
             </tr>
             <tr>
               <td><strong>Riyadh</strong></td>
-              <td>Prince Mohammed bin Salman Stadium (Qiddiya)</td>
-              <td>46,000</td>
+              <td>Prince Mohammed bin Salman Stadium, Qiddiya <em style="font-size:0.78rem; color:var(--gold);">(Name &amp; Design Subject to Final Approval)</em></td>
+              <td>46,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32, Quarter-Final</td>
             </tr>
             <tr>
               <td><strong>Jeddah</strong></td>
               <td>King Abdullah Sports City (The Shining Jewel)</td>
               <td>62,241</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32, Round of 16, Semi-Final</td>
             </tr>
             <tr>
               <td><strong>Jeddah</strong></td>
-              <td>Jeddah Central Stadium (Qaddiyah-Jeddah)</td>
-              <td>45,000</td>
+              <td>Jeddah Central Stadium</td>
+              <td>45,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32, Quarter-Final</td>
             </tr>
             <tr>
               <td><strong>Jeddah</strong></td>
               <td>King Saud University Stadium (Jeddah Campus)</td>
               <td>27,000</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32</td>
             </tr>
             <tr>
               <td><strong>Al Khobar</strong></td>
               <td>Aramco Stadium (New Al Khobar Stadium)</td>
-              <td>47,000</td>
+              <td>47,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32, Round of 16, Quarter-Final</td>
             </tr>
             <tr>
               <td><strong>Dammam</strong></td>
               <td>Prince Mohamed bin Fahd Stadium</td>
               <td>30,000</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32</td>
             </tr>
             <tr>
               <td><strong>Dammam</strong></td>
-              <td>Dammam Arena Stadium (New)</td>
-              <td>40,000</td>
+              <td>Dammam Arena Stadium</td>
+              <td>40,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32, Round of 16</td>
             </tr>
             <tr>
               <td><strong>Abha</strong></td>
               <td>King Khalid University Stadium</td>
-              <td>45,000</td>
+              <td>45,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32, Round of 16</td>
             </tr>
             <tr>
               <td><strong>NEOM</strong></td>
               <td>NEOM Stadium (The Line)</td>
-              <td>46,000</td>
+              <td>46,000 <em style="font-size:0.78rem; color:var(--gold);">(Conceptual / Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(150,100,200,0.15); color:#c9a0dc; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Concept Stage</span></td>
               <td>Group Stage, Round of 32, Quarter-Final</td>
             </tr>
             <tr>
               <td><strong>Madinah</strong></td>
               <td>Prince Mohammed bin Abdulaziz Stadium</td>
-              <td>40,000</td>
+              <td>40,000 <em style="font-size:0.78rem; color:var(--gold);">(Planned)</em></td>
+              <td><span style="font-size:0.78rem; background:rgba(201,168,76,0.12); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Under Construction</span></td>
               <td>Group Stage, Round of 32</td>
             </tr>
             <tr>
               <td><strong>Tabuk</strong></td>
               <td>King Khalid Sports City Stadium</td>
               <td>30,000</td>
+              <td><span style="font-size:0.78rem; background:rgba(100,180,100,0.12); color:#6fb86f; padding:0.2rem 0.5rem; border-radius:4px; white-space:nowrap;">Existing / Upgrade</span></td>
               <td>Group Stage, Round of 32</td>
             </tr>
           </tbody>
         </table>
+        <p style="font-size: 0.78rem; color: var(--white-dim); margin-top: 0.8rem; line-height: 1.6; font-style: italic;">* Capacities and names are based on current Vision 2030 development plans and Ministry of Sport announcements. Final specifications will be confirmed by FIFA closer to 2034. Sources: Saudi Ministry of Sport, FIFA.com, Vision 2030 Economic Programme documents.</p>
 
         <p>
           Each of these venues is being constructed or upgraded to conform to the highest standards of energy efficiency. The newly designed stadiums, such as the Aramco Stadium in Al Khobar and the Prince Mohammed bin Salman Stadium in Qiddiya, feature revolutionary architectural elements. The Qiddiya stadium, for example, is perched on the edge of a 200-meter cliff, featuring a LED wall that opens up to offer panoramic views of the entertainment city below. The NEOM Stadium is integrated directly into the vertical modules of *The Line*, powered entirely by renewable wind and solar energy, representing a landmark achievement in sustainable sports design.
@@ -554,7 +581,7 @@ import Layout from '../../layouts/Layout.astro';
                 <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
               </summary>
               <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
-                It is located in the north of Riyadh, approximately 25km from the Olaya district. The new Metro Line 4 provides a direct 30-minute connection.
+                The planned King Salman International Stadium is located in the north of Riyadh, approximately 25km from the Olaya district. The Riyadh Metro Network (including Line 4 — Yellow Line) is designed to provide direct access to major sporting venues including this stadium. A journey time of approximately 30 minutes is projected, pending final 2034 transport plans.
               </div>
             </details>
             <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all">
@@ -572,7 +599,7 @@ import Layout from '../../layouts/Layout.astro';
                 <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
               </summary>
               <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
-                King Salman International Stadium in Riyadh will be the largest, with a capacity of 92,760, hosting the Opening Ceremony and Final.
+                The planned King Salman International Stadium in Riyadh is projected to be the largest venue, with a capacity of 92,760 (planned figure, subject to final FIFA confirmation), and is expected to host the Opening Ceremony and Final.
               </div>
             </details>
           </div>
@@ -595,23 +622,23 @@ import Layout from '../../layouts/Layout.astro';
                   "name": "How far is King Salman Stadium from Riyadh city center?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "It is located in the north of Riyadh, approximately 25km from the Olaya district. The new Metro Line 4 provides a direct 30-minute connection."
+                    "text": "The planned King Salman International Stadium is located in the north of Riyadh, approximately 25km from the Olaya district. The Riyadh Metro Network (including Line 4 — Yellow Line) is designed to provide direct access to major sporting venues including this stadium, with a projected journey time of approximately 30 minutes. Final 2034 transport plans are subject to confirmation by the Riyadh Metro Authority."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Can I walk from Jeddah Airport to the stadium?",
+                  "name": "Can I walk from Jeddah Airport to the King Abdullah Sports City stadium?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No, King Abdullah Sports City is 20km from King Abdulaziz International Airport (JED). You must use the official FIFA shuttle buses or Uber/Careem."
+                    "text": "No. King Abdullah Sports City is approximately 20km from King Abdulaziz International Airport (JED). Based on plans for FIFA 2034, fans are expected to use official match-day shuttle buses or ride-hailing services (Uber, Careem). Final shuttle arrangements will be confirmed by FIFA's transport authority closer to the tournament."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Which stadium has the largest capacity for FIFA 2034?",
+                  "name": "Which stadium has the largest planned capacity for FIFA 2034?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "King Salman International Stadium in Riyadh will be the largest, with a capacity of 92,760, hosting the Opening Ceremony and Final."
+                    "text": "The King Salman International Stadium in Riyadh is projected to be the largest venue, with a planned capacity of 92,760 (subject to final FIFA confirmation). It is expected to host the Opening Ceremony and Grand Final based on current tournament plans."
                   }
                 }
               ]
@@ -627,16 +654,16 @@ import Layout from '../../layouts/Layout.astro';
           Securing tickets for the FIFA World Cup 2034 requires navigating the official FIFA ticketing portal, which operates in multiple phases. In accordance with standard FIFA regulations, tickets are sold in structured stages, starting with a random selection draw, followed by a first-come, first-served sales phase, and concluding with a last-minute sales phase. All tickets are digital, delivered via the official FIFA World Cup 2034 ticketing application.
         </p>
         <p>
-          A critical requirement for all international and domestic spectators is the **Hayya Card**. Similar to the system used during the Qatar 2022 World Cup, the Hayya Card serves as a personalized fan identification document. The card is **mandatory** for entering any match stadium. For international visitors, the Hayya Card also functions as a **multi-entry tourist visa** for the Kingdom of Saudi Arabia, simplifying entry procedures at airports and land borders. Additionally, the Hayya Card provides fans with **free access to public transit** systems (such as the Riyadh Metro and local shuttle buses) on match days, making it the most important document in your travel portfolio.
+          Based on the model used at the Qatar 2022 World Cup, a digital fan ID — similar to the <strong>Hayya Card</strong> — is expected to be required for all international and domestic spectators. Under that model, the card served as a personalized fan identification document mandatory for stadium entry. For international visitors, it also functioned as a multi-entry tourist visa, simplifying arrival procedures. Additionally, the card granted free access to public transit systems on match days. <em>Note: Saudi Arabia's 2034 fan ID system has not yet been officially confirmed by FIFA. Final requirements will be announced closer to the tournament.</em>
         </p>
         <p>
-          Tickets are categorized into four distinct groups to cater to different budget levels and spectator preferences:
+          Previous World Cups have utilized a tiered category ticket structure; final 2034 ticket tiers and pricing will be officially announced by FIFA when the ticketing portal opens. Based on precedent, the likely structure includes:
         </p>
         <ul>
-          <li><strong>Category 1 (Cat 1):</strong> The highest-priced tickets, offering prime sideline seats with the best viewing angles of the pitch. Ideal for fans seeking a premium view.</li>
-          <li><strong>Category 2 (Cat 2):</strong> Mid-range tickets, located in the corner sections and upper tiers of the sideline stands. Offers a balanced mix of price and view quality.</li>
-          <li><strong>Category 3 (Cat 3):</strong> The most affordable standard tickets, located behind the goals in the northern and southern stands. These zones are usually occupied by the most passionate supporters, offering a high-energy atmosphere.</li>
-          <li><strong>Hospitality Packages:</strong> Premium packages that include Category 1 seats, access to private skyboxes or luxury lounges, and gourmet dining featuring local and international cuisine. These packages also offer designated VIP parking and fast-track security access.</li>
+          <li><strong>Category 1 (Cat 1 — Expected):</strong> The highest-priced tickets, offering prime sideline seats with the best viewing angles of the pitch. Ideal for fans seeking a premium view.</li>
+          <li><strong>Category 2 (Cat 2 — Expected):</strong> Mid-range tickets, located in corner sections and upper tiers. Offers a balanced mix of price and view quality.</li>
+          <li><strong>Category 3 (Cat 3 — Expected):</strong> The most affordable standard tickets, located behind the goals. These zones typically generate the highest atmosphere.</li>
+          <li><strong>Hospitality Packages (Expected):</strong> Premium packages including priority seating, lounge access, and gourmet dining. Details will be confirmed by FIFA's official hospitality partners.</li>
         </ul>
         <p>
           Due to the high demand for accommodations during the tournament, booking your hotel immediately after securing match tickets is highly recommended. Hotel rates are projected to increase during peak match periods, particularly in cities like Riyadh and Jeddah.
@@ -672,12 +699,12 @@ import Layout from '../../layouts/Layout.astro';
           Tickets for the Haramain High-Speed Rail can be booked online via the official HHR portal or app. During the World Cup, fans holding a valid Hayya Card will receive special discounts on train bookings. The train features Business Class and Economy Class, both offering spacious seating, air conditioning, and food services. It is highly recommended to book your train seats at least a month in advance, as the route is also heavily utilized by pilgrims visiting Makkah and Madinah.
         </p>
 
-        <h3>Riyadh Metro Expansion</h3>
+        <h3>Riyadh Metro Network</h3>
         <p>
-          In the capital, the newly launched **Riyadh Metro** will serve as the primary transit artery for fans. The metro's six automated lines connect major commercial districts directly to the stadium precincts. For example, Line 4 (Yellow Line) links King Khalid International Airport directly to KAFD, from which fans can transfer to shuttle loops servicing the King Salman International Stadium.
+          In the capital, the <strong>Riyadh Metro Network</strong> (including Line 4 — Yellow Line) is designed to provide direct access to major sporting venues. The network's six automated lines connect major commercial districts to stadium precincts. Based on current routing, Line 4 links King Khalid International Airport to KAFD, from which fans are expected to transfer to shuttle loops serving the King Salman International Stadium. <em>Final match-day route allocations will be confirmed by the Riyadh Metro Authority and FIFA's transport committee closer to 2034.</em>
         </p>
         <p>
-          On match days, presentation of your Hayya Card and match ticket permits free travel on the Riyadh Metro. The stations feature English signage, step-free access, and high-capacity platforms designed to handle massive stadium crowds safely.
+          On match days, presentation of a valid fan ID document and match ticket is expected to permit free or subsidised travel on the Riyadh Metro — a model used successfully at Qatar 2022. The stations already feature English signage, step-free access, and high-capacity platforms.
         </p>
         <p>
           Key interchange stations—such as the Olaya Station and the Western Station—contain retail shops, fast-food outlets, and interactive visitor help desks. The metro network operates from 6:00 AM to midnight, with extended hours scheduled on match days to ensure that fans can return to their accommodations safely after late-evening fixtures.
