@@ -17,6 +17,7 @@ const destinationsList = [
   title="Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub"
   description="Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources."
 >
+  <link rel="preload" href="/images/riyadh_hero.webp" as="image" type="image/webp" fetchpriority="high" slot="head" />
   <SchemaGenerator slot="head" type="WebSite" />
   <SchemaGenerator slot="head" type="ItemList" title="Saudi Arabia Travel Destinations" itemList={destinationsList} />
 
@@ -24,6 +25,17 @@ const destinationsList = [
     
     <!-- HERO -->
     <section class="hero" aria-label="Welcome to Saudi Arabia">
+      <!-- Optimized LCP Background Image -->
+      <img
+        src="/images/riyadh_hero.webp"
+        alt="Riyadh skyline — Saudi Arabia capital city"
+        class="hero-bg-img"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width="1200"
+        height="675"
+      />
       <div class="hero-geometric" aria-hidden="true">
         <div class="geo-ring"></div>
         <div class="geo-ring"></div>
@@ -277,7 +289,7 @@ const destinationsList = [
         </div>
         <div class="destinations-grid reveal">
           <a href="/destinations/riyadh/" class="dest-card dest-riyadh">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=600" alt="Riyadh skyline — Saudi Arabia capital city" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="Riyadh skyline — Saudi Arabia capital city" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -289,7 +301,7 @@ const destinationsList = [
           </a>
 
           <a href="/destinations/jeddah/" class="dest-card dest-jeddah">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1551047465-91a3c8502f1a?q=80&w=600" alt="Jeddah historic Al-Balad district and Red Sea coast" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1551047465-91a3c8502f1a?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="Jeddah historic Al-Balad district and Red Sea coast" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -301,7 +313,7 @@ const destinationsList = [
           </a>
 
           <a href="/blog/alula-guide/" class="dest-card dest-alula">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=600" alt="AlUla ancient Nabataean rock tombs and desert landscape" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="AlUla ancient Nabataean rock tombs and desert landscape" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -312,7 +324,7 @@ const destinationsList = [
           </a>
 
           <a href="/destinations/neom/" class="dest-card dest-neom">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=600" alt="NEOM futuristic city development in Saudi Arabia" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="NEOM futuristic city development in Saudi Arabia" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -323,7 +335,7 @@ const destinationsList = [
           </a>
 
           <a href="/destinations/abha/" class="dest-card dest-abha">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1616166308003-8b7ff036109e?q=80&w=600" alt="Abha mountain cityscape in the Asir region" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1616166308003-8b7ff036109e?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="Abha mountain cityscape in the Asir region" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -334,7 +346,7 @@ const destinationsList = [
           </a>
 
           <a href="/destinations/al-khobar/" class="dest-card dest-khobar">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1608958416700-1c640d170560?q=80&w=600" alt="Al Khobar waterfront on the Arabian Gulf" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1608958416700-1c640d170560?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="Al Khobar waterfront on the Arabian Gulf" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -345,7 +357,7 @@ const destinationsList = [
           </a>
 
           <a href="/destinations/tabuk/" class="dest-card dest-tabuk">
-            <img class="dest-img" src="https://images.unsplash.com/photo-1596120228308-2c3475d9e5a1?q=80&w=600" alt="Tabuk region scenery in northwest Saudi Arabia" loading="lazy" />
+            <img class="dest-img" src="https://images.unsplash.com/photo-1596120228308-2c3475d9e5a1?q=75&w=600&auto=format&fm=webp&h=400&fit=crop" alt="Tabuk region scenery in northwest Saudi Arabia" loading="lazy" / width="600" height="400" decoding="async" />
             <div class="dest-bg"></div>
             <div class="dest-overlay"></div>
             <div class="dest-arrow" aria-hidden="true">↗</div>
@@ -399,7 +411,7 @@ const destinationsList = [
         <div class="fifa-visual reveal reveal-delay-2" id="stadiums">
           <div class="stadium-card">
             <div class="stadium-img-placeholder">
-              <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000" alt="King Salman Stadium, Riyadh — FIFA 2034 Opening and Final venue" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+              <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=75&w=800&auto=format&fm=webp&h=500&fit=crop" alt="King Salman Stadium, Riyadh — FIFA 2034 Opening and Final venue" loading="lazy" style="width:100%;height:100%;object-fit:cover;" / width="600" height="400" decoding="async" />
             </div>
             <div class="stadium-bar"></div>
             <div class="stadium-header">
@@ -412,7 +424,7 @@ const destinationsList = [
           </div>
           <div class="stadium-card">
             <div class="stadium-img-placeholder">
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000" alt="NEOM Stadium — suspended above the sea" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=75&w=800&auto=format&fm=webp&h=500&fit=crop" alt="NEOM Stadium — suspended above the sea" loading="lazy" style="width:100%;height:100%;object-fit:cover;" / width="600" height="400" decoding="async" />
             </div>
             <div class="stadium-bar"></div>
             <div class="stadium-header">
@@ -425,7 +437,7 @@ const destinationsList = [
           </div>
           <div class="stadium-card">
             <div class="stadium-img-placeholder">
-              <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=1000" alt="King Abdullah Sports City, Jeddah — The Shining Jewel stadium" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+              <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=75&w=800&auto=format&fm=webp&h=500&fit=crop" alt="King Abdullah Sports City, Jeddah — The Shining Jewel stadium" loading="lazy" style="width:100%;height:100%;object-fit:cover;" / width="600" height="400" decoding="async" />
             </div>
             <div class="stadium-bar"></div>
             <div class="stadium-header">
@@ -646,7 +658,7 @@ const destinationsList = [
         </div>
         <div class="food-grid reveal">
           <a href="/saudi-kabsa-recipe-traditional-guide-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/saudi_kabsa_platter.webp" alt="Traditional Saudi Kabsa platter with spiced rice and lamb" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/saudi_kabsa_platter.webp" alt="Traditional Saudi Kabsa platter with spiced rice and lamb" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Kabsa</div>
               <div class="food-origin">National Dish · Nationwide</div>
@@ -654,7 +666,7 @@ const destinationsList = [
             </div>
           </a>
           <a href="/saudi-mandi-slow-pit-cooked-traditional-guide-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/saudi_mandi_platter.png" alt="Saudi Mandi slow-cooked meat and rice traditional dish" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/saudi_mandi_platter.webp" alt="Saudi Mandi slow-cooked meat and rice traditional dish" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Mandi</div>
               <div class="food-origin">Slow Pit-Cooked · Hadhramaut Origin</div>
@@ -662,7 +674,7 @@ const destinationsList = [
             </div>
           </a>
           <a href="/saudi-jareesh-hail-region-ancient-recipe-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/saudi_jareesh_bowl.png" alt="Saudi Jareesh cracked wheat dish from Hail region" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/saudi_jareesh_bowl.png" alt="Saudi Jareesh cracked wheat dish from Hail region" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Jareesh</div>
               <div class="food-origin">Hail Region · Ancient Recipe</div>
@@ -670,7 +682,7 @@ const destinationsList = [
             </div>
           </a>
           <a href="/saudi-mutabbaq-recipe-street-food-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/saudi_street_food_mutabbaq.webp" alt="Saudi Mutabbaq crispy folded street food pastry" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/saudi_street_food_mutabbaq.webp" alt="Saudi Mutabbaq crispy folded street food pastry" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Mutabbaq</div>
               <div class="food-origin">Jeddah Street Food</div>
@@ -678,7 +690,7 @@ const destinationsList = [
             </div>
           </a>
           <a href="/saudi-arabic-coffee-gahwa-recipe-guide-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/arabic_coffee_gahwa_dates.webp" alt="Traditional Arabic coffee Gahwa served with fresh dates" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/arabic_coffee_gahwa_dates.webp" alt="Traditional Arabic coffee Gahwa served with fresh dates" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Dates &amp; Qahwa</div>
               <div class="food-origin">National Welcome Ritual</div>
@@ -686,7 +698,7 @@ const destinationsList = [
             </div>
           </a>
           <a href="/saudi-red-sea-seafood-guide-2026/" class="food-card" style="text-decoration: none; color: inherit; display: block;">
-            <img class="food-img" src="/images/saudi_red_sea_seafood.png" alt="Fresh Red Sea seafood grilled on Jeddah Corniche" loading="lazy" style="width: 100%; object-fit: cover;" />
+            <img class="food-img" src="/images/saudi_red_sea_seafood.webp" alt="Fresh Red Sea seafood grilled on Jeddah Corniche" loading="lazy" style="width: 100%; object-fit: cover;" / width="400" height="300" decoding="async" />
             <div class="food-content">
               <div class="food-name">Red Sea Seafood</div>
               <div class="food-origin">Jeddah Corniche · Yanbu</div>
@@ -1021,7 +1033,7 @@ const destinationsList = [
         <div class="author-block" style="flex: 1; min-width: 300px;">
           <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--white); margin-bottom:1rem;">About the Author</h3>
           <div style="display: flex; align-items: flex-start; gap: 1rem;">
-            <img src="/saudi-travel-logo.png" alt="Saudi Travel Hub Team" style="width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--gold-dim); padding: 5px;">
+            <img src="/saudi-travel-logo.png" alt="Saudi Travel Hub Team" style="width: 50px; height: 50px; border-radius: 50%; object-fit: contain; background: var(--gold-dim); padding: 5px;" width="28" height="28" loading="lazy" decoding="async" />
             <div>
               <a rel="author" class="author" href="/about/" style="color: var(--gold); font-weight: 700; text-decoration: none; font-size: 1.1rem;">Saudi Travel Hub Team</a>
               <p style="color: var(--white-dim); font-size: 0.9rem; margin-top: 0.4rem; line-height: 1.5;">Expert travel writers and local guides dedicated to uncovering the very best of Saudi Arabia. We live, breathe, and travel the Kingdom.</p>

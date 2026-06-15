@@ -41,11 +41,7 @@ const personSchema = {
 
 <div class="author-box" style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin: 3rem 0; display: flex; gap: 1.5rem; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
   <div class="author-avatar-container" style="flex-shrink: 0;">
-    <img 
-      src={avatarUrl} 
-      alt={`${name} headshot`} 
-      style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); display: block;"
-      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230a1324%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22Outfit%22 font-size=%2224%22 fill=%22%23c8a96e%22 font-weight=%22700%22 text-anchor=%22middle%22>MZ</text></svg>'"
+    <img src={avatarUrl} alt={`${name} headshot`} style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); display: block;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 100 100%22 loading="lazy" decoding="async" /><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230a1324%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22Outfit%22 font-size=%2224%22 fill=%22%23c8a96e%22 font-weight=%22700%22 text-anchor=%22middle%22>MZ</text></svg>'"
     />
   </div>
   
