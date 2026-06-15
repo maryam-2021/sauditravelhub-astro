@@ -15,6 +15,18 @@ const faqData = [
   {
     question: "How long does the Saudi eVisa take to process?",
     answer: "Most eVisas are approved within 24 hours, but it is recommended to apply at least 3-5 days before your flight."
+  },
+  {
+    question: "Can I get a Saudi visa if my passport expires in 5 months?",
+    answer: "No. Your passport must be valid for at least 6 months from the date of entry into Saudi Arabia."
+  },
+  {
+    question: "Is the Saudi eVisa valid for performing Umrah?",
+    answer: "Yes, the standard Tourist eVisa allows you to perform Umrah at any time of the year, except during the official Hajj season dates."
+  },
+  {
+    question: "Do I need a separate visa for Riyadh and Jeddah?",
+    answer: "No, the Saudi Tourist eVisa is valid for travel to all regions of the Kingdom, including Riyadh, Jeddah, AlUla, and NEOM."
   }
 ];
 ---
@@ -218,6 +230,14 @@ const faqData = [
         margin-bottom: 2rem;
       }
     }
+    
+    /* Collapsible summary markers reset */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary {
+      list-style: none;
+    }
   </style>
 
   <!-- BREADCRUMBS -->
@@ -273,40 +293,109 @@ const faqData = [
           This guide provides an exhaustive, authoritative breakdown of all Saudi visa types, detailing costs, validity periods, processing times, and eligibility criteria. By understanding the specific requirements for your nationality and travel purpose, you can prevent border delays and plan a seamless journey to the historic sites of AlUla, the vibrant stadiums of FIFA 2034, or the sacred precincts of Makkah and Madinah.
         </p>
 
-        <!-- QUICK FACTS TABLE -->
-        <table class="quick-facts-table" aria-label="Saudi Visa Quick Facts">
-          <thead>
-            <tr>
-              <th colspan="2">Saudi Visa: Quick Facts (2026 Guide)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Tourist eVisa Fee</strong></td>
-              <td>SAR 480 (Includes Mandatory Health Insurance)</td>
-            </tr>
-            <tr>
-              <td><strong>Tourist eVisa Validity</strong></td>
-              <td>1 Year (Multiple Entry; 90 Days Maximum per Stay)</td>
-            </tr>
-            <tr>
-              <td><strong>On-Arrival Visa Fee</strong></td>
-              <td>SAR 480 (Payable by Credit Card at Airport Kiosks)</td>
-            </tr>
-            <tr>
-              <td><strong>eVisa Processing Time</strong></td>
-              <td>Typically 5 Minutes to 24 Hours</td>
-            </tr>
-            <tr>
-              <td><strong>Umrah Specific Visa Validity</strong></td>
-              <td>90 Days (Single Entry)</td>
-            </tr>
-            <tr>
-              <td><strong>Mandatory Insurance Coverage</strong></td>
-              <td>Emergency Medical Treatment &amp; COVID-19 Cover</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- VISA COMPARISON TABLE SECTION -->
+        <div id="visa-comparison-table" class="my-10 space-y-6">
+          <div class="overflow-x-auto border border-[rgba(160,200,255,0.09)] rounded-xl bg-[#162540] shadow-xl">
+            <table class="min-w-full border-collapse text-left">
+              <caption class="caption-top text-center text-sm text-[#e8c97a] py-4 font-semibold italic border-b border-[rgba(160,200,255,0.09)] bg-[#1e2f4d]/50">
+                Saudi Arabia Visa Comparison 2026: Costs, Validity, and Umrah Rules.
+              </caption>
+              <thead>
+                <tr class="bg-[#1e2f4d] border-b border-[rgba(160,200,255,0.09)]">
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Visa Type</th>
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Eligibility (Who can apply?)</th>
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Cost (SAR &amp; USD)</th>
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Processing Time</th>
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Validity &amp; Stay Duration</th>
+                  <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Umrah Allowed?</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[rgba(160,200,255,0.09)]">
+                <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                  <td class="px-6 py-4 text-sm font-semibold text-white">Tourist eVisa</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">60+ eligible countries</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">SAR 480 (~$128)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">&lt;24 hours</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">1 Year / 90 days per stay</td>
+                  <td class="px-6 py-4 text-sm"><span class="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">YES (except Hajj season)</span></td>
+                </tr>
+                <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                  <td class="px-6 py-4 text-sm font-semibold text-white">Visa on Arrival (VoA)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">US/UK/Schengen visa holders</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">SAR 480 (~$128)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Instant at airport</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">1 Year / 90 days per stay</td>
+                  <td class="px-6 py-4 text-sm"><span class="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">YES (except Hajj season)</span></td>
+                </tr>
+                <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                  <td class="px-6 py-4 text-sm font-semibold text-white">GCC Resident Visa</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">UAE/Kuwait/Qatar/Bahrain/Oman residents</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">SAR 100 (~$27)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">1-3 days</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">30 days (single entry)</td>
+                  <td class="px-6 py-4 text-sm"><span class="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">NO (Umrah only via specific permit)</span></td>
+                </tr>
+                <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                  <td class="px-6 py-4 text-sm font-semibold text-white">Umrah Visa (Specific)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Non-eVisa nationalities</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Varies by agent</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">3-7 days</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">90 days (single entry)</td>
+                  <td class="px-6 py-4 text-sm"><span class="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">YES (Umrah only)</span></td>
+                </tr>
+                <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                  <td class="px-6 py-4 text-sm font-semibold text-white">Hajj Visa</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">All nationalities (via agents)</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Varies</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Seasonal only</td>
+                  <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Specific Hajj dates only</td>
+                  <td class="px-6 py-4 text-sm"><span class="inline-block px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">YES (Hajj only)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Key Takeaway Box -->
+          <div class="border-l-4 border-[#c9a84c] bg-[rgba(201,168,76,0.15)] p-6 rounded-r-lg shadow-md">
+            <p class="m-0 text-[#e8c97a] font-medium text-base">
+              <strong>Note:</strong> The standard Tourist eVisa is the most flexible option for 90% of travelers, allowing multiple entries and Umrah performance year-round.
+            </p>
+          </div>
+
+          <!-- Micro-Intent FAQ Section -->
+          <div class="mt-8 space-y-6">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 1.5rem;">Frequently Asked Questions about Saudi Visas</h2>
+            <div class="space-y-4">
+              <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all" open>
+                <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                  <span>Can I get a Saudi visa if my passport expires in 5 months?</span>
+                  <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+                </summary>
+                <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                  No. Your passport must be valid for at least 6 months from the date of entry into Saudi Arabia.
+                </div>
+              </details>
+              <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all">
+                <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                  <span>Is the Saudi eVisa valid for performing Umrah?</span>
+                  <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+                </summary>
+                <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                  Yes, the standard Tourist eVisa allows you to perform Umrah at any time of the year, except during the official Hajj season dates.
+                </div>
+              </details>
+              <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all">
+                <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                  <span>Do I need a separate visa for Riyadh and Jeddah?</span>
+                  <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+                </summary>
+                <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                  No, the Saudi Tourist eVisa is valid for travel to all regions of the Kingdom, including Riyadh, Jeddah, AlUla, and NEOM.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- TOURIST EVISA -->
