@@ -62,6 +62,68 @@ const riyadhGuideSections = [
   <SchemaGenerator slot="head" type="FAQPage" faqData={faqData} />
   <SchemaGenerator slot="head" type="ItemList" title="Riyadh Travel Guide Sections" itemList={riyadhGuideSections} />
 
+  <!-- Additional Schema for Day Trips & Safety FAQs -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristAttraction",
+        "name": "Edge of the World",
+        "description": "Jebel Fihrayn, also known as the Edge of the World, features 300-meter high Tuwaiq cliffs offering panoramic views over an ancient dried ocean bed.",
+        "url": "https://www.sauditravelhub.com/destinations/riyadh/#edge-of-the-world"
+      },
+      {
+        "@type": "TouristAttraction",
+        "name": "Diriyah",
+        "description": "The historic birthplace of the first Saudi state, featuring Najdi-style adobe mud-brick structures and the UNESCO World Heritage site of At-Turaif.",
+        "url": "https://www.sauditravelhub.com/destinations/riyadh/#diriyah"
+      },
+      {
+        "@type": "TouristAttraction",
+        "name": "Al-Thumamah Park",
+        "description": "An outdoor desert recreation area north of Riyadh known for its high red sand dunes, dune bashing, and desert camp experience.",
+        "url": "https://www.sauditravelhub.com/destinations/riyadh/#thumamah"
+      },
+      {
+        "@type": "TouristAttraction",
+        "name": "Wadi Hanifah",
+        "description": "A restored natural valley ecosystem spanning over 120km with pedestrian trails, wetlands, and parks.",
+        "url": "https://www.sauditravelhub.com/destinations/riyadh/#historical-entities"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there cell phone service at the Edge of the World?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, there is zero cell service at Jebel Fihrayn. You must download offline maps and inform someone of your return time before leaving Riyadh."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I visit Diriyah at night?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Diriyah Gate is beautifully lit at night and is actually cooler and less crowded than during the day. It is very safe and family-friendly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a 4x4 for Al-Thumamah Park?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if you plan to go off-road for dune bashing. For just viewing the dunes from the main road, a standard car is fine, but a 4x4 is recommended for the full experience."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Style Additions for Table of Contents layout -->
   <style>
     .layout-wrapper {
@@ -235,6 +297,123 @@ const riyadhGuideSections = [
     .inline-link:hover {
       color: var(--gold-light);
     }
+
+    /* Day Trip Metrics & Safety Custom Styling */
+    .day-trip-metrics-table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(12px);
+    }
+    .day-trip-metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .day-trip-metrics-table th {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+      font-weight: 600;
+      padding: 1rem 1.25rem;
+      border-bottom: 2px solid var(--border);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    .day-trip-metrics-table tr {
+      border-bottom: 1px solid var(--border);
+      transition: background-color var(--transition);
+    }
+    .day-trip-metrics-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .day-trip-metrics-table tr:last-child {
+      border-bottom: none;
+    }
+    .day-trip-metrics-table td {
+      padding: 1rem 1.25rem;
+      vertical-align: middle;
+      color: var(--white-dim);
+    }
+    .difficulty-badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .difficulty-badge.easy {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .difficulty-badge.moderate {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .day-trips-faq {
+      margin-top: 3rem;
+    }
+    .day-trips-faq h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .faq-accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .faq-accordion-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.3);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .faq-accordion-item:hover {
+      border-color: var(--gold);
+    }
+    .faq-accordion-item summary {
+      padding: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-accordion-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-accordion-item summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      transition: transform 0.3s ease;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .faq-accordion-item[open] summary::after {
+      content: '−';
+      transform: rotate(90deg);
+    }
+    .faq-accordion-item .faq-answer {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      color: var(--white-dim);
+      line-height: 1.6;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 1rem;
+    }
+
     @media(max-width: 968px) {
       .layout-wrapper {
         grid-template-columns: 1fr;
@@ -281,6 +460,7 @@ const riyadhGuideSections = [
         <li><a href="#navigating-riyadh">3. Navigating: Metro &amp; Transport</a></li>
         <li><a href="#best-districts">4. Best Districts to Stay</a></li>
         <li><a href="#day-trips">5. Day Trips: Natural Entities</a></li>
+        <li><a href="#day-trip-metrics-safety">5b. Day Trip Metrics &amp; Safety</a></li>
         <li><a href="#riyadh-cuisine">6. Riyadh Cuisine &amp; Dining</a></li>
         <li><a href="#faqs">Frequently Asked Questions</a></li>
       </ul>
@@ -586,6 +766,87 @@ const riyadhGuideSections = [
         <p>
           For those seeking a more refined day trip, the **Diriyah Art Oasis** offers a fusion of contemporary art and historical nature. Located within the agricultural groves of Diriyah, this creative center is the first national academy dedicated to digital and contemporary art. The facility hosts international exhibitions, digital art installations, and creative workshops, all set within a beautifully designed modern pavilion that honors Najdi architectural heritage.
         </p>
+
+        <!-- Day Trip Metrics & Safety Section -->
+        <h3 id="day-trip-metrics-safety">Riyadh Day Trip Metrics & Safety</h3>
+        <p>
+          To help you plan your excursions safely and choose the destination that best matches your fitness levels and vehicle capabilities, refer to our consolidated metrics guide below.
+        </p>
+
+        <!-- Quick Facts Table -->
+        <div class="day-trip-metrics-table-wrapper">
+          <table class="day-trip-metrics-table" aria-label="Riyadh Day Trip Quick Facts">
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Distance from Riyadh (km)</th>
+                <th>Drive Time (One Way)</th>
+                <th>Best Time to Visit</th>
+                <th>Difficulty Level</th>
+                <th>Essential Gear</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr itemscope itemtype="https://schema.org/TouristAttraction">
+                <td><strong itemprop="name">Edge of the World</strong></td>
+                <td itemprop="geoDistance">90km NW</td>
+                <td>1.5–2 hours</td>
+                <td>Sunset/Sunrise</td>
+                <td><span class="difficulty-badge moderate">Moderate (Hiking)</span></td>
+                <td>Sturdy shoes, 2L water, no cell service</td>
+              </tr>
+              <tr itemscope itemtype="https://schema.org/TouristAttraction">
+                <td><strong itemprop="name">Diriyah</strong></td>
+                <td itemprop="geoDistance">20km NW</td>
+                <td>20 mins</td>
+                <td>Evening (Cooler)</td>
+                <td><span class="difficulty-badge easy">Easy (Walking)</span></td>
+                <td>Comfortable shoes, camera</td>
+              </tr>
+              <tr itemscope itemtype="https://schema.org/TouristAttraction">
+                <td><strong itemprop="name">Al-Thumamah Park</strong></td>
+                <td itemprop="geoDistance">40km N</td>
+                <td>30 mins</td>
+                <td>Winter Mornings</td>
+                <td><span class="difficulty-badge easy">Easy (Dune Bashing)</span></td>
+                <td>4x4 vehicle, sunglasses</td>
+              </tr>
+              <tr itemscope itemtype="https://schema.org/TouristAttraction">
+                <td><strong itemprop="name">Wadi Hanifah</strong></td>
+                <td itemprop="geoDistance">15km W</td>
+                <td>15 mins</td>
+                <td>Early Morning</td>
+                <td><span class="difficulty-badge easy">Easy (Walking/Cycling)</span></td>
+                <td>Water bottle, sun hat</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Micro-Intent FAQ Section -->
+        <div class="day-trips-faq">
+          <h2>Riyadh Day Trips: Critical Safety & Planning Answers</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item">
+              <summary>Is there cell phone service at the Edge of the World?</summary>
+              <div class="faq-answer">
+                No, there is zero cell service at Jebel Fihrayn. You must download offline maps and inform someone of your return time before leaving Riyadh.
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary>Can I visit Diriyah at night?</summary>
+              <div class="faq-answer">
+                Yes, Diriyah Gate is beautifully lit at night and is actually cooler and less crowded than during the day. It is very safe and family-friendly.
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary>Do I need a 4x4 for Al-Thumamah Park?</summary>
+              <div class="faq-answer">
+                Yes, if you plan to go off-road for dune bashing. For just viewing the dunes from the main road, a standard car is fine, but a 4x4 is recommended for the full experience.
+              </div>
+            </details>
+          </div>
+        </div>
       </section>
 
       <!-- CUISINE -->
