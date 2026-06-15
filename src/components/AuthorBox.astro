@@ -1,0 +1,79 @@
+---
+// src/components/AuthorBox.astro
+
+interface Props {
+  name?: string;
+  role?: string;
+  avatarUrl?: string;
+  profileUrl?: string;
+  bio?: string;
+  linkedinUrl?: string;
+  twitterUrl?: string;
+}
+
+const {
+  name = "Maryam Zafar",
+  role = "Lead Travel Editor",
+  avatarUrl = "/images/authors/maryam-zafar.jpg",
+  profileUrl = "/about/maryam-zafar/",
+  bio = "Expert travel editor specializing in Saudi Arabia tourism, FIFA 2034 logistics, and cultural heritage.",
+  linkedinUrl = "https://www.linkedin.com/in/maryamzafar-travel",
+  twitterUrl = "https://twitter.com/maryamzafar_travel"
+} = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  "jobTitle": role,
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Saudi Travel Hub"
+  },
+  "url": `https://www.sauditravelhub.com${profileUrl}`,
+  "sameAs": [
+    linkedinUrl,
+    twitterUrl
+  ].filter(Boolean),
+  "description": bio
+};
+---
+
+<div class="author-box" style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin: 3rem 0; display: flex; gap: 1.5rem; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+  <div class="author-avatar-container" style="flex-shrink: 0;">
+    <img 
+      src={avatarUrl} 
+      alt={`${name} headshot`} 
+      style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); display: block;"
+      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%230a1324%22/><text x=%2250%25%22 y=%2255%25%22 font-family=%22Outfit%22 font-size=%2224%22 fill=%22%23c8a96e%22 font-weight=%22700%22 text-anchor=%22middle%22>MZ</text></svg>'"
+    />
+  </div>
+  
+  <div class="author-details" style="flex-grow: 1;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+      <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700; color: #fff;">
+        Written by <a href={profileUrl} style="color: var(--gold); text-decoration: none; border-bottom: 1px dashed transparent; transition: border-color var(--transition);" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">{name}</a>
+      </h3>
+      <span style="font-size: 0.8rem; color: var(--gold-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">{role}</span>
+    </div>
+    
+    <p style="margin: 0 0 0.75rem 0; font-size: 0.95rem; line-height: 1.6; color: var(--white-dim);">
+      {bio}
+    </p>
+    
+    <div style="display: flex; gap: 1rem; font-size: 0.88rem;">
+      {linkedinUrl && (
+        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.25rem;">
+          💼 LinkedIn Profile
+        </a>
+      )}
+      {twitterUrl && (
+        <a href={twitterUrl} target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.25rem;">
+          🐦 Twitter Profile
+        </a>
+      )}
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
