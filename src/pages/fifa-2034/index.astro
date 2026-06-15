@@ -1,0 +1,657 @@
+---
+// src/pages/fifa-2034/index.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="FIFA World Cup 2034 Saudi Arabia: Stadiums, Tickets & Host Cities Guide"
+  description="Complete guide to FIFA 2034 in Saudi Arabia. 15 stadiums, 8 host cities, ticketing rules, fan zones, and transport plans for the 2034 World Cup."
+  canonicalUrl="https://www.sauditravelhub.com/fifa-2034/"
+>
+  <!-- Schema Injection -->
+  <script slot="head" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        "name": "FIFA World Cup 2034 Saudi Arabia",
+        "description": "The 25th FIFA World Cup tournament, bringing 48 nations to compete across 15 stadiums in Saudi Arabia.",
+        "startDate": "2034-11-01",
+        "endDate": "2034-12-18",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/PhysicalEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Saudi Arabia",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA"
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can non-Muslims attend matches in Madinah?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Non-Muslims can attend matches and visit Madinah freely. The restrictions on non-Muslim entry only apply to the immediate sacred precinct of the Prophet's Mosque (Haram area), while the stadium, fan zones, and other parts of the city are open to all visitors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to get from Jeddah Airport to the stadium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "King Abdulaziz International Airport (JED) in Jeddah is located close to the King Abdullah Sports City. You can reach the stadium within 15–20 minutes using official taxi services, ride-hailing apps (Uber, Careem), or dedicated World Cup shuttle buses that operate regularly on match days."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "FIFA 2034 Fan Guide Navigation",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Host Cities & Their Stadiums",
+            "url": "https://www.sauditravelhub.com/fifa-2034/#host-cities"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ticketing Rules & Categories",
+            "url": "https://www.sauditravelhub.com/fifa-2034/#ticketing-rules"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Transport Plans for Fans",
+            "url": "https://www.sauditravelhub.com/fifa-2034/#transport-plans"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Fan Zones & Cultural Events",
+            "url": "https://www.sauditravelhub.com/fifa-2034/#fan-zones"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Style Additions for Side-by-Side Table of Contents layout -->
+  <style>
+    .layout-wrapper {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .sidebar-toc {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+    .sidebar-toc h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .sidebar-toc ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .sidebar-toc ul li a {
+      font-size: 0.88rem;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color var(--transition), padding-left var(--transition);
+      display: block;
+    }
+    .sidebar-toc ul li a:hover {
+      color: var(--gold-light);
+      padding-left: 5px;
+    }
+    .article-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--white-dim);
+    }
+    .article-content p {
+      margin-bottom: 1.8rem;
+      text-align: justify;
+    }
+    .article-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      color: var(--gold);
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .article-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.8rem;
+      padding-left: 1.8rem;
+    }
+    .article-content li {
+      margin-bottom: 0.6rem;
+    }
+    .stadiums-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .stadiums-table th, .stadiums-table td {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .stadiums-table th {
+      background: var(--surface3);
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .stadiums-table td {
+      font-size: 0.92rem;
+    }
+    .stadiums-table tr:last-child td {
+      border-bottom: none;
+    }
+    .callout-box {
+      background: var(--gold-dim);
+      border-left: 4px solid var(--gold);
+      padding: 1.8rem;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: 2.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .city-hero-styled {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(5, 13, 26, 0.45) 0%, rgba(5, 13, 26, 0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1920') center/cover no-repeat;
+      margin-top: 72px;
+      padding: 6rem 3rem;
+      position: relative;
+    }
+    .entity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .entity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      transition: var(--transition);
+    }
+    .entity-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .entity-card h4 {
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .entity-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .breadcrumb-area {
+      background: rgba(201, 168, 76, 0.03);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .inline-link {
+      color: var(--gold);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .inline-link:hover {
+      color: var(--gold-light);
+    }
+    @media(max-width: 968px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-toc {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-area">
+    <div class="container" style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white-dim);">
+      <a href="/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Home</a> <span>/</span> 
+      <a href="/fifa-2034/" style="color: var(--gold); text-decoration: none; font-weight: 700;">FIFA World Cup</a> <span>/</span> Fan Guide
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="city-hero-styled">
+    <div class="city-hero-content">
+      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 700; margin-bottom: 1rem;">World Cup 2034 · Central Hub</div>
+      <h1 class="city-title" style="font-weight: 300; font-family: 'Cormorant Garamond', serif; line-height: 1.1; margin-bottom: 1.5rem;">
+        FIFA World Cup 2034 Saudi Arabia: <br />
+        <em>The Ultimate Fan Guide</em>
+      </h1>
+      <p class="city-sub">
+        The complete, independent resource for the historic 2034 tournament. Explore the 15 state-of-the-art stadiums, 8 host cities, ticketing rules, transit routes, and cultural guidelines.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYOUT WRAPPER -->
+  <div class="layout-wrapper" id="main-content">
+    
+    <!-- TABLE OF CONTENTS -->
+    <aside class="sidebar-toc" aria-label="Table of Contents">
+      <h3>Guide Sections</h3>
+      <ul>
+        <li><a href="#intro">Tournament Overview</a></li>
+        <li><a href="#host-cities">1. Host Cities &amp; Stadiums</a></li>
+        <li><a href="#ticketing-rules">2. Ticketing &amp; Hayya Card</a></li>
+        <li><a href="#transport-plans">3. Transit &amp; Travel Plans</a></li>
+        <li><a href="#fan-zones">4. Fan Zones &amp; Culture</a></li>
+        <li><a href="#faqs">Frequently Asked Questions</a></li>
+      </ul>
+    </aside>
+
+    <!-- ARTICLE BODY -->
+    <main class="article-content" role="main">
+      
+      <!-- INTRO -->
+      <section id="intro" style="padding: 0; margin-bottom: 3rem;">
+        <p>
+          The **FIFA World Cup 2034** in the Kingdom of Saudi Arabia stands as one of the most historic milestones in modern sporting history. It will represent the first time that a single nation hosts the expanded, **48-team tournament** in its entirety in the Middle East. Spanning across a diverse geographic landscape, from the high-altitude mountains of Abha to the hyper-futuristic linear city of NEOM, the 2034 tournament will showcase the absolute pinnacle of football competition. A total of **104 matches** will be played, uniting players and fans from every corner of the globe in a celebration of sport, culture, and hospitality.
+        </p>
+        <p>
+          The scale of this tournament is unprecedented. Moving away from the traditional 32-team format, the 48-team structure means that the tournament will run over a longer duration of approximately 38 to 40 days. The teams will be divided into 12 groups of four, with the top two teams from each group, along with the eight best third-placed teams, advancing to a newly introduced Round of 32. This expansion increases the total number of matches from 64 to 104, necessitating a massive logistical footprint that only a nation with the strategic focus of Saudi Arabia can deliver. Every match day will present multiple high-stakes fixtures, turning the entire country into an active, high-performance sports arena.
+        </p>
+        <p>
+          Saudi Arabia's successful bid is the crowning achievement of the country's **Vision 2030** transformation program. Under this national roadmap, the Kingdom is opening its doors to international tourism, building carbon-neutral cities, and investing billions in sports and cultural infrastructure. The 2034 World Cup is not just a sporting event; it is the ultimate showcase of a nation redefining its position on the global stage. For the traveler, this means access to newly constructed high-speed rail lines, futuristic metro networks, brand-new airports, and world-class hotels that have been designed to meet the highest standards of international luxury and sustainability.
+        </p>
+        <p>
+          The tournament is scheduled to take place during the winter months of **November and December 2034**. This timing replicates the climatic success of the Qatar 2022 World Cup, ensuring that matches are played in mild, pleasant weather. During this period, temperatures across most of the host cities range between a comfortable 15°C and 25°C (59°F to 77°F), which is optimal for stadium attendance, outdoor fan festivals, and sightseeing. This guide serves as your comprehensive, independent handbook, providing detailed logistics, transport schedules, cultural rules, and local advice to ensure an unforgettable World Cup journey.
+        </p>
+        <p>
+          As a central hub for all things football-related in the Kingdom, this page links directly to specialized "Spoke" pages covering stadium-specific details, hotel guides, and transit applications. Whether you are planning to follow your national team through the group stages or securing tickets for the historic Final, the following sections provide the granular detail required to navigate the Kingdom during this month-long celebration.
+        </p>
+      </section>
+
+      <!-- HOST CITIES & STADIUMS -->
+      <section id="host-cities" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Host Cities &amp; Their Stadiums</h2>
+        <p>
+          Saudi Arabia's tournament master plan features **15 state-of-the-art stadiums** located across **8 distinct host cities**. Each city offers a unique environment, reflecting the diverse geography and culture of the Kingdom. The matches are strategically distributed to minimize travel times for teams and fans, grouping matches by geographical clusters. This regional grouping ensures that fans can base themselves in a single city or cluster for the group stages, reducing the need for constant, long-distance travel.
+        </p>
+        <p>
+          Riyadh, the capital, serves as the main anchor of the tournament, hosting the opening and final matches. Jeddah, the gateway to the Red Sea, offers coastal stadium atmospheres and deep historical excursions. Meanwhile, the mountain city of Abha provides high-altitude stadium conditions, and the futuristic NEOM presents a venue suspended 350 meters above the ground. Below is the official breakdown of the host cities, stadium names, capacities, and match distributions:
+        </p>
+
+        <!-- STADIUMS TABLE -->
+        <table class="stadiums-table" aria-label="FIFA 2034 Stadiums and Host Cities">
+          <thead>
+            <tr>
+              <th>Host City</th>
+              <th>Stadium Name</th>
+              <th>Capacity</th>
+              <th>Key Matches / Stage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Riyadh</strong></td>
+              <td>King Salman International Stadium</td>
+              <td>92,760</td>
+              <td>Opening Match, Group Stage, Semi-Final, Grand Final</td>
+            </tr>
+            <tr>
+              <td><strong>Riyadh</strong></td>
+              <td>King Fahd International Stadium</td>
+              <td>67,000</td>
+              <td>Group Stage, Round of 32, Round of 16, Quarter-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Riyadh</strong></td>
+              <td>Al-Awwal Park (KSU Stadium)</td>
+              <td>25,000</td>
+              <td>Group Stage, Round of 32</td>
+            </tr>
+            <tr>
+              <td><strong>Riyadh</strong></td>
+              <td>Prince Faisal bin Fahd Stadium</td>
+              <td>45,000</td>
+              <td>Group Stage, Round of 32, Round of 16</td>
+            </tr>
+            <tr>
+              <td><strong>Riyadh</strong></td>
+              <td>Prince Mohammed bin Salman Stadium (Qiddiya)</td>
+              <td>46,000</td>
+              <td>Group Stage, Round of 32, Quarter-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Jeddah</strong></td>
+              <td>King Abdullah Sports City (The Shining Jewel)</td>
+              <td>62,241</td>
+              <td>Group Stage, Round of 32, Round of 16, Semi-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Jeddah</strong></td>
+              <td>Jeddah Central Stadium (Qaddiyah-Jeddah)</td>
+              <td>45,000</td>
+              <td>Group Stage, Round of 32, Quarter-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Jeddah</strong></td>
+              <td>King Saud University Stadium (Jeddah Campus)</td>
+              <td>27,000</td>
+              <td>Group Stage, Round of 32</td>
+            </tr>
+            <tr>
+              <td><strong>Al Khobar</strong></td>
+              <td>Aramco Stadium (New Al Khobar Stadium)</td>
+              <td>47,000</td>
+              <td>Group Stage, Round of 32, Round of 16, Quarter-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Dammam</strong></td>
+              <td>Prince Mohamed bin Fahd Stadium</td>
+              <td>30,000</td>
+              <td>Group Stage, Round of 32</td>
+            </tr>
+            <tr>
+              <td><strong>Dammam</strong></td>
+              <td>Dammam Arena Stadium (New)</td>
+              <td>40,000</td>
+              <td>Group Stage, Round of 32, Round of 16</td>
+            </tr>
+            <tr>
+              <td><strong>Abha</strong></td>
+              <td>King Khalid University Stadium</td>
+              <td>45,000</td>
+              <td>Group Stage, Round of 32, Round of 16</td>
+            </tr>
+            <tr>
+              <td><strong>NEOM</strong></td>
+              <td>NEOM Stadium (The Line)</td>
+              <td>46,000</td>
+              <td>Group Stage, Round of 32, Quarter-Final</td>
+            </tr>
+            <tr>
+              <td><strong>Madinah</strong></td>
+              <td>Prince Mohammed bin Abdulaziz Stadium</td>
+              <td>40,000</td>
+              <td>Group Stage, Round of 32</td>
+            </tr>
+            <tr>
+              <td><strong>Tabuk</strong></td>
+              <td>King Khalid Sports City Stadium</td>
+              <td>30,000</td>
+              <td>Group Stage, Round of 32</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Each of these venues is being constructed or upgraded to conform to the highest standards of energy efficiency. The newly designed stadiums, such as the Aramco Stadium in Al Khobar and the Prince Mohammed bin Salman Stadium in Qiddiya, feature revolutionary architectural elements. The Qiddiya stadium, for example, is perched on the edge of a 200-meter cliff, featuring a LED wall that opens up to offer panoramic views of the entertainment city below. The NEOM Stadium is integrated directly into the vertical modules of *The Line*, powered entirely by renewable wind and solar energy, representing a landmark achievement in sustainable sports design.
+        </p>
+
+        <h3>Riyadh Venues</h3>
+        <p>
+          Riyadh will serve as the administrative and competitive core of the tournament. The **King Salman International Stadium** stands as the crown jewel of the host venues. With a massive capacity of over 92,000, it is designed to host the historic Opening Match and the Grand Final. The stadium's architecture incorporates local green corridors and solar infrastructure, integrating seamlessly with the Green Riyadh initiative. The renovated **King Fahd International Stadium** (capacity 67,000) features an iconic tent-like fabric roof that has dominated Riyadh's eastern skyline for decades, now updated with modern media, VIP hospitality, and skywalk transit links. **Al-Awwal Park** (capacity 25,000), located on the King Saud University campus, will offer an intimate, high-energy environment for group stage matches, while the **Prince Faisal bin Fahd Stadium** (capacity 45,000) will benefit from deep-city transit links. Finally, the **Prince Mohammed bin Salman Stadium** in the futuristic entertainment city of Qiddiya represents the next generation of sports architecture, perched atop the Tuwaiq cliffside.
+        </p>
+
+        <h3>Jeddah Venues</h3>
+        <p>
+          Jeddah, located on the Red Sea coast, offers a different atmosphere, combining maritime culture with football passion. The **King Abdullah Sports City**, locally known as "The Shining Jewel," has a capacity of 62,241 and is the home of Jeddah's football legacy. It features a stunning geometric facade that glows at night, mimicking local Islamic art. It will host matches up to the Semi-Final stage. The new **Jeddah Central Stadium** (capacity 45,000) is part of a massive waterfront redevelopment project, integrating stadium visits with yacht marinas, public beaches, and the historic Al-Balad district.
+        </p>
+
+        <h3>Eastern Province: Al Khobar &amp; Dammam</h3>
+        <p>
+          The Eastern Province, facing the Arabian Gulf, will act as a major entry point for fans traveling from neighboring GCC countries. The **Aramco Stadium** in Al Khobar (capacity 47,000) is a new build featuring a wave-like facade inspired by the Gulf waters. It will host matches up to the Quarter-Finals. Dammam will support the cluster with two venues: the renovated **Prince Mohamed bin Fahd Stadium** (capacity 30,000) and the brand-new **Dammam Arena Stadium** (capacity 40,000). This cluster is highly accessible, linked directly to Bahrain via the King Fahd Causeway, allowing international fans to split their stay between the two nations.
+        </p>
+
+        <h3>Specialist Venues: NEOM, Abha, Madinah, Tabuk</h3>
+        <p>
+          These four cities introduce unique geographical elements to the tournament. The **NEOM Stadium** is perhaps the most futuristic venue ever proposed for a World Cup. Built into the structure of *The Line*, the stadium is suspended 350 meters above the ground, offering spectators views of the surrounding desert canyon and Red Sea coast. It is designed to be carbon-neutral and fully powered by renewable energy. The **King Khalid University Stadium** in Abha (capacity 45,000) is located in the Sarawat Mountains at an altitude of 2,200 meters. The cool highland climate will offer a spring-like setting, though teams will need to adjust to the high-altitude conditions. Madinah's **Prince Mohammed bin Abdulaziz Stadium** (capacity 40,000) will welcome fans to one of the world's most significant historical cities, while Tabuk's **King Khalid Sports City Stadium** (capacity 30,000) will act as a key gateway in the northwest, close to the Red Sea luxury resorts.
+        </p>
+      </section>
+
+      <!-- TICKETING RULES & CATEGORIES -->
+      <section id="ticketing-rules" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Ticketing Rules &amp; Categories</h2>
+        <p>
+          Securing tickets for the FIFA World Cup 2034 requires navigating the official FIFA ticketing portal, which operates in multiple phases. In accordance with standard FIFA regulations, tickets are sold in structured stages, starting with a random selection draw, followed by a first-come, first-served sales phase, and concluding with a last-minute sales phase. All tickets are digital, delivered via the official FIFA World Cup 2034 ticketing application.
+        </p>
+        <p>
+          A critical requirement for all international and domestic spectators is the **Hayya Card**. Similar to the system used during the Qatar 2022 World Cup, the Hayya Card serves as a personalized fan identification document. The card is **mandatory** for entering any match stadium. For international visitors, the Hayya Card also functions as a **multi-entry tourist visa** for the Kingdom of Saudi Arabia, simplifying entry procedures at airports and land borders. Additionally, the Hayya Card provides fans with **free access to public transit** systems (such as the Riyadh Metro and local shuttle buses) on match days, making it the most important document in your travel portfolio.
+        </p>
+        <p>
+          Tickets are categorized into four distinct groups to cater to different budget levels and spectator preferences:
+        </p>
+        <ul>
+          <li><strong>Category 1 (Cat 1):</strong> The highest-priced tickets, offering prime sideline seats with the best viewing angles of the pitch. Ideal for fans seeking a premium view.</li>
+          <li><strong>Category 2 (Cat 2):</strong> Mid-range tickets, located in the corner sections and upper tiers of the sideline stands. Offers a balanced mix of price and view quality.</li>
+          <li><strong>Category 3 (Cat 3):</strong> The most affordable standard tickets, located behind the goals in the northern and southern stands. These zones are usually occupied by the most passionate supporters, offering a high-energy atmosphere.</li>
+          <li><strong>Hospitality Packages:</strong> Premium packages that include Category 1 seats, access to private skyboxes or luxury lounges, and gourmet dining featuring local and international cuisine. These packages also offer designated VIP parking and fast-track security access.</li>
+        </ul>
+        <p>
+          Due to the high demand for accommodations during the tournament, booking your hotel immediately after securing match tickets is highly recommended. Hotel rates are projected to increase during peak match periods, particularly in cities like Riyadh and Jeddah.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 <a href="/fifa-2034/hotels/" class="inline-link">Where to Stay for FIFA 2034</a> — Read our comprehensive hotel guide to discover verified properties near stadiums, hotel packages, and budget-friendly alternatives.
+          </p>
+        </div>
+        <p>
+          Ticketing allocations also include special provisions for disabled fans and those with limited mobility, categorized as Accessibility Tickets. These tickets provide dedicated wheelchair spaces, companion seats, and easy-access entry gates. Fans applying for these tickets must submit official documentation through the FIFA portal during the application phase.
+        </p>
+        <p>
+          It is important to note that the resale of tickets outside the official FIFA resale platform is strictly prohibited. Scalping tickets or purchasing from unauthorized third-party websites can result in the cancellation of your tickets and the revoking of your Hayya Card. The official FIFA resale platform will open several months before the tournament, allowing fans to resell tickets at face value.
+        </p>
+      </section>
+
+      <!-- TRANSPORT PLANS -->
+      <section id="transport-plans" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Transport Plans for Fans</h2>
+        <p>
+          Saudi Arabia is implementing a massive transportation master plan to connect the host cities and ensure that fans can travel between matches safely and efficiently. The country is investing in high-speed rail networks, expanding metro lines, and scheduling additional domestic flights to build a cohesive transit ecosystem that can handle millions of concurrent travelers.
+        </p>
+        
+        <h3>Haramain High-Speed Rail</h3>
+        <p>
+          For matches in the western region, the **Haramain High-Speed Rail** is the primary transit link. Operating at speeds of up to **300 km/h**, this state-of-the-art electric rail network connects the coastal city of **Jeddah** directly with the holy cities of **Makkah** and **Madinah**, as well as the King Abdullah Economic City (KAEC). The journey between Jeddah and Madinah takes approximately 2 hours, offering a comfortable, fast, and eco-friendly alternative to road travel.
+        </p>
+        <p>
+          The rail system will operate at high frequency during the World Cup, with additional trains scheduled to accommodate fans traveling between matches. Stations are equipped with luxury lounges, luggage storage facilities, and direct connections to local bus and taxi loops.
+        </p>
+        <p>
+          Tickets for the Haramain High-Speed Rail can be booked online via the official HHR portal or app. During the World Cup, fans holding a valid Hayya Card will receive special discounts on train bookings. The train features Business Class and Economy Class, both offering spacious seating, air conditioning, and food services. It is highly recommended to book your train seats at least a month in advance, as the route is also heavily utilized by pilgrims visiting Makkah and Madinah.
+        </p>
+
+        <h3>Riyadh Metro Expansion</h3>
+        <p>
+          In the capital, the newly launched **Riyadh Metro** will serve as the primary transit artery for fans. The metro's six automated lines connect major commercial districts directly to the stadium precincts. For example, Line 4 (Yellow Line) links King Khalid International Airport directly to KAFD, from which fans can transfer to shuttle loops servicing the King Salman International Stadium.
+        </p>
+        <p>
+          On match days, presentation of your Hayya Card and match ticket permits free travel on the Riyadh Metro. The stations feature English signage, step-free access, and high-capacity platforms designed to handle massive stadium crowds safely.
+        </p>
+        <p>
+          Key interchange stations—such as the Olaya Station and the Western Station—contain retail shops, fast-food outlets, and interactive visitor help desks. The metro network operates from 6:00 AM to midnight, with extended hours scheduled on match days to ensure that fans can return to their accommodations safely after late-evening fixtures.
+        </p>
+
+        <h3>Inter-City Flights &amp; Saudia</h3>
+        <p>
+          To travel between distant host cities—such as NEOM in the far northwest and Abha in the southwest—air travel is the most practical option. **Saudia**, the national carrier of Saudi Arabia, is planning a massive expansion of domestic flight schedules during the World Cup, introducing dedicated "stadium shuttle flights" that connect host cities on match days.
+        </p>
+        <p>
+          New airports are being built or expanded, including the Red Sea International Airport and the NEOM Bay Airport, to handle the influx of international charter flights. Fans are recommended to book domestic flights well in advance to secure preferred departure times that align with stadium gate openings. Low-cost carriers like Flynas and Flyadeal will also operate high-frequency routes between Riyadh, Jeddah, Dammam, and Abha, offering budget-friendly air travel options.
+        </p>
+      </section>
+
+      <!-- FAN ZONES & CULTURE -->
+      <section id="fan-zones" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Fan Zones &amp; Cultural Events</h2>
+        <p>
+          The FIFA World Cup 2034 is designed as a celebration that extends far beyond the stadium gates. Saudi Arabia is preparing extensive **Fan Zones** and cultural programs in every host city to offer fans a rich immersion into the Kingdom's history, culinary arts, and local customs.
+        </p>
+        <p>
+          Riyadh will host its main fan festival at the massive **Boulevard World** complex, featuring replica pavilions representing cultures from around the world. Jeddah's fan festival will be located along the **Jeddah Corniche**, offering beachside viewing screens, live music, and seafood plazas overlooking the Red Sea. In Diriyah, the historic clay ruins of At-Turaif will serve as a dramatic backdrop for nightly heritage light shows, poetry readings, and traditional crafts markets.
+        </p>
+        <p>
+          In accordance with local regulations, these fan festivals will focus on **alcohol-free entertainment alternatives**. The Kingdom is designing these spaces to highlight traditional hospitality, offering fresh fruit juices, specialty mocktails, local mint teas, and the famous Saudi Qahwa. This focus on family-friendly, alcohol-free entertainment creates a unique, safe, and highly welcoming environment where fans of all ages and backgrounds can celebrate together.
+        </p>
+        <p>
+          The cultural calendar will also feature international concerts, theatrical performances, and art biennials, making the World Cup a month-long festival of global creativity. Traditional Najdi sword dances (*Ardha*) and coastal sea music (*Samri*) will be performed live, offering fans an authentic glimpse into the living traditions of the Arabian Peninsula.
+        </p>
+        <p>
+          When visiting the fan zones or exploring local districts, international fans should be mindful of local cultural guidelines:
+        </p>
+        <ul>
+          <li><strong>Dress Code:</strong> Both men and women are expected to dress modestly in public. This means covering shoulders and knees. Swimwear is restricted to private beaches and resort pools.</li>
+          <li><strong>Public Conduct:</strong> Public displays of affection are discouraged. Respectful behavior is expected, particularly near religious sites and residential neighborhoods.</li>
+          <li><strong>Photography:</strong> Avoid photographing military buildings, security checkpoints, or local residents without their explicit permission.</li>
+        </ul>
+
+        <h3>Host City Profiles &amp; Fan Excursions</h3>
+        <p>
+          Each of the eight host cities offers a unique window into the culture, geography, and lifestyle of Saudi Arabia, making the World Cup a diverse travel experience. By grouping matches into regional clusters, fans can easily base themselves in one area and immerse themselves in the local attractions, transit ecosystems, and dining spots. Here is a detailed look at what each host city offers to visiting spectators:
+        </p>
+        
+        <h4>Riyadh: The Energetic Capital</h4>
+        <p>
+          As the political and economic capital of Saudi Arabia, **Riyadh** will host the opening and final matches. Fans in Riyadh will experience a fast-paced metropolis where massive, futuristic development sits alongside ancient heritage. Major attractions include the historic **At-Turaif** district in Diriyah, the clay-walled **Masmak Fortress**, and the towering **Kingdom Centre Sky Bridge** which offers panoramic views of the city skyline. For shopping and dining, Boulevard City and KAFD are the premier hubs, filled with gourmet restaurants and retail complexes.
+        </p>
+
+        <h4>Jeddah: The Red Sea Gateway</h4>
+        <p>
+          Known for its historic trade routes and maritime culture, **Jeddah** is a coastal city that offers a relaxed, cosmopolitan atmosphere. The city's main historical hub is **Al-Balad**, a UNESCO World Heritage site famous for its multi-story coral-stone buildings and ornate wooden bay windows (*rawashin*). The Jeddah Corniche features the world's tallest fountain, King Fahd's Fountain, and is lined with public beaches, parks, and seafood restaurants. Jeddah Central Stadium and the King Abdullah Sports City will host key knockout matches, offering fans coastal sea breezes and rich seafood dining experiences.
+        </p>
+
+        <h4>Al Khobar: The Gulf Waterfront</h4>
+        <p>
+          Located in the Eastern Province, **Al Khobar** is a modern, corporate city situated directly on the Arabian Gulf. The city is famous for its scenic waterfront promenade, the Corniche, which features green parks, playgrounds, and cafes. Al Khobar is closely linked to Bahrain via the King Fahd Causeway, allowing fans to commute easily between the two countries. The new **Aramco Stadium** will be the focal point of World Cup matches in this region, offering spectators advanced architectural layouts and beautiful gulf views.
+        </p>
+
+        <h4>Dammam: The Industrial Hub</h4>
+        <p>
+          Dammam, the capital of the Eastern Province, supports the eastern cluster with two stadium venues. While historically known as an industrial and logistical hub, Dammam has developed extensive parks, museums, and waterfront recreation zones. The **Love Island** park and the **Dammam Regional Museum** are popular local attractions, and the city's traditional markets offer excellent opportunities to purchase local spices and Gulf pearls.
+        </p>
+
+        <h4>NEOM: The City of the Future</h4>
+        <p>
+          Situated in the northwest, **NEOM** represents the next generation of human civilization. The **NEOM Stadium** will be built into the structure of *The Line*, suspended 350 meters above the canyon floor. Fans staying in NEOM will experience a carbon-neutral environment powered entirely by solar and wind energy. The surrounding region features dramatic desert canyons, turquoise Red Sea coastlines, and futuristic sports resorts, making it a dream destination for technology and nature enthusiasts.
+        </p>
+
+        <h4>Abha: The Mountain Sanctuary</h4>
+        <p>
+          Perched in the Asir Mountains at an altitude of 2,200 meters, **Abha** offers a refreshing escape from the desert heat. The city experiences a mild, spring-like climate year-round, with daytime temperatures rarely exceeding 25°C. Attractions include **Al-Muftaha Art Village**, scenic cable car rides over the mountains, and hiking trails in the **Asir National Park**. The matches at King Khalid University Stadium will feature misty mountain backdrops and cool highland breezes.
+        </p>
+
+        <h4>Madinah: The Historical Heart</h4>
+        <p>
+          **Madinah** is one of the most significant historical and religious cities in the world. While the sacred precinct of the Prophet's Mosque is reserved for Muslim visitors, the rest of the city, including its stadium, museums, and fan zones, is open to all international tourists. Fans can explore the **Hejaz Railway Museum**, local date palm farms, and enjoy the tranquil, welcoming atmosphere that has characterized the city for centuries.
+        </p>
+
+        <h4>Tabuk: The Archeological Gateway</h4>
+        <p>
+          Located in the northwest, **Tabuk** is the gateway to ancient archaeological sites, including the ruins of Midian and the coastal town of **Haql**, famous for its half-sunken shipwreck. The city's **Tabuk Castle** dates back to the Ottoman era, and the region's agricultural valleys produce roses and olives. Tabuk's stadium will provide a northern gateway, linking World Cup visits with exploring the Red Sea Project's pristine luxury islands.
+        </p>
+
+        <h3>The FIFA 2034 Legacy</h3>
+        <p>
+          The hosting of the World Cup is not merely a month-long tournament; it is a catalyst for long-term national development. The fifteen stadiums have been designed with a legacy plan in mind. Many of the newly constructed venues feature modular seating sections that can be dismantled after the tournament. These seats will be donated to developing nations to help build sports infrastructure globally, reducing the capacity of local venues to sustainable levels for domestic leagues.
+        </p>
+        <p>
+          Beyond sports venues, the World Cup is driving the expansion of the country's public transport networks, green initiatives, and tourism sectors. The Riyadh Metro, the Haramain High-Speed Rail, and the newly built airports will serve as the backbone of the country's transportation infrastructure for decades. The Green Riyadh initiative, planting millions of trees across the capital, is creating a cooler, more walkable urban environment, leaving a positive ecological footprint that will benefit generations to come.
+        </p>
+
+        <h3>Security, Safety &amp; Health Services</h3>
+        <p>
+          Saudi Arabia is renowned as one of the safest travel destinations in the world, with extremely low crime rates and heavily monitored public spaces. During the FIFA World Cup 2034, extensive security measures will be implemented, including dedicated transit police at all metro stations, security checkpoints at stadium perimeters, and round-the-clock patrol units in fan zones and tourist districts. Emergency services can be reached by dialing **911** from any local phone, and bilingual operators are available to assist international visitors.
+        </p>
+        <p>
+          Health services will also be highly accessible. All fans holding a valid Hayya Card are eligible for **free emergency medical care** at designated public hospitals and clinics throughout the tournament. Private hospitals and pharmacies are widely available in all major districts, operating 24/7. International visitors are required to hold valid travel insurance, which is automatically issued with their eVisa, ensuring comprehensive coverage during their stay.
+        </p>
+      </section>
+
+      <!-- FAQS -->
+      <section id="faqs" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <strong>Can non-Muslims attend matches in Madinah?</strong>
+          <p>
+            Yes. Non-Muslims are fully permitted to attend World Cup matches, visit fan zones, book hotels, and explore Madinah freely. The historical restrictions on non-Muslim entry only apply to the immediate sacred precinct surrounding the Prophet's Mosque (Haram area), which is marked by clear highway signage. The sports venues, commercial districts, and tourist attractions are located outside this sacred precinct and are open to all international visitors.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>How to get from Jeddah Airport to the stadium?</strong>
+          <p>
+            The King Abdulaziz International Airport (JED) in Jeddah is located approximately 15 kilometers from the **King Abdullah Sports City** (The Shining Jewel). The most convenient transit options include:
+          </p>
+          <ul>
+            <li><strong>Official World Cup Shuttle Buses:</strong> Operating at regular intervals on match days, these buses pick up fans directly from Terminals 1 and South and drop them at the stadium transport loop. Access is free with a Hayya Card.</li>
+            <li><strong>Ride-Hailing:</strong> Apps like Uber and Careem operate extensively at JED. Dedicated ride-hailing pickup zones are located outside the arrival gates. The journey takes 15–20 minutes and costs approximately 40–60 SAR ($11–$16 USD).</li>
+            <li><strong>Airport Taxis:</strong> Licensed airport cabs are available 24/7. It is recommended to check the meter or agree on the fare before departure.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</Layout>

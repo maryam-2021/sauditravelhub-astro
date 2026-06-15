@@ -1,0 +1,695 @@
+---
+// src/pages/destinations/riyadh/index.astro
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Riyadh Travel Guide 2026: History, FIFA 2034, Metro & Best Districts"
+  description="The ultimate guide to Riyadh. Explore Diriyah, King Salman Stadium (FIFA 2034), Riyadh Metro lines, best districts to stay, and day trips to Edge of the World."
+  canonicalUrl="https://www.sauditravelhub.com/destinations/riyadh/"
+>
+  <!-- Schema Injection -->
+  <script slot="head" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristDestination",
+        "name": "Riyadh",
+        "description": "The capital city of Saudi Arabia and a primary host for FIFA 2034.",
+        "url": "https://www.sauditravelhub.com/destinations/riyadh/",
+        "containsPlace": [
+          { "@type": "Place", "name": "King Salman International Stadium" },
+          { "@type": "Place", "name": "Diriyah" },
+          { "@type": "Place", "name": "Kingdom Centre" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Riyadh safe for solo female travelers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Riyadh is extremely safe. The city is heavily monitored, and women can travel freely, use the Metro, and dine alone without restriction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best time to visit Riyadh for FIFA 2034?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tournament will take place in November/December when temperatures are mild (15–25°C), perfect for stadium visits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a car in Riyadh?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not anymore. The Riyadh Metro covers most tourist areas. For day trips like Edge of the World, a guided tour or rental 4x4 is recommended."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Riyadh Travel Guide Sections",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Historical Entities: The Roots of Riyadh",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#historical-entities"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FIFA 2034 in Riyadh: Stadiums & Fan Zones",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#fifa-2034"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Navigating Riyadh: The Metro & Transport",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#navigating-riyadh"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Best Districts to Stay in Riyadh",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#best-districts"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Day Trips from Riyadh: Natural Entities",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#day-trips"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Riyadh Cuisine: Food Entities",
+            "url": "https://www.sauditravelhub.com/destinations/riyadh/#riyadh-cuisine"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Style Additions for Table of Contents layout -->
+  <style>
+    .layout-wrapper {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .sidebar-toc {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+    .sidebar-toc h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .sidebar-toc ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .sidebar-toc ul li a {
+      font-size: 0.88rem;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color var(--transition), padding-left var(--transition);
+      display: block;
+    }
+    .sidebar-toc ul li a:hover {
+      color: var(--gold-light);
+      padding-left: 5px;
+    }
+    .article-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--white-dim);
+    }
+    .article-content p {
+      margin-bottom: 1.8rem;
+      text-align: justify;
+    }
+    .article-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      color: var(--gold);
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .article-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.8rem;
+      padding-left: 1.8rem;
+    }
+    .article-content li {
+      margin-bottom: 0.6rem;
+    }
+    .quick-facts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .quick-facts-table th, .quick-facts-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-facts-table th {
+      background: var(--surface3);
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .quick-facts-table td {
+      font-size: 0.95rem;
+    }
+    .quick-facts-table tr:last-child td {
+      border-bottom: none;
+    }
+    .callout-box {
+      background: var(--gold-dim);
+      border-left: 4px solid var(--gold);
+      padding: 1.8rem;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: 2.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .city-hero-styled {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(5, 13, 26, 0.45) 0%, rgba(5, 13, 26, 0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1920') center/cover no-repeat;
+      margin-top: 72px;
+      padding: 6rem 3rem;
+      position: relative;
+    }
+    .entity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .entity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      transition: var(--transition);
+    }
+    .entity-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .entity-card h4 {
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .entity-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .breadcrumb-area {
+      background: rgba(201, 168, 76, 0.03);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .inline-link {
+      color: var(--gold);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .inline-link:hover {
+      color: var(--gold-light);
+    }
+    @media(max-width: 968px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-toc {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-area">
+    <div class="container" style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white-dim);">
+      <a href="/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Home</a> <span>/</span> 
+      <a href="/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Destinations</a> <span>/</span> Riyadh
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="city-hero-styled">
+    <div class="city-hero-content">
+      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 700; margin-bottom: 1rem;">Destinations · Saudi Arabia</div>
+      <h1 class="city-title" style="font-weight: 300; font-family: 'Cormorant Garamond', serif; line-height: 1.1; margin-bottom: 1.5rem;">
+        Riyadh Travel Guide 2026: <br />
+        <em>The Heart of the Kingdom</em> &amp; FIFA 2034 Host
+      </h1>
+      <p class="city-sub">
+        Explore a city of breathtaking contrasts, where the ancient adobe mud walls of Diriyah stand in the shadow of KAFD's glistening futuristic towers, all preparing for the world's greatest sporting stage.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYOUT WRAPPER (SIDEBAR + MAIN CONTENT) -->
+  <div class="layout-wrapper" id="main-content">
+    
+    <!-- STICKY TABLE OF CONTENTS -->
+    <aside class="sidebar-toc" aria-label="Table of Contents">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#historical-entities">1. Historical Roots of Riyadh</a></li>
+        <li><a href="#fifa-2034">2. FIFA 2034: Stadiums &amp; Fan Zones</a></li>
+        <li><a href="#navigating-riyadh">3. Navigating: Metro &amp; Transport</a></li>
+        <li><a href="#best-districts">4. Best Districts to Stay</a></li>
+        <li><a href="#day-trips">5. Day Trips: Natural Entities</a></li>
+        <li><a href="#riyadh-cuisine">6. Riyadh Cuisine &amp; Dining</a></li>
+        <li><a href="#faqs">Frequently Asked Questions</a></li>
+      </ul>
+    </aside>
+
+    <!-- ARTICLE BODY -->
+    <main class="article-content" role="main">
+      
+      <!-- INTRO -->
+      <section id="intro" style="padding: 0; margin-bottom: 3rem;">
+        <p>
+          Riyadh, the sprawling capital of the Kingdom of Saudi Arabia, stands today as a monumental entity of contrast. It is a metropolis where ancient Najdi clay-brick heritage coexists seamlessly with the most ambitious, hyper-futuristic engineering projects of Saudi Vision 2030. In Riyadh, the past is not forgotten; rather, it forms the foundation upon which a global city of the future is being built. As you walk through its districts, you transition from the historic birthplace of the first Saudi state in Diriyah to the towering steel-and-glass skyscrapers of the King Abdullah Financial District (KAFD). This architectural and sociological duality makes the city one of the most compelling destinations in the Middle East.
+        </p>
+        <p>
+          Historically known as <em>Hajr al-Yamamah</em>, a fertile valley settlement that lay along trade routes across the Arabian Peninsula, Riyadh has evolved from an isolated desert oasis into a thriving G20 capital. Today, the city is a financial and political powerhouse, home to over seven million residents. Its geographical location in the Najd region—a vast sedimentary plateau in the center of the peninsula—has shaped its architecture, its culture, and its climate. Riyadh experiences a desert climate characterized by hot summers and cool, crisp winter nights, making the cooler months a magical time to explore the city. The dry air of the plateau prevents the humidity experienced on the coasts, rendering even warmer autumn days pleasant under the shade of palm groves.
+        </p>
+        <p>
+          Riyadh's transformation has entered a dramatic new chapter as the city prepares to serve as the primary host for the **FIFA World Cup 2034**. This mega-event is accelerating the city's infrastructure, cultural projects, and transportation systems, transforming Riyadh into an accessible, open, and world-class tourist destination. Millions of fans will walk through its state-of-the-art transit stations, gather in its expansive fan zones, and sit in stadiums that showcase the cutting edge of sports architecture. Whether you are a business traveler, a heritage enthusiast, a football fan, or a luxury seeker, Riyadh offers an array of experiences that showcase the legendary warmth of Saudi hospitality (<em>Dafah</em>).
+        </p>
+        <p>
+          As we look towards 2026 and beyond, the city's master plan is rapidly unfolding. Massive projects like the Green Riyadh Initiative are planting millions of trees across the urban canopy, reducing temperatures and creating pedestrian corridors. Meanwhile, the construction of the King Salman Park—set to be the largest urban park in the world—will introduce extensive green lakes, sports academies, and cultural theaters to the center of the capital. This guide provides an exhaustive, expert breakdown of Riyadh's history, sports venues, transport networks, accommodations, and culinary secrets to help you navigate this dynamic metropolis.
+        </p>
+
+        <!-- QUICK FACTS TABLE -->
+        <table class="quick-facts-table" aria-label="Riyadh Quick Facts">
+          <thead>
+            <tr>
+              <th colspan="2">Riyadh: Quick Facts (2026 Guide)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Administrative Status</strong></td>
+              <td>Capital City of Saudi Arabia (Riyadh Province)</td>
+            </tr>
+            <tr>
+              <td><strong>Population</strong></td>
+              <td>Approximately 7.6 Million (2026 Estimate)</td>
+            </tr>
+            <tr>
+              <td><strong>Total Land Area</strong></td>
+              <td>1,913 square kilometers (Urbanized Area)</td>
+            </tr>
+            <tr>
+              <td><strong>Best Time to Visit</strong></td>
+              <td>October to April (Mild weather, 15°C to 28°C)</td>
+            </tr>
+            <tr>
+              <td><strong>Airport Code</strong></td>
+              <td>RUH (King Khalid International Airport)</td>
+            </tr>
+            <tr>
+              <td><strong>Local Currency</strong></td>
+              <td>Saudi Riyal (SAR; pegged at 1 USD = 3.75 SAR)</td>
+            </tr>
+            <tr>
+              <td><strong>Official Language</strong></td>
+              <td>Arabic (English is widely spoken in service sectors)</td>
+            </tr>
+            <tr>
+              <td><strong>Standard Time Zone</strong></td>
+              <td>Arabia Standard Time (AST; UTC+3)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- HISTORICAL ENTITIES -->
+      <section id="historical-entities" style="padding: 0; margin-bottom: 3rem;">
+        <h2>1. Historical Entities: The Roots of Riyadh</h2>
+        <p>
+          Understanding Riyadh requires tracing its roots back to the mud-brick settlements of the Najd region. The city's modern identity is deeply anchored in its historical sites, which have been preserved and restored with meticulous care to maintain their cultural authenticity while integrating state-of-the-art tourist facilities. These historic nodes represent the soul of the Kingdom, telling stories of survival, faith, and political unification that paved the way for the nation's contemporary rise.
+        </p>
+
+        <h3 id="diriyah">Diriyah: The Birthplace of the Kingdom</h3>
+        <p>
+          Located just on the northwestern outskirts of the modern city limits, along the fertile valley of Wadi Hanifah, lies **Diriyah**. This is the historic home of the House of Al Saud and served as the capital of the First Saudi State established in 1744. The town's strategic position allowed it to control major agricultural and trade routes, making it a powerful hub in central Arabia. At the heart of Diriyah is the **At-Turaif District**, a breathtaking citadel that was inscribed as a UNESCO World Heritage Site in 2010. At-Turaif represents one of the world's most significant mud-brick (adobe) settlements, constructed entirely in the traditional Najdi architectural style.
+        </p>
+        <p>
+          The architectural brilliance of At-Turaif is characterized by its massive adobe structures, which were engineered to withstand the harsh desert elements. Sun-dried clay bricks mixed with straw provide excellent thermal mass, keeping the interior of the palaces cool during the scorching summer heat and warm during the chilly desert nights. The buildings feature distinctive Najdi triangular decorations, geometric carvings on wooden doors made from local tamarisk tree wood, and narrow, shaded alleyways designed to maximize airflow and minimize exposure to the sun. The structural integrity of these buildings is a testament to the ingenuity of Najdi master builders, who utilized local limestone bases to support massive clay walls.
+        </p>
+        <p>
+          The most prominent structure within At-Turaif is the **Salwa Palace**. Spanning over 10,000 square meters, this multi-story palace was the official residence of the rulers of the First Saudi State. It was from this seat of power that Imam Muhammad bin Saud and his successors administered a state that eventually unified most of the Arabian Peninsula. Today, it stands as an open-air museum where visitors can learn about the history of the Saudi state through interactive digital exhibitions, archaeological displays, and sound-and-light shows that project the stories of the past onto the ancient walls.
+        </p>
+        <p>
+          The oasis of Diriyah flourished due to **Wadi Hanifah**, a natural valley basin spanning over 120 kilometers. For centuries, this wadi provided the essential groundwater resources needed to cultivate date palms and sustain human settlements in the arid heartland of the Arabian Peninsula. Today, Wadi Hanifah has been transformed into a massive eco-tourism corridor, featuring walking paths, green parks, and restored wetlands. The area is also home to the **Diriyah Gate** project, a multi-billion-dollar development under Vision 2030 that is building a traditional Najdi-style walkable city featuring luxury hotels, museums, and high-end restaurants. The Bujairi Terrace, overlooking the illuminated ruins of At-Turaif, offers world-class dining in an unmatched historical setting.
+        </p>
+        <p>
+          Diriyah's history is also one of resilience. In 1818, the city faced a brutal six-month siege by the Ottoman forces led by Ibrahim Pasha. Despite a valiant defense, the city was largely destroyed, and the capital was subsequently moved to Riyadh. The preservation of At-Turaif today represents a reclamation of this heritage, serving as a symbol of pride and continuity for the Saudi people.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 <a href="/destinations/diriyah/" class="inline-link">Read our full Diriyah Heritage Guide</a> to discover detailed walking itineraries, museum tickets, and dining recommendations in Bujairi Terrace.
+          </p>
+        </div>
+
+        <h3 id="masmak">Masmak Fortress &amp; Old Riyadh</h3>
+        <p>
+          In the heart of Riyadh's historic commercial district lies the **Masmak Fortress** (also known as Al-Masmak). Built around 1865 under the reign of Mohammed bin Abdullah bin Rasheed, this clay and mud-brick fortress is a symbol of the birth of modern Saudi Arabia. The fortress consists of thick, defensive walls, watchtowers at each of its four corners, and a central courtyard. It was designed as a military stronghold to defend the old city of Riyadh, featuring heavy wooden gates and tiny slits in the walls for muskets.
+        </p>
+        <p>
+          Masmak is famous as the site of the legendary battle of January 15, 1902, when the young **King Abdulaziz Al Saud** led a small group of warriors to scale the walls of the fortress, capture the garrison, and reclaim his ancestral home. This daring raid marked the beginning of the unification campaign that led to the declaration of the Kingdom of Saudi Arabia in 1932. Today, the fortress has been converted into a museum displaying historical maps, weapons, photographs, and artifacts from the early 20th century. Visitors can still see the spear tip embedded in the heavy wooden gate of the fortress, a remnant of the historic battle.
+        </p>
+        <p>
+          Directly adjacent to the Masmak Fortress is **Al-Deerah Square**, historically known as Justice Square. This plaza connects the fortress with the grand Imam Turki bin Abdullah Mosque, a beautiful stone structure that accommodates thousands of worshippers. The square is a hub of public life, serving as the setting for traditional celebrations, military parades, and community gatherings. During national holidays, the square comes alive with traditional dances, food stalls, and heritage displays, making it an excellent spot for cultural immersion.
+        </p>
+        <p>
+          Just steps away from the square is **Souq Al-Zal**, one of the oldest traditional marketplaces in Riyadh, established in 1901. Walking into Souq Al-Zal is a sensory journey back in time. The air is thick with the scent of burning oud, frankincense, and local perfumes. The narrow alleyways are packed with vendors selling hand-woven carpets, antique brass coffee pots (<em>dallah</em>), traditional silver jewelry, curved daggers (<em>jambiya</em>), and high-quality *bisht* cloaks worn by men on formal occasions. Souq Al-Zal is particularly famous for its lively afternoon auctions, where collectors gather to bid on rare antiques and heritage textiles, offering a unique opportunity to witness traditional commerce in action.
+        </p>
+      </section>
+
+      <!-- FIFA 2034 -->
+      <section id="fifa-2034" style="padding: 0; margin-bottom: 3rem;">
+        <h2>2. FIFA 2034 in Riyadh: Stadiums &amp; Fan Zones</h2>
+        <p>
+          The hosting of the **FIFA World Cup 2034** in Saudi Arabia represents a historical milestone for the Kingdom, with Riyadh acting as the centerpiece of the tournament. The city will host the opening and final matches, drawing millions of global fans. To meet international standards, Riyadh is constructing and renovating an array of state-of-the-art stadiums, integrated with public transport networks and sustainable fan zones that will redefine the spectator experience.
+        </p>
+
+        <h3 id="king-salman">King Salman International Stadium</h3>
+        <p>
+          The crown jewel of Riyadh's sporting infrastructure is the **King Salman International Stadium**, currently under construction in northern Riyadh. With a planned seating capacity of **92,760**, this venue is designated to host the high-profile Opening Match and the Grand Final of the FIFA World Cup 2034. Designed by renowned sports architecture firm Populous, the stadium's layout is inspired by the local desert landscape, featuring a modular canopy structure that mimics the organic lines of local topography and native trees.
+        </p>
+        <p>
+          Located near the King Khalid International Airport, the stadium is engineered for sustainability and fan comfort. It incorporates state-of-the-art passive cooling systems, solar-paneled canopies to generate green energy, and recycling water systems to maintain the surrounding turf. The stadium precinct will include massive parks, public sports facilities, and commercial zones, ensuring a lasting legacy for the local community. The development is closely integrated with the sports initiatives of the **Qiddiya Investment Company**, which is building a massive sports, arts, and entertainment city just southwest of Riyadh, establishing a regional corridor for sports excellence.
+        </p>
+        <p>
+          The stadium's master plan also includes extensive training facilities, an Olympic-sized swimming pool, multi-sport indoor arenas, and a dedicated running track. By integrating these amenities, the stadium will function as a year-round community hub, promoting health and wellness long after the World Cup concludes. Its direct link to the Riyadh Metro ensures that over 90,000 spectators can be evacuated efficiently, minimizing transport delays.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 Learn more about the stadium's architecture, transport routes, and surrounding fan zones at the official <a href="/fifa-2034/king-salman-stadium/" class="inline-link">King Salman Stadium Guide</a>.
+          </p>
+        </div>
+
+        <h3 id="king-fahd">King Fahd International Stadium</h3>
+        <p>
+          Historically known as "The Pearl" due to its iconic tent-like fabric roof, the **King Fahd International Stadium** is undergoing a massive renovation to expand its seating capacity to **67,000**. Located in eastern Riyadh, the stadium has been a landmark of the city's skyline since it opened in 1987. The stadium's roof structure—consisting of 24 large Teflon-coated fiberglass tents arranged in a circle—provides essential shade for spectators while allowing natural ventilation, making it a masterpiece of climate-adapted sports design.
+        </p>
+        <p>
+          King Fahd Stadium holds a rich football legacy. It hosted the final matches of the inaugural FIFA Confederations Cups (formerly known as the King Fahd Cup) in 1992, 1995, and 1997. It was also a primary venue for the 1989 FIFA World Youth Championship. The ongoing renovation will update the interior hospitality boxes, modernize media facilities, and construct direct skywalk connections to the Riyadh Metro network, ensuring seamless transit access for fans in 2034.
+        </p>
+        <p>
+          The upgrades also focus on implementing a hybrid turf system that combines natural grass with synthetic fibers, ensuring durability under heavy match schedules. The stadium's lighting is being replaced with energy-efficient LED systems capable of dynamic light shows, enhancing the pre-match entertainment for international fans.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 For updates on the renovation progress and ticketing announcements, visit our <a href="/fifa-2034/stadiums/" class="inline-link">FIFA 2034 Stadiums Guide</a>.
+          </p>
+        </div>
+
+        <h3 id="al-awwal">Al-Awwal Park (Al-Hilal Stadium)</h3>
+        <p>
+          Located within the campus of King Saud University in western Riyadh, **Al-Awwal Park** is a modern, compact stadium with a seating capacity of **25,000**. Known for its close-proximity seating layout that brings fans close to the pitch, the stadium is designated to host group stage matches during the FIFA World Cup 2034. It is currently the home ground for Al-Nassr FC, featuring global football icon Cristiano Ronaldo, and has hosted major domestic and international matches.
+        </p>
+        <p>
+          The stadium features a golden, metallic exterior cladding that shines under the desert sun, reflecting the city's modern identity. The venue is fully accessible via public transit, and its location on the university campus provides ample parking, pedestrian plazas, and food zones. Al-Awwal Park represents Riyadh's focus on building flexible, highly efficient stadiums that provide an intimate and energetic atmosphere for football matches.
+        </p>
+        <p>
+          The stadium's design minimizes spectator blind spots, and the acoustic engineering amplifies the crowd's chants, creating an intense atmosphere for high-stakes games. The precinct around Al-Awwal Park is integrated with KSU's student center, offering access to cafes, green lawns, and libraries, rendering it a highly pleasant district during match days.
+        </p>
+
+        <h3 id="fan-festival">Riyadh Fan Festival</h3>
+        <p>
+          To accommodate the millions of football fans who will descend on the capital, Riyadh is planning massive, interactive **Fan Festivals** in two key locations: **Boulevard World** and **Diriyah Gate**. These fan zones will feature massive high-definition screens broadcasting the matches live, interactive gaming arenas, and global merchandise stores.
+        </p>
+        <p>
+          The fan zones are designed to celebrate both global football culture and traditional Saudi heritage. Visitors will be able to sample traditional Saudi foods, witness live performances of the *Ardha* (traditional sword dance), and purchase handmade crafts from local artisans. The festivals will run throughout the tournament, offering a safe, family-friendly, and vibrant atmosphere that will serve as the heartbeat of the city's celebrations.
+        </p>
+        <p>
+          Each fan zone will be equipped with cooling stations, water dispensers, and medical hubs. Dedicated shuttle buses will connect the fan festivals directly to the metro stations and the match stadiums, ensuring that travel is seamless. The integration of local musicians, international DJs, and cultural ambassadors will make these festivals a highlight of the tournament experience.
+        </p>
+      </section>
+
+      <!-- METRO & TRANSPORT -->
+      <section id="navigating-riyadh" style="padding: 0; margin-bottom: 3rem;">
+        <h2>3. Navigating Riyadh: The Metro &amp; Transport</h2>
+        <p>
+          Riyadh's vast size and rapid population growth have historically made it a car-dependent city, characterized by multi-lane highways and heavy traffic. However, the launch of the **Riyadh Metro** represents a revolution in the city's transport infrastructure. This multi-billion-dollar rapid transit network is designed to reduce traffic congestion, lower emissions, and provide tourists with an affordable, efficient, and accessible way to travel between major landmarks, districts, and stadiums.
+        </p>
+
+        <h3 id="metro-overview">Riyadh Metro Lines Overview</h3>
+        <p>
+          The Riyadh Metro is one of the largest public transport networks in the world, spanning **176 kilometers** across six major lines with **85 stations**. The stations have been designed by world-renowned architects, including Zaha Hadid Architects (for the KAFD Metro Station), incorporating solar panels, natural light shafts, and traditional Najdi geometric patterns.
+        </p>
+        <div class="entity-grid">
+          <div class="entity-card">
+            <h4>Line 1 (Blue Line)</h4>
+            <p><strong>Route:</strong> Olaya - Batha. Connects the northern commercial districts of Olaya and KAFD with the historic southern districts of Batha and Al-Deerah.</p>
+          </div>
+          <div class="entity-card">
+            <h4>Line 2 (Red Line)</h4>
+            <p><strong>Route:</strong> King Abdullah Road. Runs east-west, linking major shopping malls, educational institutions, and residential neighborhoods.</p>
+          </div>
+          <div class="entity-card">
+            <h4>Line 3 (Orange Line)</h4>
+            <p><strong>Route:</strong> Madinah Al-Munawwarah - Saad Al-Awwal. The longest line in the network, connecting the western suburbs directly to eastern Riyadh.</p>
+          </div>
+          <div class="entity-card">
+            <h4>Line 4 (Yellow Line)</h4>
+            <p><strong>Route:</strong> Airport Link. Connects the King Khalid International Airport (RUH) directly with KAFD and the northern sports complexes.</p>
+          </div>
+        </div>
+        <p>
+          The Metro operates on a three-class system: First Class (featuring leather seats and extra space), Family Class (for women and families traveling together), and Single/General Class. The trains are fully automated, driverless, and equipped with Wi-Fi, air conditioning, and digital travel guides. Tickets can be purchased at station kiosks or via the official **Darbi** mobile application. Fares are highly affordable, with a single ride costing approximately 4 SAR ($1.07 USD) and weekly passes available for tourists.
+        </p>
+        <p>
+          Major transit hubs like the KAFD Station function as community centers, containing retail shops, cafes, and exhibition spaces. Security is tightly maintained, with CCTV monitoring and transit police present at all stations, making the metro a safe option for solo female travelers and families alike.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 Master the routes, station locations, and ticketing apps by reading our <a href="/how-to-get-around-riyadh-public-transport-2026/" class="inline-link">Complete Riyadh Metro Tourist Guide</a>.
+          </p>
+        </div>
+
+        <h3 id="ride-hailing">Ride-Hailing &amp; Taxis</h3>
+        <p>
+          While the Metro covers major corridors, ride-hailing applications remain the most popular way to travel between off-grid tourist locations, such as the Edge of the World or Al-Thumamah Park. The major ride-hailing apps operating in Riyadh are **Uber**, **Careem** (a regional subsidiary of Uber), and **Jeeny** (popular for budget rides).
+        </p>
+        <p>
+          Ride-hailing is highly regulated in Saudi Arabia, ensuring passenger safety and transparent pricing. All drivers are verified, and vehicles must meet strict quality standards. An average ride from the King Khalid International Airport (RUH) to downtown districts like Olaya or KAFD costs between **80 and 120 SAR** ($21 to $32 USD), depending on traffic and peak demand. Traditional street taxis are also widely available, but it is highly recommended to use ride-hailing apps to avoid negotiations and ensure GPS tracking. Careem also offers options to book local tour guides or premium luxury cars for business travel.
+        </p>
+      </section>
+
+      <!-- DISTRICTS TO STAY -->
+      <section id="best-districts" style="padding: 0; margin-bottom: 3rem;">
+        <h2>4. Best Districts to Stay in Riyadh</h2>
+        <p>
+          Riyadh is a sprawling city, and choosing the right district to stay can make a significant difference in your travel experience. The city has developed distinct neighborhoods, each catering to different traveler profiles—from business executives and luxury seekers to families and heritage tourists.
+        </p>
+
+        <h3 id="olaya">Olaya District</h3>
+        <p>
+          **Olaya** is the commercial and retail heart of modern Riyadh. Located in the center of the city's north-south axis, it is the best district for first-time visitors, shoppers, and those seeking vibrant dining and nightlife. The district is characterized by wide boulevards, luxury shopping malls, and upscale business hotels.
+        </p>
+        <p>
+          The most famous landmark in Olaya is the **Kingdom Centre**, a 99-story skyscraper featuring an iconic inverted-arch opening at its top. The tower houses a luxury shopping mall, the Four Seasons Hotel, and the famous **Sky Bridge**—a 56-meter-long glass corridor suspended 300 meters in the air, offering panoramic views of the city skyline. Nearby is the **Al Faisaliah Tower**, Riyadh's first skyscraper, designed by Norman Foster, featuring a giant glass sphere at its peak housing a fine-dining restaurant. Olaya is highly walkable around its central mall plazas, and is served by multiple stations on the Riyadh Metro Blue Line.
+        </p>
+        <p>
+          Staying in Olaya puts you within walking distance of high-end cafes, gourmet food trucks, and premium shopping complexes like the Centria Mall. The district's hotels range from international luxury chains to modern boutique service apartments, catering to diverse budgets.
+        </p>
+
+        <h3 id="dq">Diplomatic Quarter (DQ)</h3>
+        <p>
+          Known locally as *Al-Safarat*, the **Diplomatic Quarter (DQ)** is a highly secure, beautifully landscaped district in western Riyadh. It houses foreign embassies, international organizations, and residential complexes for expatriates. The DQ is characterized by low-rise Najdi-inspired architecture, lush parks, and pedestrian-only walking paths.
+        </p>
+        <p>
+          The DQ is the best district for families and travelers seeking a quiet, green sanctuary away from the city's heavy traffic. The district is surrounded by the natural cliffs of **Wadi Hanifah**, featuring scenic walking trails, picnic areas, and running paths. The DQ also hosts vibrant weekend markets, art exhibitions, and boutique cafes. It is a highly safe, pedestrian-friendly zone where kids can play freely in the community parks.
+        </p>
+        <p>
+          The hotels in the DQ, such as the Marriott and the Radisson Blu, are designed to blend with the local Najdi architecture, featuring earth-toned stone walls and interior courtyards. Staying here offers a peaceful, secure retreat, with easy access to high-end fitness clubs, organic cafes, and botanical gardens.
+        </p>
+
+        <h3 id="kafd">KAFD (King Abdullah Financial District)</h3>
+        <p>
+          For luxury travelers, business executives, and architecture enthusiasts, the **King Abdullah Financial District (KAFD)** is the ultimate destination. Located in northern Riyadh, KAFD is a hyper-modern, 1.6-million-square-meter financial center featuring over 60 high-performance skyscrapers. Designed as a sustainable, walkable city-within-a-city, KAFD features interconnected skywalks that allow pedestrians to travel between buildings without exposing themselves to the summer heat.
+        </p>
+        <p>
+          The dominant feature of KAFD is the **PIF Tower** (historically known as *The Spire*), a 385-meter skyscraper that stands as the tallest building in Riyadh. The district is also famous for its innovative KAFD Metro Station, designed by Zaha Hadid, which serves as a major hub for the Riyadh Metro Yellow and Blue Lines. KAFD is home to luxury five-star hotels, gourmet restaurants, high-end fashion boutiques, and modern art galleries, making it the epicenter of the city's business and luxury lifestyle.
+        </p>
+        <p>
+          A unique architectural feature of KAFD is the "Wadi"—a sunken pedestrian spine that runs through the center of the district, designed to mimic a natural dry riverbed. The Wadi is lined with trees, water features, and outdoor seating, creating a micro-climate that is significantly cooler than the surrounding streets.
+        </p>
+      </section>
+
+      <!-- DAY TRIPS -->
+      <section id="day-trips" style="padding: 0; margin-bottom: 3rem;">
+        <h2>5. Day Trips from Riyadh: Natural Entities</h2>
+        <p>
+          While Riyadh's urban landscape is dominated by modern architecture, the surrounding desert plateau features natural geological wonders and outdoor recreation zones. These day trips offer a glimpse into the raw beauty of the Arabian desert, providing a contrast to the city's high-tech environment.
+        </p>
+
+        <h3 id="edge-of-the-world">Edge of the World (Jebel Fihrayn)</h3>
+        <p>
+          Located approximately 90 kilometers northwest of Riyadh, the **Edge of the World** (Jebel Fihrayn) is one of Saudi Arabia's most famous natural landmarks. It is part of the massive **Tuwaiq Escarpment**, a continuous line of cliffs that stretches for over 800 kilometers across the center of the Arabian Peninsula. At Jebel Fihrayn, the cliffs drop 300 meters into an ancient ocean bed, offering uninterrupted views of the desert plains below.
+        </p>
+        <p>
+          The Edge of the World is a popular destination for hiking, trekking, and sunset photography. As the sun sets, the layers of sedimentary rock glow in shades of orange, red, and gold, while the desert valley below is bathed in deep shadows. Hikers can follow trails along the cliff edge, exploring natural rock arches and fossilized coral reefs that date back 150 million years, when the Arabian Peninsula was covered by a shallow sea.
+        </p>
+        <p>
+          However, visiting the Edge of the World requires careful planning and safety precautions. The road leading to the cliffs is unpaved, rough, and rocky, requiring a **4x4 vehicle** with high clearance and a GPS navigation system. There is no mobile network coverage at the site, so traveling in a convoy or booking a guided tour is highly recommended. Visitors must carry abundant water, food, and emergency supplies, and check local weather forecasts, as heavy rains can cause dangerous flash floods in the wadis surrounding the cliffs.
+        </p>
+        <p>
+          When planning your trip, aim to arrive at the site by mid-afternoon. This allows you to complete the hike and secure a good spot for sunset photography before the gates of the reserve are locked at 6:00 PM. A basic safety checklist includes: a satellite messenger or offline maps downloaded on your phone, a fully inflated spare tire, a tow rope, and at least 4 liters of water per person.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 For complete details on road routes, safety gear, guided tours, and weather advisories, read our <a href="/edge-of-the-world-riyadh-tour-guide-2026/" class="inline-link">Edge of the World Safety &amp; Tour Guide</a>.
+          </p>
+        </div>
+
+        <h3 id="thumamah">Al-Thumamah Park</h3>
+        <p>
+          Located 40 kilometers north of the city center, **Al-Thumamah Park** is Riyadh's primary outdoor playground for desert adventure. The park is characterized by vast red sand dunes, making it a popular destination for locals and tourists seeking desert thrills.
+        </p>
+        <p>
+          The most popular activities in Al-Thumamah include **dune bashing** in 4x4 vehicles, quad biking, and sandboarding down the steep dunes. Visitors can also experience traditional camel riding or rent a desert camp for the night. These camps range from simple Bedouin-style tents to luxury glamping setups, complete with carpets, fire pits, and traditional BBQ facilities. Al-Thumamah offers a lively, energetic atmosphere, particularly on weekend afternoons when families gather to enjoy the cool winter weather.
+        </p>
+        <p>
+          The park also features designated zones for quad bike rentals, with rates ranging from 50 to 100 SAR per hour. Food stalls selling hot tea, dates, and local street snacks line the roads, ensuring that visitors are well-catered to during their desert stay.
+        </p>
+
+        <h3 id="art-oasis">Diriyah Art Oasis</h3>
+        <p>
+          For those seeking a more refined day trip, the **Diriyah Art Oasis** offers a fusion of contemporary art and historical nature. Located within the agricultural groves of Diriyah, this creative center is the first national academy dedicated to digital and contemporary art. The facility hosts international exhibitions, digital art installations, and creative workshops, all set within a beautifully designed modern pavilion that honors Najdi architectural heritage.
+        </p>
+      </section>
+
+      <!-- CUISINE -->
+      <section id="riyadh-cuisine" style="padding: 0; margin-bottom: 3rem;">
+        <h2>6. Riyadh Cuisine: Food Entities</h2>
+        <p>
+          Riyadh's culinary scene is undergoing a rapid evolution, matching the city's global ambitions. The capital offers a journey through the traditional, aromatic spices of the Central Province, while hosting international fine-dining brands and Michelin-starred restaurants that rival those of London or New York.
+        </p>
+
+        <h3 id="traditional-food">Traditional Najdi Food</h3>
+        <p>
+          Traditional cuisine in the Najd region is characterized by warm, comforting dishes designed to sustain desert communities through cold winter nights. The food relies on local ingredients such as wheat, dates, cardamom, saffron, and slow-cooked meats, seasoned with local black lime and ghee.
+        </p>
+        <p>
+          The national dish of Saudi Arabia is **Kabsa**, a fragrant platter of long-grain basmati rice cooked with a blend of spices—including cardamom, cloves, cinnamon, and black lime (<em>loomi</em>)—and topped with slow-roasted chicken or lamb. Another beloved Najdi classic is **Jareesh**, which consists of coarsely crushed wheat cooked with yogurt, milk, chicken broth, and warm spices, simmered for hours until it reaches a creamy, porridge-like consistency, and topped with caramelized onions and ghee. For a savory snack, **Mutabbaq** is a must-try—a thin, pan-fried pastry stuffed with minced meat, egg, spring onion, and spices, served with fresh lemon slices.
+        </p>
+        <p>
+          To experience authentic Najdi dining, head to **Najd Village**, a beautifully restored mud-brick restaurant where guests sit on traditional floor cushions and share communal platters of Kabsa and Jareesh, eaten by hand in accordance with local customs.
+        </p>
+        <p>
+          Another unique aspect of Najdi dining is the hospitality ritual of serving **Saudi Qahwa** (Arabic coffee). This light-roasted coffee is spiced with cardamom and saffron, and is always poured from a traditional brass pot (*dallah*) into small, handle-less cups (*finjal*). It is custom to accept the cup with your right hand, and when you are finished, you gently shake the cup from side to side to indicate that you do not want a refill. Qahwa is always served alongside sweet, soft dates to balance the coffee's bitter, spiced flavor.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 Discover the 15 national dishes, traditional recipes, and best local eateries by reading our <a href="/saudi-arabia-traditional-food-guide-15-dishes/" class="inline-link">Saudi Arabia Traditional Food Guide</a>.
+          </p>
+        </div>
+
+        <h3 id="modern-dining">Modern Dining</h3>
+        <p>
+          For modern dining, **Boulevard Riyadh City** and **Boulevard World** are the premier entertainment and dining districts. These zones host dozens of international restaurants, trendy cafes, and local concept eateries, set alongside fountains, theaters, and neon-lit avenues.
+        </p>
+        <p>
+          Riyadh has also become a major hub for global fine dining, featuring renowned Michelin-starred brands like Zuma, Roka, LPM Restaurant &amp; Bar, and Myazu (offering world-class contemporary Japanese cuisine). These upscale venues are located in districts like Olaya and KAFD, catering to the city's cosmopolitan residents and luxury travelers. Laysen Valley is another emerging culinary enclave, hosting local fine-dining concepts that merge traditional ingredients with modern cooking techniques, creating a unique Saudi fusion cuisine.
+        </p>
+
+        <h3>Riyadh Shopping: High-End Retail Entities</h3>
+        <p>
+          Beyond historical exploration and athletic spectacles, Riyadh is widely celebrated as the retail capital of the Gulf. High-end shopping is not merely a commercial activity; it is a lifestyle, offering air-conditioned sanctuaries of leisure. Key retail entities include **Centria Mall**, renowned as the ultimate destination for haute couture, housing brands like Balenciaga, Armani, and Gucci. Meanwhile, **Riyadh Park Mall** provides a vibrant, family-centric environment complete with an IMAX cinema, indoor entertainment zones, and a glass-domed promenade lined with cafes. For a modern outdoor retail experience, **The Zone** and **U Walk** feature pedestrian-friendly pathways, beautiful water fountains, and open-air dining terraces, establishing Riyadh as a premier shopping and leisure destination.
+        </p>
+      </section>
+
+      <!-- FAQS -->
+      <section id="faqs" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <strong>Is Riyadh safe for solo female travelers?</strong>
+          <p>
+            Yes, Riyadh is extremely safe for solo female travelers. The city has very low crime rates and is heavily monitored by security cameras and police patrols. Women can travel freely, drive, use the Riyadh Metro, and dine alone without any restrictions. While the historic districts are conservative, modern areas like Olaya and KAFD are highly cosmopolitan. Women are no longer required by law to wear the traditional black abaya or cover their hair, though dressing modestly (covering shoulders and knees) is recommended in public spaces.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>What is the best time to visit Riyadh for FIFA 2034?</strong>
+          <p>
+            The FIFA World Cup 2034 will take place during the winter months of November and December. This is the optimal season to visit Riyadh. During these months, daytime temperatures are mild, ranging from 15°C to 25°C (59°F to 77°F), which is perfect for outdoor stadium visits, walking through fan zones, and exploring historic sites like Diriyah without the risk of heat exhaustion. Nights can get cool, occasionally dropping below 10°C, so packing light jackets and sweaters is recommended.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>Do I need a car in Riyadh?</strong>
+          <p>
+            Not anymore. With the launch of the Riyadh Metro, tourists can easily travel between major commercial, retail, and sports districts (such as Olaya, KAFD, and the FIFA stadiums) without a car. For off-grid destinations or locations not served by the Metro, ride-hailing apps like Uber and Careem are highly convenient and affordable. However, if you plan to take day trips to natural landmarks like the Edge of the World or Al-Thumamah Park, a rental 4x4 vehicle or booking a guided tour is necessary, as these routes involve unpaved desert tracks.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</Layout>

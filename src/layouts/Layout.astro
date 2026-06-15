@@ -102,6 +102,7 @@ const orgSchema = {
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <slot name="head" />
 </head>
 <body>
   <!-- Custom Cursor -->

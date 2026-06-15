@@ -1,0 +1,574 @@
+---
+// src/pages/visa-guide/index.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Saudi Arabia Visa Guide 2026: eVisa, On-Arrival & Umrah Visas"
+  description="Complete Saudi visa guide. Apply for eVisa, check on-arrival eligibility, Umrah visa rules, and GCC resident requirements. Updated 2026."
+  canonicalUrl="https://www.sauditravelhub.com/visa-guide/"
+>
+  <!-- Schema Injection -->
+  <script slot="head" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I perform Umrah on a tourist visa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the standard Saudi Tourist eVisa allows you to perform Umrah at any time of the year, except during the official Hajj season dates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is travel insurance mandatory for Saudi Arabia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, mandatory health insurance is included in the SAR 480 eVisa fee. It covers emergency medical treatment within the Kingdom."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the Saudi eVisa take to process?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most eVisas are approved within 24 hours, but it is recommended to apply at least 3-5 days before your flight."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Saudi Visa Guide Sections",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "The Tourist eVisa",
+            "url": "https://www.sauditravelhub.com/visa-guide/#tourist-evisa"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Visa on Arrival",
+            "url": "https://www.sauditravelhub.com/visa-guide/#visa-on-arrival"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Umrah & Hajj Visas",
+            "url": "https://www.sauditravelhub.com/visa-guide/#umrah-hajj"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "GCC Resident Visas",
+            "url": "https://www.sauditravelhub.com/visa-guide/#gcc-residents"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Style Additions for Side-by-Side Table of Contents layout -->
+  <style>
+    .layout-wrapper {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .sidebar-toc {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+    .sidebar-toc h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .sidebar-toc ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .sidebar-toc ul li a {
+      font-size: 0.88rem;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color var(--transition), padding-left var(--transition);
+      display: block;
+    }
+    .sidebar-toc ul li a:hover {
+      color: var(--gold-light);
+      padding-left: 5px;
+    }
+    .article-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--white-dim);
+    }
+    .article-content p {
+      margin-bottom: 1.8rem;
+      text-align: justify;
+    }
+    .article-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      color: var(--gold);
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .article-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.8rem;
+      padding-left: 1.8rem;
+    }
+    .article-content li {
+      margin-bottom: 0.6rem;
+    }
+    .quick-facts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .quick-facts-table th, .quick-facts-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-facts-table th {
+      background: var(--surface3);
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .quick-facts-table td {
+      font-size: 0.95rem;
+    }
+    .quick-facts-table tr:last-child td {
+      border-bottom: none;
+    }
+    .callout-box {
+      background: var(--gold-dim);
+      border-left: 4px solid var(--gold);
+      padding: 1.8rem;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: 2.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--gold-light);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+    .city-hero-styled {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(5, 13, 26, 0.45) 0%, rgba(5, 13, 26, 0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1920') center/cover no-repeat;
+      margin-top: 72px;
+      padding: 6rem 3rem;
+      position: relative;
+    }
+    .entity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .entity-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      transition: var(--transition);
+    }
+    .entity-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .entity-card h4 {
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .entity-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .breadcrumb-area {
+      background: rgba(201, 168, 76, 0.03);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .inline-link {
+      color: var(--gold);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .inline-link:hover {
+      color: var(--gold-light);
+    }
+    @media(max-width: 968px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-toc {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-area">
+    <div class="container" style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white-dim);">
+      <a href="/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Home</a> <span>/</span> 
+      <a href="/visa/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Visas</a> <span>/</span> Visa Guide
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="city-hero-styled">
+    <div class="city-hero-content">
+      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 700; margin-bottom: 1rem;">Visas &amp; Border Control · 2026 Update</div>
+      <h1 class="city-title" style="font-weight: 300; font-family: 'Cormorant Garamond', serif; line-height: 1.1; margin-bottom: 1.5rem;">
+        Saudi Arabia Visa Guide 2026: <br />
+        <em>Everything You Need to Enter</em>
+      </h1>
+      <p class="city-sub">
+        Navigate the simplified entry regulations of the Kingdom of Saudi Arabia. Discover eligibility, costs, rules, and procedures for eVisas, Visas on Arrival, Umrah permits, and GCC residencies.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAYOUT WRAPPER -->
+  <div class="layout-wrapper" id="main-content">
+    
+    <!-- TABLE OF CONTENTS -->
+    <aside class="sidebar-toc" aria-label="Table of Contents">
+      <h3>Visa Topics</h3>
+      <ul>
+        <li><a href="#intro">Visa Overview</a></li>
+        <li><a href="#tourist-evisa">1. The Tourist eVisa</a></li>
+        <li><a href="#visa-on-arrival">2. Visa on Arrival (VoA)</a></li>
+        <li><a href="#umrah-hajj">3. Umrah &amp; Hajj Visas</a></li>
+        <li><a href="#gcc-residents">4. GCC Resident Visas</a></li>
+        <li><a href="#faqs">Frequently Asked Questions</a></li>
+      </ul>
+    </aside>
+
+    <!-- ARTICLE BODY -->
+    <main class="article-content" role="main">
+      
+      <!-- INTRO -->
+      <section id="intro" style="padding: 0; margin-bottom: 3rem;">
+        <p>
+          Entering the Kingdom of Saudi Arabia was historically one of the most challenging travel logistics in the world, restricted primarily to religious pilgrims, business invitees, and sponsored expatriate workers. However, as a core pillar of the **Saudi Vision 2030** transformation program, the country has opened its borders to global tourism. The launching of the unified tourist visa platform has revolutionized entry procedures, simplifying a once-complex process into a fast, transparent, and highly accessible system. Today, millions of international travelers can secure entry authorization online within minutes, making the Kingdom a leading destination for leisure, adventure, and spiritual journeys.
+        </p>
+        <p>
+          The unified platform administered by the **Ministry of Tourism** and the **General Directorate of Passports (Jawazat)** coordinates the various entry categories. This streamlined approach ensures that whether you are arriving at King Khalid International Airport (RUH) in Riyadh or King Abdulaziz International Airport (JED) in Jeddah, your border clearance is fast and digital. In 2026, the country has further expanded its eligible nationalities list, updated its on-arrival regulations, and integrated its transit visa schemes with national carriers like Saudia and flyadeal, creating a highly cohesive travel ecosystem.
+        </p>
+        <p>
+          This guide provides an exhaustive, authoritative breakdown of all Saudi visa types, detailing costs, validity periods, processing times, and eligibility criteria. By understanding the specific requirements for your nationality and travel purpose, you can prevent border delays and plan a seamless journey to the historic sites of AlUla, the vibrant stadiums of FIFA 2034, or the sacred precincts of Makkah and Madinah.
+        </p>
+
+        <!-- QUICK FACTS TABLE -->
+        <table class="quick-facts-table" aria-label="Saudi Visa Quick Facts">
+          <thead>
+            <tr>
+              <th colspan="2">Saudi Visa: Quick Facts (2026 Guide)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tourist eVisa Fee</strong></td>
+              <td>SAR 480 (Includes Mandatory Health Insurance)</td>
+            </tr>
+            <tr>
+              <td><strong>Tourist eVisa Validity</strong></td>
+              <td>1 Year (Multiple Entry; 90 Days Maximum per Stay)</td>
+            </tr>
+            <tr>
+              <td><strong>On-Arrival Visa Fee</strong></td>
+              <td>SAR 480 (Payable by Credit Card at Airport Kiosks)</td>
+            </tr>
+            <tr>
+              <td><strong>eVisa Processing Time</strong></td>
+              <td>Typically 5 Minutes to 24 Hours</td>
+            </tr>
+            <tr>
+              <td><strong>Umrah Specific Visa Validity</strong></td>
+              <td>90 Days (Single Entry)</td>
+            </tr>
+            <tr>
+              <td><strong>Mandatory Insurance Coverage</strong></td>
+              <td>Emergency Medical Treatment &amp; COVID-19 Cover</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- TOURIST EVISA -->
+      <section id="tourist-evisa" style="padding: 0; margin-bottom: 3rem;">
+        <h2>1. The Tourist eVisa (Primary Entity)</h2>
+        <p>
+          The **Tourist eVisa** represents the primary entry pathway for international leisure travelers visiting Saudi Arabia. Launched to encourage global cultural exchange and tourism, this digital visa is secured entirely online prior to departure, eliminating the need to mail passports or visit a Saudi embassy in person. The system is managed by the Ministry of Tourism in coordination with **VisitSaudi.com**, the official tourism portal.
+        </p>
+
+        <h3>Eligibility &amp; Coverage</h3>
+        <p>
+          The eVisa is currently available to citizens of **60+ eligible countries**. This list is regularly updated by the Ministry of Tourism as bilateral diplomatic relations and travel agreements expand. The countries are grouped by region to help travelers verify their visa status easily:
+        </p>
+        <ul>
+          <li><strong>Europe:</strong> Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United Kingdom, Switzerland, Norway, Iceland, Liechtenstein, Monaco, Andorra, San Marino, Montenegro, Ukraine, and Russia.</li>
+          <li><strong>North America:</strong> The United States of America and Canada.</li>
+          <li><strong>Asia &amp; Oceania:</strong> China (including Hong Kong, Macau, and Taiwan), Japan, South Korea, Singapore, Malaysia, Brunei, Kazakhstan, Uzbekistan, Tajikistan, Kyrgyzstan, Australia, and New Zealand.</li>
+          <li><strong>Middle East &amp; Africa:</strong> Citizens of neighboring GCC countries (Bahrain, Kuwait, Oman, Qatar, United Arab Emirates) do not require any entry visa; they enjoy freedom of movement. Foreign residents/expatriates living in these GCC countries can apply for a simplified tourist eVisa online, regardless of their country of citizenship. South Africa, Mauritius, and Seychelles are also included in the tourist eVisa eligible list.</li>
+        </ul>
+        <p>
+          The eVisa grants tourists permission to participate in tourism-related activities, family visits, leisure travel, and the performance of the minor pilgrimage (Umrah). However, it strictly prohibits other activities such as studying, taking up local employment, or performing the major pilgrimage (Hajj), which require specialized visas issued by their respective ministries.
+        </p>
+        <p>
+          For travelers from non-eligible countries, a Tourist Consul Visa must be applied for through the nearest Saudi consulate or embassy. This process requires submitting flight bookings, hotel reservations, proof of employment, and bank statements to verify financial solvency.
+        </p>
+
+        <h3>Cost &amp; Validity</h3>
+        <p>
+          The total cost for the Tourist eVisa is **SAR 480** (approximately $128 USD). This fee is broken down into:
+        </p>
+        <ul>
+          <li><strong>Visa Fee:</strong> SAR 300 (standard entry processing charge).</li>
+          <li><strong>Mandatory Health Insurance Fee:</strong> SAR 180 (automatically issued from approved local providers like Tawuniya or Bupa Arabia). This insurance covers emergency medical services, accidental injuries, and emergency dental treatments within the Kingdom during your stay.</li>
+        </ul>
+        <p>
+          The eVisa is valid for **1 year (365 days) from the date of issue**. It is a **multiple-entry visa**, meaning you can enter the country as many times as you like within the one-year validity window. However, the maximum duration of stay for any single visit is **90 days**. The cumulative stay within the one-year validity period must not exceed 180 days. Overstaying is strictly penalized, resulting in a fine of 100 SAR per day and potential deportation.
+        </p>
+        <div class="callout-box">
+          <p>
+            🔗 <a href="/saudi-arabia-evisa-requirements-2026/" class="inline-link">Step-by-Step eVisa Application Guide</a> — Read our detailed walkthrough to prepare your digital photo, passport scans, and payment cards for the portal.
+          </p>
+        </div>
+      </section>
+
+      <!-- VISA ON ARRIVAL -->
+      <section id="visa-on-arrival" style="padding: 0; margin-bottom: 3rem;">
+        <h2>2. Visa on Arrival (VoA)</h2>
+        <p>
+          For travelers who prefer not to apply online in advance, or for those whose eligibility is tied to active visas from other Western nations, the **Visa on Arrival (VoA)** offers a convenient entry route. The General Directorate of Passports (**Jawazat**) administers the VoA desks located directly before border control at all international airports, including **King Khalid International Airport (RUH)** in Riyadh, **King Abdulaziz International Airport (JED)** in Jeddah, and **King Fahd International Airport (DMM)** in Dammam.
+        </p>
+
+        <h3>Who is Eligible?</h3>
+        <p>
+          The VoA is accessible to two primary categories of travelers:
+        </p>
+        <ol>
+          <li><strong>Citizens of eVisa Countries:</strong> Any citizen of the 60+ countries eligible for the eVisa can also purchase a Visa on Arrival. However, applying for the eVisa in advance is highly recommended to prevent wait times in airport queues.</li>
+          <li><strong>Holders of US, UK, or Schengen Visas:</strong> Travelers of *any* nationality who hold a valid, active tourist or business visa from the United States, the United Kingdom, or any Schengen Area nation are eligible for a Saudi Visa on Arrival. However, two strict conditions must be met:
+            <ul>
+              <li>The visa must have been **used at least once** to enter the issuing country (evidenced by a passport entry stamp).</li>
+              <li>The traveler must fly on a **national carrier of Saudi Arabia** (Saudia, flyadeal, or Flynas) or have permanent residency in the US, UK, or EU.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Process at RUH and JED Airports</h3>
+        <p>
+          Upon arrival at the airport, follow the signs to the "Visa on Arrival" desks or self-service kiosks. The process is fully digital:
+        </p>
+        <ul>
+          <li><strong>Scan Passport:</strong> Place your passport on the digital reader at the kiosk to verify validity (which must be at least 6 months from your entry date).</li>
+          <li><strong>Biometrics:</strong> Complete a digital fingerprint scan and passport photo capture at the kiosk.</li>
+          <li><strong>Payment:</strong> Pay the fee of **SAR 480** using a credit or debit card. Cash is not accepted at the kiosks, so carrying a valid Visa, Mastercard, or American Express is necessary.</li>
+          <li><strong>Stamp:</strong> Take the printed receipt and proceed to the immigration counter to receive your entry stamp. The entire process takes approximately 10–15 minutes during off-peak hours.</li>
+        </ul>
+
+        <h3>Biometrics, Smart Gates &amp; Border Clearance</h3>
+        <p>
+          To expedite the entry process for the millions of travelers arriving annually, Saudi Arabia has introduced automated **Smart Gates** at major international airports, particularly in Terminals 1 and 2 at King Khalid International Airport (RUH) in Riyadh and Terminal 1 at King Abdulaziz International Airport (JED) in Jeddah. These smart gates utilize advanced facial recognition technology and biometric scanning, allowing pre-registered travelers and citizens of GCC countries to clear border control in under 10 seconds without speaking to an immigration officer.
+        </p>
+        <p>
+          For first-time international visitors, a brief registration process is required at the standard immigration desks. An officer will capture your digital facial profile and scan your fingerprints (biometrics). This profile is then linked to your passport and visa, enabling you to use the automated Smart Gates on subsequent visits and during departure. The integration of these digital gates significantly reduces wait times during peak travel periods, ensuring a modern, efficient entry experience.
+        </p>
+
+        <h3>Health &amp; Mandatory Vaccination Requirements</h3>
+        <p>
+          In addition to securing a valid visa, all travelers entering Saudi Arabia must comply with specific health regulations and vaccination mandates administered by the **Ministry of Health**. These requirements are designed to prevent the spread of infectious diseases, particularly during large international gatherings like the World Cup and religious pilgrimages:
+        </p>
+        <ul>
+          <li><strong>Meningococcal Meningitis:</strong> All pilgrims arriving for Umrah or Hajj, and travelers arriving from designated meningitis belt countries in sub-Saharan Africa, must present a valid vaccination certificate for the quadrivalent (ACYW135) vaccine. The vaccination must have been administered at least 10 days before arrival and not more than 3 or 5 years ago (depending on the vaccine type).</li>
+          <li><strong>Yellow Fever:</strong> Travelers arriving from countries with risk of yellow fever transmission (primarily in tropical regions of South America and Africa) must present a valid International Certificate of Vaccination against Yellow Fever.</li>
+          <li><strong>Polio:</strong> Visitors arriving from countries with active polio transmission must present proof of vaccination with oral polio vaccine (OPV) or inactivated polio vaccine (IPV) administered within the last 12 months.</li>
+        </ul>
+      </section>
+
+      <!-- UMRAH & HAJJ VISAS -->
+      <section id="umrah-hajj" style="padding: 0; margin-bottom: 3rem;">
+        <h2>3. Umrah &amp; Hajj Visas: The Critical Differences</h2>
+        <p>
+          Saudi Arabia's role as the birthplace of Islam brings millions of spiritual pilgrims annually to the holy cities of Makkah and Madinah. The **Ministry of Hajj and Umrah** regulates spiritual entry, maintaining a clear distinction between visas permitted for the minor pilgrimage (**Umrah**) and those required for the major pilgrimage (**Hajj**).
+        </p>
+
+        <h3>Performing Umrah on a Tourist Visa</h3>
+        <p>
+          Under the Vision 2030 reforms, the **standard Tourist eVisa allows you to perform Umrah**. This is a major improvement, allowing spiritual travelers to combine their pilgrimage with sightseeing and visiting family. The Tourist eVisa permits entry to both Makkah and Madinah, and holders can perform the ritual circumambulation (*Tawaf*) at the Masjid al-Haram in Makkah.
+        </p>
+        <p>
+          However, to manage crowds and ensure safety, pilgrims must book a permit slot using the official **Nusuk App** (formerly Eatmarna). The Nusuk App registers your passport details, verifies your active visa, and allows you to book specific times to perform Umrah and pray in the sacred *Rawdah* at the Prophet's Mosque in Madinah. During peak seasons, such as the holy month of **Ramadan**, booking slots weeks in advance via the app is mandatory, as daily visitor numbers are capped to prevent overcrowding.
+        </p>
+        <p>
+          It is important to note that the Tourist Visa permits Umrah at any time of the year **except during the official Hajj season**. During the Hajj period (which changes annually based on the Islamic lunar calendar), only holders of specific Hajj visas are permitted to enter Makkah and the surrounding holy sites (Mina, Arafat, Muzdalifah).
+        </p>
+
+        <h3>The Specific Umrah Visa</h3>
+        <p>
+          For travelers from countries not eligible for the eVisa or Visa on Arrival (such as Pakistan, India, Bangladesh, and various African nations), a **Specific Umrah Visa** must be secured. This visa is applied for through licensed travel agencies authorized by the Ministry of Hajj and Umrah.
+        </p>
+        <p>
+          The Umrah Visa is valid for **90 days** and is a **single-entry visa**. Unlike the tourist visa, it requires a sponsored package, including pre-booked hotel accommodations in Makkah and Madinah, and pre-arranged transport transfers. Holders of the Umrah Visa can travel freely between Makkah, Madinah, and Jeddah, but are not permitted to travel to other provinces of the Kingdom without an authorized tour guide.
+        </p>
+
+        <h3>Hajj Visa Restrictions</h3>
+        <p>
+          Unlike Umrah, performing the major pilgrimage (**Hajj**) strictly requires a **Specific Hajj Visa**. It is **illegal** to perform Hajj using a Tourist Visa, a standard Umrah Visa, or a Transit Visa. Border control and security checkpoints are established around Makkah and the holy sites weeks before Hajj, and any traveler caught attempting to perform Hajj without a valid Hajj visa faces severe penalties, including:
+        </p>
+        <ul>
+          <li>Fines up to 10,000 SAR.</li>
+          <li>Immediate arrest and deportation.</li>
+          <li>A 10-year ban on entering Saudi Arabia.</li>
+        </ul>
+        <p>
+          Hajj visas are distributed to countries based on quota systems and must be applied for through the official **Nusuk Hajj** platform or authorized national Hajj committees.
+        </p>
+      </section>
+
+      <!-- GCC RESIDENT VISAS -->
+      <section id="gcc-residents" style="padding: 0; margin-bottom: 3rem;">
+        <h2>4. GCC Resident Visas</h2>
+        <p>
+          The Gulf Cooperation Council (**GCC**) Supreme Council has simplified travel between its member nations to foster economic cooperation. Expatriates who reside in **UAE, Kuwait, Qatar, Bahrain, and Oman** can apply for a simplified tourist eVisa to enter Saudi Arabia, regardless of their nationality.
+        </p>
+
+        <h3>Rules for Expatriates</h3>
+        <p>
+          To secure this simplified eVisa, GCC residents must meet two strict criteria:
+        </p>
+        <ol>
+          <li><strong>Residency Validity:</strong> The residency visa (e.g., UAE Iqama or Qatar ID) must be valid for at least **3 months** at the time of entry into Saudi Arabia.</li>
+          <li><strong>Passport Validity:</strong> The applicant's passport must be valid for at least **6 months** at the time of entry.</li>
+        </ol>
+        <p>
+          The application is processed through the official unified visa portal. Applicants must upload a copy of their GCC residency card and passport bio-page. The fee is **SAR 300** plus the medical insurance fee (totaling approximately **SAR 480**). Most GCC resident eVisas are processed instantly or within 24 hours, offering expatriates in Dubai, Doha, and Kuwait City a fast way to plan weekend trips to Riyadh or Jeddah.
+        </p>
+
+        <h3>The Stopover / Transit Visa (96-Hour Option)</h3>
+        <p>
+          For travelers who are transiting through Saudi Arabia on their way to another global destination, the **Stopover Visa** (also known as the Transit Visa) offers a highly convenient, low-cost entry route. This visa is integrated directly with the booking engines of Saudi national carriers **Saudia** and **Flynas**. When purchasing an international flight that includes a layover in Saudi Arabia, passengers can apply for the Stopover Visa during the flight booking process.
+        </p>
+        <p>
+          The Stopover Visa is **free of charge** (though minor administrative and medical insurance fees totaling approximately 100 SAR apply). It is valid for **90 days from the date of issue** and permits a stay of up to **96 hours (4 days)** in the Kingdom. A major benefit of this visa is that booking a flight with Saudia also includes a **free one-night hotel stay** in cities like Jeddah or Riyadh, making it a highly attractive option for travelers looking to experience a quick taste of Saudi culture without paying for a full tourist visa. The visa is processed instantly during the flight booking, and a digital copy is attached to your airline ticket.
+        </p>
+
+        <h3>Business &amp; Employment Visas</h3>
+        <p>
+          While the Tourist Visa covers leisure, family visits, and Umrah, it strictly prohibits engaging in paid employment or commercial trade within the Kingdom. For travelers visiting Saudi Arabia for commercial purposes, a **Business Visa** must be secured. This visa requires an official **Letter of Invitation (LOI)** from a Saudi-registered company, verified by the local Chamber of Commerce. The application is processed through the Saudi Ministry of Foreign Affairs (MOFA) portal.
+        </p>
+        <p>
+          For long-term residency and paid employment, a **Work Visa** is mandatory. This process is highly structured, requiring the sponsoring Saudi employer to secure a work block visa allotment. The expatriate worker must then submit a comprehensive application to the Saudi embassy, including: a medical fitness certificate (verifying the absence of contagious diseases), a certified police clearance certificate from their home country, and legalized educational degrees. Once approved, the worker is issued a temporary entry visa, which is converted into a resident identity card (**Iqama**) upon arrival in the Kingdom.
+        </p>
+
+        <h3>Step-by-Step e-Visa Application Process</h3>
+        <p>
+          Applying for the Tourist eVisa is a simple, fully digital process. To ensure a smooth application, follow these step-by-step instructions:
+        </p>
+        <ol>
+          <li><strong>Create an Account:</strong> Visit the official Saudi eVisa portal and register an account using a valid email address. Set a secure password and verify your email via the confirmation link sent to your inbox.</li>
+          <li><strong>Enter Personal Details:</strong> Fill in your full name, nationality, date of birth, and occupation exactly as they appear on your passport. Double-check for any typos, as minor errors can lead to border delays.</li>
+          <li><strong>Upload Documents:</strong> Upload a clear, color scan of your passport bio-page (must be valid for at least 6 months) and a recent passport-style photograph with a white background. The portal accepts JPEG/PNG formats under 100KB.</li>
+          <li><strong>Select Medical Insurance:</strong> The portal will automatically display a list of approved local medical insurance providers. Select your preferred provider (the cost is fixed at 180 SAR and is included in the final fee).</li>
+          <li><strong>Complete Payment:</strong> Pay the total fee of 480 SAR using a credit or debit card (Visa, Mastercard, or American Express). Ensure your bank allows international transactions, as the payment is processed through a Saudi merchant gateway.</li>
+        </ol>
+
+        <h3>Customs Regulations &amp; Prohibited Items</h3>
+        <p>
+          Entering Saudi Arabia requires compliance with strict customs regulations, which are designed to protect the religious and social values of the Kingdom. The General Directorate of Customs conducts thorough baggage scans at all entry borders. The following items are **strictly prohibited** and will be confiscated, potentially resulting in fines, arrest, and immediate deportation:
+        </p>
+        <ul>
+          <li><strong>Alcohol &amp; Narcotics:</strong> The import, possession, and consumption of alcohol or illegal drugs are strictly illegal in Saudi Arabia.</li>
+          <li><strong>Pork Products:</strong> All food items containing pork or pork derivatives are prohibited.</li>
+          <li><strong>Religious Materials:</strong> Bringing non-Islamic religious books, symbols, or Bibles in large quantities intended for distribution is illegal. However, carrying a single copy of a personal religious book for private use is permitted.</li>
+          <li><strong>Weapons &amp; Drones:</strong> Weapons, ammunition, and fireworks are strictly prohibited. Drones require prior import permits from the General Authority of Civil Aviation (GACA); unpermitted drones will be confiscated at the airport.</li>
+        </ul>
+      </section>
+
+      <!-- FAQS -->
+      <section id="faqs" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <strong>Can I perform Umrah on a tourist visa?</strong>
+          <p>
+            Yes, the standard Saudi Tourist eVisa allows you to perform the minor pilgrimage (Umrah) at any time of the year, except during the official Hajj season dates. You must download the official **Nusuk App** on your smartphone to register your visa details and book a permit slot to perform Umrah or pray in the sacred *Rawdah* at the Prophet's Mosque in Madinah.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Is travel insurance mandatory for Saudi Arabia?</strong>
+          <p>
+            Yes. Travel health insurance is mandatory for all visitors entering Saudi Arabia on a tourist visa. If you apply for an eVisa, the cost of this insurance (180 SAR) is automatically included in the total fee of 480 SAR, and your insurance policy is issued instantly from an approved local Saudi provider. If you are entering on a different visa type, you must secure valid travel health insurance that covers emergency medical care within the Kingdom.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>How long does the Saudi eVisa take to process?</strong>
+          <p>
+            Most Saudi eVisas are processed and approved within 5 to 24 hours of submission. In many cases, applicants receive their digital visa PDF in their email inbox within 10 minutes. However, to account for potential processing delays or system maintenance, it is highly recommended to submit your eVisa application at least **3 to 5 days** before your scheduled flight.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</Layout>
