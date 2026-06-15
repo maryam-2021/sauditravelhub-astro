@@ -1,6 +1,22 @@
 ---
 // src/pages/visa-guide/index.astro
 import Layout from '../../layouts/Layout.astro';
+import SchemaGenerator from '../../components/SchemaGenerator.astro';
+
+const faqData = [
+  {
+    question: "Can I perform Umrah on a tourist visa?",
+    answer: "Yes, the standard Saudi Tourist eVisa allows you to perform Umrah at any time of the year, except during the official Hajj season dates."
+  },
+  {
+    question: "Is travel insurance mandatory for Saudi Arabia?",
+    answer: "Yes, mandatory health insurance is included in the SAR 480 eVisa fee. It covers emergency medical treatment within the Kingdom."
+  },
+  {
+    question: "How long does the Saudi eVisa take to process?",
+    answer: "Most eVisas are approved within 24 hours, but it is recommended to apply at least 3-5 days before your flight."
+  }
+];
 ---
 
 <Layout
@@ -9,72 +25,16 @@ import Layout from '../../layouts/Layout.astro';
   canonicalUrl="https://www.sauditravelhub.com/visa-guide/"
 >
   <!-- Schema Injection -->
-  <script slot="head" type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Can I perform Umrah on a tourist visa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, the standard Saudi Tourist eVisa allows you to perform Umrah at any time of the year, except during the official Hajj season dates."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is travel insurance mandatory for Saudi Arabia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, mandatory health insurance is included in the SAR 480 eVisa fee. It covers emergency medical treatment within the Kingdom."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does the Saudi eVisa take to process?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most eVisas are approved within 24 hours, but it is recommended to apply at least 3-5 days before your flight."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Saudi Visa Guide Sections",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "The Tourist eVisa",
-            "url": "https://www.sauditravelhub.com/visa-guide/#tourist-evisa"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Visa on Arrival",
-            "url": "https://www.sauditravelhub.com/visa-guide/#visa-on-arrival"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Umrah & Hajj Visas",
-            "url": "https://www.sauditravelhub.com/visa-guide/#umrah-hajj"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "GCC Resident Visas",
-            "url": "https://www.sauditravelhub.com/visa-guide/#gcc-residents"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+  <SchemaGenerator slot="head" type="FAQPage" faqData={faqData} />
+  <SchemaGenerator
+    slot="head"
+    type="Article"
+    title="Saudi Arabia Visa Guide 2026: eVisa, On-Arrival & Umrah Visas"
+    description="Complete Saudi visa guide. Apply for eVisa, check on-arrival eligibility, Umrah visa rules, and GCC resident requirements. Updated 2026."
+    url="https://www.sauditravelhub.com/visa-guide/"
+    datePublished="2026-01-15T08:00:00Z"
+    dateModified="2026-06-15T14:30:00Z"
+  />
 
   <!-- Style Additions for Side-by-Side Table of Contents layout -->
   <style>

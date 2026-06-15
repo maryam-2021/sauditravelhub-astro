@@ -1,0 +1,140 @@
+---
+// src/components/SchemaGenerator.astro
+
+interface Props {
+  type: 'WebSite' | 'Organization' | 'FAQPage' | 'TouristDestination' | 'ItemList' | 'Article';
+  title?: string;
+  description?: string;
+  url?: string;
+  faqData?: Array<{ question?: string; name?: string; answer?: string; acceptedAnswer?: any }>;
+  containsPlace?: Array<string | { name: string }>;
+  itemList?: Array<{ name: string; url: string; position?: number }>;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const {
+  type,
+  title,
+  description,
+  url,
+  faqData,
+  containsPlace,
+  itemList,
+  image,
+  datePublished,
+  dateModified
+} = Astro.props;
+
+let schemaJson: any = null;
+
+if (type === 'WebSite') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": title || "Saudi Travel Hub",
+    "url": url || "https://www.sauditravelhub.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${url || "https://www.sauditravelhub.com/"}search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
+} else if (type === 'Organization') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": title || "Saudi Travel Hub",
+    "url": url || "https://www.sauditravelhub.com/",
+    "logo": "https://www.sauditravelhub.com/saudi_favicon.png",
+    "sameAs": [
+      "https://www.instagram.com/sauditravelhub",
+      "https://twitter.com/sauditravelhub",
+      "https://www.linkedin.com/company/sauditravelhub",
+      "https://www.tiktok.com/@sauditravelhub",
+      "https://www.youtube.com/@sauditravelhub",
+      "https://www.facebook.com/sauditravelhub"
+    ]
+  };
+} else if (type === 'FAQPage') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData?.map(item => {
+      const questionText = item.question || item.name;
+      let answerText = "";
+      if (typeof item.acceptedAnswer === 'string') {
+        answerText = item.acceptedAnswer;
+      } else if (item.acceptedAnswer && typeof item.acceptedAnswer === 'object') {
+        answerText = item.acceptedAnswer.text || "";
+      } else {
+        answerText = item.answer || "";
+      }
+      return {
+        "@type": "Question",
+        "name": questionText,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": answerText
+        }
+      };
+    }) || []
+  };
+} else if (type === 'TouristDestination') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": title,
+    "description": description,
+    "url": url,
+    "containsPlace": containsPlace?.map(item => {
+      const name = typeof item === 'string' ? item : item.name;
+      return {
+        "@type": "Place",
+        "name": name
+      };
+    }) || []
+  };
+} else if (type === 'ItemList') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": title || "Saudi Travel Destinations",
+    "itemListElement": itemList?.map((item, idx) => ({
+      "@type": "ListItem",
+      "position": item.position || (idx + 1),
+      "name": item.name,
+      "url": item.url
+    })) || []
+  };
+} else if (type === 'Article') {
+  schemaJson = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "url": url,
+    "image": image || "https://www.sauditravelhub.com/saudi_favicon.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Saudi Travel Hub",
+      "url": "https://www.sauditravelhub.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Saudi Travel Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.sauditravelhub.com/saudi_favicon.png"
+      }
+    },
+    "datePublished": datePublished || "2026-01-01T00:00:00Z",
+    "dateModified": dateModified || "2026-06-15T14:30:00Z"
+  };
+}
+---
+
+{schemaJson && (
+  <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+)}

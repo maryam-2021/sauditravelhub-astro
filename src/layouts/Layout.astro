@@ -23,10 +23,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Saudi Travel Hub",
-  "url": canonicalUrl,
+  "url": "https://www.sauditravelhub.com/",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": `${canonicalUrl}search?q={search_term_string}`,
+    "target": "https://www.sauditravelhub.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -35,16 +35,19 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Saudi Travel Hub",
-  "url": canonicalUrl,
-  "logo": `${canonicalUrl}saudi-travel-logo.png`,
+  "url": "https://www.sauditravelhub.com/",
+  "logo": "https://www.sauditravelhub.com/saudi_favicon.png",
   "sameAs": [
-    "https://www.instagram.com/sauditravelhub",
     "https://twitter.com/sauditravelhub",
+    "https://www.instagram.com/sauditravelhub",
+    "https://www.linkedin.com/company/sauditravelhub",
     "https://www.tiktok.com/@sauditravelhub",
     "https://www.youtube.com/@sauditravelhub",
     "https://www.facebook.com/sauditravelhub"
   ]
 };
+
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html' || Astro.url.pathname === '';
 ---
 
 <!DOCTYPE html>
@@ -100,7 +103,7 @@ const orgSchema = {
   <meta name="generator" content={Astro.generator} />
 
   <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   <slot name="head" />
 </head>

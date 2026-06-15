@@ -1,6 +1,55 @@
 ---
 // src/pages/destinations/riyadh/index.astro
 import Layout from '../../../layouts/Layout.astro';
+import SchemaGenerator from '../../../components/SchemaGenerator.astro';
+
+const containsPlaces = [
+  "King Salman International Stadium",
+  "Diriyah",
+  "Kingdom Centre"
+];
+
+const faqData = [
+  {
+    question: "Is Riyadh safe for solo female travelers?",
+    answer: "Yes, Riyadh is extremely safe. The city is heavily monitored, and women can travel freely, use the Metro, and dine alone without restriction."
+  },
+  {
+    question: "What is the best time to visit Riyadh for FIFA 2034?",
+    answer: "The tournament will take place in November/December when temperatures are mild (15–25°C), perfect for stadium visits."
+  },
+  {
+    question: "Do I need a car in Riyadh?",
+    answer: "Not anymore. The Riyadh Metro covers most tourist areas. For day trips like Edge of the World, a guided tour or rental 4x4 is recommended."
+  }
+];
+
+const riyadhGuideSections = [
+  {
+    name: "Historical Entities: The Roots of Riyadh",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#historical-entities"
+  },
+  {
+    name: "FIFA 2034 in Riyadh: Stadiums & Fan Zones",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#fifa-2034"
+  },
+  {
+    name: "Navigating Riyadh: The Metro & Transport",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#navigating-riyadh"
+  },
+  {
+    name: "Best Districts to Stay in Riyadh",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#best-districts"
+  },
+  {
+    name: "Day Trips from Riyadh: Natural Entities",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#day-trips"
+  },
+  {
+    name: "Riyadh Cuisine: Food Entities",
+    url: "https://www.sauditravelhub.com/destinations/riyadh/#riyadh-cuisine"
+  }
+];
 ---
 
 <Layout
@@ -9,95 +58,9 @@ import Layout from '../../../layouts/Layout.astro';
   canonicalUrl="https://www.sauditravelhub.com/destinations/riyadh/"
 >
   <!-- Schema Injection -->
-  <script slot="head" type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TouristDestination",
-        "name": "Riyadh",
-        "description": "The capital city of Saudi Arabia and a primary host for FIFA 2034.",
-        "url": "https://www.sauditravelhub.com/destinations/riyadh/",
-        "containsPlace": [
-          { "@type": "Place", "name": "King Salman International Stadium" },
-          { "@type": "Place", "name": "Diriyah" },
-          { "@type": "Place", "name": "Kingdom Centre" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is Riyadh safe for solo female travelers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Riyadh is extremely safe. The city is heavily monitored, and women can travel freely, use the Metro, and dine alone without restriction."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the best time to visit Riyadh for FIFA 2034?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tournament will take place in November/December when temperatures are mild (15–25°C), perfect for stadium visits."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need a car in Riyadh?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Not anymore. The Riyadh Metro covers most tourist areas. For day trips like Edge of the World, a guided tour or rental 4x4 is recommended."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Riyadh Travel Guide Sections",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Historical Entities: The Roots of Riyadh",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#historical-entities"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "FIFA 2034 in Riyadh: Stadiums & Fan Zones",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#fifa-2034"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Navigating Riyadh: The Metro & Transport",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#navigating-riyadh"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Best Districts to Stay in Riyadh",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#best-districts"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Day Trips from Riyadh: Natural Entities",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#day-trips"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Riyadh Cuisine: Food Entities",
-            "url": "https://www.sauditravelhub.com/destinations/riyadh/#riyadh-cuisine"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+  <SchemaGenerator slot="head" type="TouristDestination" title="Riyadh" description="The capital city of Saudi Arabia and a primary host for FIFA 2034." url="https://www.sauditravelhub.com/destinations/riyadh/" containsPlace={containsPlaces} />
+  <SchemaGenerator slot="head" type="FAQPage" faqData={faqData} />
+  <SchemaGenerator slot="head" type="ItemList" title="Riyadh Travel Guide Sections" itemList={riyadhGuideSections} />
 
   <!-- Style Additions for Table of Contents layout -->
   <style>

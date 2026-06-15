@@ -1,12 +1,25 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import SchemaGenerator from '../components/SchemaGenerator.astro';
+
+const destinationsList = [
+  { name: "Riyadh Travel Guide", url: "https://www.sauditravelhub.com/destinations/riyadh/" },
+  { name: "Jeddah Travel Guide", url: "https://www.sauditravelhub.com/destinations/jeddah/" },
+  { name: "NEOM Travel Guide", url: "https://www.sauditravelhub.com/destinations/neom/" },
+  { name: "Abha Travel Guide", url: "https://www.sauditravelhub.com/destinations/abha/" },
+  { name: "Al Khobar Travel Guide", url: "https://www.sauditravelhub.com/destinations/al-khobar/" },
+  { name: "Tabuk Travel Guide", url: "https://www.sauditravelhub.com/destinations/tabuk/" }
+];
 ---
 
 <Layout 
   title="Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub"
   description="Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources."
 >
+  <SchemaGenerator slot="head" type="WebSite" />
+  <SchemaGenerator slot="head" type="ItemList" title="Saudi Arabia Travel Destinations" itemList={destinationsList} />
+
   <main id="main-content">
     
     <!-- HERO -->
