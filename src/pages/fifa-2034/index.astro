@@ -267,6 +267,14 @@ import Layout from '../../layouts/Layout.astro';
         margin-bottom: 2rem;
       }
     }
+    
+    /* Collapsible summary markers reset */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary {
+      list-style: none;
+    }
   </style>
 
   <!-- BREADCRUMBS -->
@@ -300,6 +308,7 @@ import Layout from '../../layouts/Layout.astro';
       <ul>
         <li><a href="#intro">Tournament Overview</a></li>
         <li><a href="#host-cities">1. Host Cities &amp; Stadiums</a></li>
+        <li><a href="#stadium-logistics">1b. Stadium &amp; Logistics</a></li>
         <li><a href="#ticketing-rules">2. Ticketing &amp; Hayya Card</a></li>
         <li><a href="#transport-plans">3. Transit &amp; Travel Plans</a></li>
         <li><a href="#fan-zones">4. Fan Zones &amp; Culture</a></li>
@@ -466,6 +475,149 @@ import Layout from '../../layouts/Layout.astro';
         <p>
           These four cities introduce unique geographical elements to the tournament. The **NEOM Stadium** is perhaps the most futuristic venue ever proposed for a World Cup. Built into the structure of *The Line*, the stadium is suspended 350 meters above the ground, offering spectators views of the surrounding desert canyon and Red Sea coast. It is designed to be carbon-neutral and fully powered by renewable energy. The **King Khalid University Stadium** in Abha (capacity 45,000) is located in the Sarawat Mountains at an altitude of 2,200 meters. The cool highland climate will offer a spring-like setting, though teams will need to adjust to the high-altitude conditions. Madinah's **Prince Mohammed bin Abdulaziz Stadium** (capacity 40,000) will welcome fans to one of the world's most significant historical cities, while Tabuk's **King Khalid Sports City Stadium** (capacity 30,000) will act as a key gateway in the northwest, close to the Red Sea luxury resorts.
         </p>
+      </section>
+
+      <!-- STADIUM & LOGISTICS SECTION -->
+      <section id="stadium-logistics" style="padding: 0; margin-bottom: 3rem;">
+        <h2>Stadium &amp; Logistics</h2>
+        <p>
+          Understanding the distance metrics, metro routes, and transport modes between host stadiums and central transit terminals is crucial for fans planning their match-day itineraries. With matches scheduled across multiple regions, logistics coordination will be the backbone of the fan experience. The table below consolidates the exact capacity and transport details for the key match venues:
+        </p>
+
+        <div id="stadium-logistics-table" class="my-6 overflow-x-auto border border-[rgba(160,200,255,0.09)] rounded-xl bg-[#162540] shadow-xl">
+          <table class="min-w-full border-collapse text-left">
+            <caption class="caption-top text-center text-sm text-[#e8c97a] py-4 font-semibold italic border-b border-[rgba(160,200,255,0.09)] bg-[#1e2f4d]/50">
+              FIFA 2034 Saudi Arabia: Stadium Capacities &amp; Key Metrics
+            </caption>
+            <thead>
+              <tr class="bg-[#1e2f4d] border-b border-[rgba(160,200,255,0.09)]">
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Host City</th>
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Stadium Name</th>
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Capacity</th>
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Distance from Airport</th>
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Metro Access</th>
+                <th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-[#e8c97a]">Key Matches</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[rgba(160,200,255,0.09)]">
+              <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                <td class="px-6 py-4 text-sm font-semibold text-white">Riyadh</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">King Salman Int. Stadium</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">92,760</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85" itemprop="distance">25km from RUH</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Yes (Metro Line 4 - Yellow)</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Opening Match &amp; Final</td>
+              </tr>
+              <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                <td class="px-6 py-4 text-sm font-semibold text-white">Riyadh</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">King Fahd Int. Stadium</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">67,000</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85" itemprop="distance">15km from RUH</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Yes (Metro Line 2 - Red)</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Semi-Finals</td>
+              </tr>
+              <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                <td class="px-6 py-4 text-sm font-semibold text-white">Jeddah</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">King Abdullah Sports City</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">62,241</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85" itemprop="distance">20km from JED</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">No (Bus Shuttle)</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Group Stage &amp; Knockouts</td>
+              </tr>
+              <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                <td class="px-6 py-4 text-sm font-semibold text-white">Al Khobar</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Prince Saud bin Jalawi</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">25,000</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85" itemprop="distance">10km from DMM</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">No (Bus Shuttle)</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Group Stage</td>
+              </tr>
+              <tr class="hover:bg-[#1e2f4d]/30 transition-colors">
+                <td class="px-6 py-4 text-sm font-semibold text-white">NEOM</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">NEOM Stadium</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">46,000</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85" itemprop="distance">15km from NEOM Bay</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">No (Private Shuttle)</td>
+                <td class="px-6 py-4 text-sm text-[#dce8ff]/85">Group Stage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Micro-Intent FAQ Section -->
+        <div class="mt-8 space-y-6">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 1.5rem;">FIFA 2034 Logistics: Micro-Intents Answered</h3>
+          <div class="space-y-4">
+            <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all" open>
+              <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                <span>How far is King Salman Stadium from Riyadh city center?</span>
+                <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+              </summary>
+              <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                It is located in the north of Riyadh, approximately 25km from the Olaya district. The new Metro Line 4 provides a direct 30-minute connection.
+              </div>
+            </details>
+            <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all">
+              <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                <span>Can I walk from Jeddah Airport to the stadium?</span>
+                <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+              </summary>
+              <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                No, King Abdullah Sports City is 20km from King Abdulaziz International Airport (JED). You must use the official FIFA shuttle buses or Uber/Careem.
+              </div>
+            </details>
+            <details class="bg-[#162540] border border-[rgba(160,200,255,0.09)] rounded-lg p-4 transition-all">
+              <summary class="font-medium text-white cursor-pointer list-none flex justify-between items-center focus:outline-none">
+                <span>Which stadium has the largest capacity for FIFA 2034?</span>
+                <span class="text-[#c9a84c] text-lg font-bold">&plus;</span>
+              </summary>
+              <div class="mt-4 text-[#dce8ff]/85 text-sm border-t border-[rgba(160,200,255,0.09)] pt-4">
+                King Salman International Stadium in Riyadh will be the largest, with a capacity of 92,760, hosting the Opening Ceremony and Final.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- JSON-LD Technical Injection -->
+        <script type="application/ld+json" set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Table",
+              "name": "FIFA 2034 Saudi Arabia: Stadium Capacities & Key Metrics",
+              "about": "Logistics, capacities, and metro transport lines for FIFA World Cup 2034 stadiums in Saudi Arabia."
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How far is King Salman Stadium from Riyadh city center?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It is located in the north of Riyadh, approximately 25km from the Olaya district. The new Metro Line 4 provides a direct 30-minute connection."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I walk from Jeddah Airport to the stadium?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, King Abdullah Sports City is 20km from King Abdulaziz International Airport (JED). You must use the official FIFA shuttle buses or Uber/Careem."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which stadium has the largest capacity for FIFA 2034?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "King Salman International Stadium in Riyadh will be the largest, with a capacity of 92,760, hosting the Opening Ceremony and Final."
+                  }
+                }
+              ]
+            }
+          ]
+        })} />
       </section>
 
       <!-- TICKETING RULES & CATEGORIES -->
