@@ -4,18 +4,25 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+interface BreadcrumbItem {
+  name: string;
+  item: string;
+}
+
 interface Props {
   title?: string;
   description?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const {
   title = "Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub",
   description = "Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources.",
   canonicalUrl: canonicalUrlProp,
-  ogImage = "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200"
+  ogImage = "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1200",
+  breadcrumbs: customBreadcrumbs
 } = Astro.props;
 
 // Derive canonical URL dynamically:
@@ -63,6 +70,54 @@ const orgSchema = {
 };
 
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html' || Astro.url.pathname === '';
+
+// Breadcrumb Schema & Visible Items
+let breadcrumbItems: { name: string; item: string; }[] = [];
+
+if (customBreadcrumbs) {
+  breadcrumbItems = customBreadcrumbs;
+} else if (!isHomepage) {
+  // Fallback: Generate dynamically from URL
+  const paths = Astro.url.pathname.split('/').filter(Boolean);
+  breadcrumbItems.push({
+    name: "Home",
+    item: PROD_ORIGIN + "/"
+  });
+
+  let accumulatedPath = "";
+  paths.forEach((segment) => {
+    accumulatedPath += `/${segment}`;
+    
+    const cleanSegment = segment.replace(/\.html$/, '');
+    let name = cleanSegment
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+      
+    if (cleanSegment.toLowerCase() === 'faq') name = 'FAQ';
+    if (cleanSegment.toLowerCase() === 'fifa-2034') name = 'FIFA 2034';
+    if (cleanSegment.toLowerCase() === 'neom') name = 'NEOM';
+    
+    breadcrumbItems.push({
+      name: name,
+      item: PROD_ORIGIN + accumulatedPath + (accumulatedPath.endsWith('.html') ? '' : '/')
+    });
+  });
+}
+
+// Convert breadcrumbItems to Schema format (ensuring sequential position starting at 1)
+const breadcrumbSchemaElements = breadcrumbItems.map((item, index) => ({
+  "@type": "ListItem",
+  "position": index + 1,
+  "name": item.name,
+  "item": item.item
+}));
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbSchemaElements
+};
 ---
 
 <!DOCTYPE html>
@@ -120,6 +175,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   <!-- Structured Data JSON-LD -->
   {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   <slot name="head" />
 </head>
 <body>
@@ -130,6 +186,23 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   </div>
 
   <Header />
+
+  {!isHomepage && breadcrumbItems.length > 0 && (
+    <div class="breadcrumb-area">
+      <div class="container breadcrumb-container">
+        {breadcrumbItems.map((item, index) => (
+          <>
+            {index > 0 && <span class="breadcrumb-separator">/</span>}
+            {index === breadcrumbItems.length - 1 ? (
+              <span class="breadcrumb-current">{item.name}</span>
+            ) : (
+              <a href={item.item} class="breadcrumb-link">{item.name}</a>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+  )}
 
   <slot />
 
@@ -221,3 +294,41 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.
   </script>
 </body>
 </html>
+
+<style>
+  .breadcrumb-area {
+    background: rgba(201, 168, 76, 0.03);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    margin-top: 72px; /* Push below fixed header */
+  }
+  .breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--white-dim);
+  }
+  .breadcrumb-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color var(--transition);
+  }
+  .breadcrumb-link:hover {
+    color: var(--gold-light);
+  }
+  .breadcrumb-separator {
+    color: var(--border);
+    user-select: none;
+  }
+  .breadcrumb-current {
+    color: var(--white-dim);
+    font-weight: 500;
+  }
+</style>

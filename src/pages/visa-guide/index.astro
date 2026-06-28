@@ -29,12 +29,19 @@ const faqData = [
     answer: "No, the Saudi Tourist eVisa is valid for travel to all regions of the Kingdom, including Riyadh, Jeddah, AlUla, and NEOM."
   }
 ];
+
+const breadcrumbs = [
+  { name: "Home", item: "https://www.sauditravelhub.com/" },
+  { name: "Visas", item: "https://www.sauditravelhub.com/visa/" },
+  { name: "Visa Guide", item: "https://www.sauditravelhub.com/visa-guide/" }
+];
 ---
 
 <Layout
   title="Saudi Arabia Visa Guide 2026: eVisa, On-Arrival & Umrah Visas"
   description="Complete Saudi visa guide. Apply for eVisa, check on-arrival eligibility, Umrah visa rules, and GCC resident requirements. Updated 2026."
   canonicalUrl="https://www.sauditravelhub.com/visa-guide/"
+  breadcrumbs={breadcrumbs}
 >
   <!-- Schema Injection -->
   <SchemaGenerator slot="head" type="FAQPage" faqData={faqData} />
@@ -175,7 +182,7 @@ const faqData = [
       align-items: center;
       background: linear-gradient(180deg, rgba(5, 13, 26, 0.45) 0%, rgba(5, 13, 26, 0.9) 100%), 
                   url('https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1920') center/cover no-repeat;
-      margin-top: 72px;
+      margin-top: 0;
       padding: 6rem 3rem;
       position: relative;
     }
@@ -207,11 +214,7 @@ const faqData = [
       margin-bottom: 0;
       line-height: 1.6;
     }
-    .breadcrumb-area {
-      background: rgba(201, 168, 76, 0.03);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-    }
+
     .inline-link {
       color: var(--gold);
       text-decoration: underline;
@@ -240,13 +243,7 @@ const faqData = [
     }
   </style>
 
-  <!-- BREADCRUMBS -->
-  <div class="breadcrumb-area">
-    <div class="container" style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white-dim);">
-      <a href="/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Home</a> <span>/</span> 
-      <a href="/visa/" style="color: var(--gold); text-decoration: none; font-weight: 700;">Visas</a> <span>/</span> Visa Guide
-    </div>
-  </div>
+  <!-- Breadcrumbs handled by Layout -->
 
   <!-- HERO SECTION -->
   <section class="city-hero-styled">
