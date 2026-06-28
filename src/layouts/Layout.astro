@@ -85,7 +85,7 @@ if (customBreadcrumbs) {
   });
 
   let accumulatedPath = "";
-  paths.forEach((segment) => {
+  paths.forEach((segment, index) => {
     accumulatedPath += `/${segment}`;
     
     const cleanSegment = segment.replace(/\.html$/, '');
@@ -98,9 +98,12 @@ if (customBreadcrumbs) {
     if (cleanSegment.toLowerCase() === 'fifa-2034') name = 'FIFA 2034';
     if (cleanSegment.toLowerCase() === 'neom') name = 'NEOM';
     
+    const isLast = index === paths.length - 1;
+    const itemUrl = PROD_ORIGIN + accumulatedPath + (isLast || accumulatedPath.endsWith('.html') ? '' : '/');
+    
     breadcrumbItems.push({
       name: name,
-      item: PROD_ORIGIN + accumulatedPath + (accumulatedPath.endsWith('.html') ? '' : '/')
+      item: itemUrl
     });
   });
 }
@@ -174,7 +177,7 @@ const breadcrumbSchema = {
 
   <!-- Structured Data JSON-LD -->
   {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
-  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />}
   {!isHomepage && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   <slot name="head" />
 </head>
