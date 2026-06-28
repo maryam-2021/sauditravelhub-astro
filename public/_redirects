@@ -19,3 +19,6 @@
 /nature/food-dining/ /food/ 301
 /nature/nature-landscapes/ /nature/ 301
 /wonders/* /experiences/:splat 301
+/riyadh /destinations/riyadh/ 301
+/riyadh/ /destinations/riyadh/ 301
+/riyadh/* /destinations/riyadh/:splat 301
