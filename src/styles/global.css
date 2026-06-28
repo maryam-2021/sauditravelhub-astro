@@ -440,3 +440,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .cookie-btns { width: 100%; justify-content: center; }
   .back-to-top { bottom: 5rem; right: 1rem; }
 }
+
+/* Text-LCP strategy: hide background image on mobile, making H1 the LCP element */
+@media (max-width: 640px) {
+  .hero-bg-img {
+    display: none !important;
+  }
+}

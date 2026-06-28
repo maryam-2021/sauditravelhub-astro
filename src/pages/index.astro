@@ -18,7 +18,16 @@ const destinationsList = [
   title="Saudi Arabia Travel Guide 2026 | Destinations, Visa & FIFA 2034 | Saudi Travel Hub"
   description="Your independent, expert travel guide to Saudi Arabia. Discover destinations, eVisa requirements, cultural tips, and complete FIFA 2034 World Cup planning resources."
 >
-  <link rel="preload" href="/images/riyadh_hero.webp" as="image" type="image/webp" fetchpriority="high" slot="head" />
+  <link 
+    rel="preload" 
+    as="image" 
+    href="/images/hero-riyadh-1200.avif"
+    imagesrcset="/images/hero-riyadh-800.avif 800w, /images/hero-riyadh-1200.avif 1200w"
+    imagesizes="(max-width: 640px) 100vw, 1200px"
+    media="(min-width: 641px)"
+    fetchpriority="high" 
+    slot="head" 
+  />
   <SchemaGenerator slot="head" type="HomepageStack" />
   <SchemaGenerator slot="head" type="ItemList" title="Saudi Arabia Travel Destinations" itemList={destinationsList} />
 
@@ -26,17 +35,24 @@ const destinationsList = [
     
     <!-- HERO -->
     <section class="hero" aria-label="Welcome to Saudi Arabia">
-      <!-- Optimized LCP Background Image -->
-      <img 
-        src="/images/riyadh_hero.webp" 
-        alt="Riyadh skyline at sunset" 
-        width="1920" 
-        height="1080" 
-        fetchpriority="high" 
-        loading="eager" 
-        decoding="async"
-        class="hero-bg-img"
-      />
+      <!-- Optimized LCP Background Image using responsive formats -->
+      <picture>
+        <source srcset="/images/hero-riyadh-800.avif 800w,
+                        /images/hero-riyadh-1200.avif 1200w"
+                sizes="(max-width: 640px) 100vw, 1200px"
+                type="image/avif">
+        <source srcset="/images/hero-riyadh-800.webp 800w,
+                        /images/hero-riyadh-1200.webp 1200w"
+                sizes="(max-width: 640px) 100vw, 1200px"
+                type="image/webp">
+        <img src="/images/hero-riyadh-1200.jpg" 
+             width="1200" height="800"
+             alt="Riyadh skyline at sunset with Kingdom Tower"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async"
+             class="hero-bg-img">
+      </picture>
       <div class="hero-geometric" aria-hidden="true">
         <div class="geo-ring"></div>
         <div class="geo-ring"></div>
